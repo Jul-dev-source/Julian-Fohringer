@@ -8,18 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-neutral-900 text-white">
     <!-- The header begins here, this includes the navigation bar and hero section -->
-    <header>
+    <header class="sticky-top z-50 x">
         <div> <!-- Navigation bar background container-->
             <div> <!-- Navigation bar container-->
-                <nav> <!-- Navigation bar content-->
+                <nav class="flex flex-row my-2 mx-24"> <!-- Navigation bar content-->
                     <a href="#hero">Julian Fohringer</a>
-
-                    <ul>
-                        <li><a href="#projects">Work</a></li>
-                        <li><a href="#process">Process</a></li>
-                        <li><a href="#about">About</a></li>
+                    <ul class="flex flex-row space-x-8 ml-auto">
+                        <li class="button"><a href="#projects">Work</a></li>
+                        <li class="button"><a href="#process">Process</a></li>
+                        <li class="button"><a href="#about">About</a></li>
                     </ul>
                 </nav>
             </div>
@@ -27,7 +26,7 @@
     </header>
 
     <!-- The main content of the page goes here -->
-    <main>
+    <main class="my-16 mx-24">
 
         <!-- Hero Section -->
         <section id="hero">
@@ -256,7 +255,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="my-2 mx-24">
 
         <div>
 
