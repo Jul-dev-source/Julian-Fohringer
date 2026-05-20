@@ -4,21 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/style.css" rel="stylesheet">
+    <link href="src/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-neutral-900 text-white">
     <!-- The header begins here, this includes the navigation bar and hero section -->
-    <header class="sticky-top z-50 x">
-        <div> <!-- Navigation bar background container-->
+    <header class="sticky top-0 z-50">
+        <div class="w-full bg-neutral-800"> <!-- Navigation bar background container-->
             <div> <!-- Navigation bar container-->
-                <nav class="flex flex-row my-2 mx-24"> <!-- Navigation bar content-->
-                    <a href="#hero">Julian Fohringer</a>
+                <nav class="w-full px-4 sm:px-6 lg:w-2/3 lg:mx-auto flex flex-row pt-8 pb-4 pt-8">
+                    <!-- Navigation bar content-->
+                    <a class="uppercase font-bold text-base place-self-center" href="#hero">JF</a>
                     <ul class="flex flex-row space-x-8 ml-auto">
-                        <li class="button"><a href="#projects">Work</a></li>
-                        <li class="button"><a href="#process">Process</a></li>
-                        <li class="button"><a href="#about">About</a></li>
+                        <li class="text-base btn btn-tertiary"><a href="#projects"><span>Work</span></a></li>
+                        <li class="text-base btn btn-tertiary"><a href="#process"><span>Process</span></a></li>
+                        <li class="text-base btn btn-tertiary"><a href="#about"><span>About</span></a></li>
+                        <li class="text-base btn btn-tertiary"><a href="..." target="_blank"><span>My Hidden
+                                    Passion</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -26,236 +29,285 @@
     </header>
 
     <!-- The main content of the page goes here -->
-    <main class="my-16 mx-24">
+    <main class="my-16 space-y-12">
+        <div class="w-full px-4 sm:px-6 lg:w-2/3 lg:mx-auto">
 
-        <!-- Hero Section -->
-        <section id="hero">
+            <!-- Hero Section -->
+            <section id="hero">
 
-            <div> <!-- Hero container-->
+                <div class="flex flex-col lg:flex-row gap-12"> <!-- Hero container-->
 
-                <div> <!-- Hero content-->
+                    <div class="lg:basis-1/2 space-y-8 place-self-center"> <!-- Hero content-->
 
-                    <p>UX/UI Designer</p> <!-- Eyebrow -->
+                        <div> <!-- Hero intro-->
 
-                    <h1>
-                        From first insight to final handoff —
-                        <span>I own the process.</span>
-                    </h1>
+                            <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">Hi, I’m Julian.
+                                UX/UI
+                                Designer</p>
+                            <h1 class="text-6xl">
+                                From first insight to final handoff —
+                                <span class="underline decoration-orange-400">I own the process.</span>
+                            </h1>
+                        </div>
 
-                    <p>
-                        I design interfaces that work — from concept to developer handoff.
-                        Currently transitioning toward product design.
-                    </p> <!-- Hero description -->
+                        <p class="text-base text-gray-400"> <!-- Hero description -->
+                            I design interfaces that work — from concept to developer handoff.
+                            Currently transitioning toward product design.
+                        </p>
 
-                    <div> <!-- Hero buttons-->
+                        <div class="flex flex-row flex-wrap gap-4"> <!-- Hero buttons-->
+                            <a class="btn btn-primary inline-flex items-center gap-2" href="#projects">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                                <span>
+                                    My Projects</span>
+                            </a>
 
-                        <a href="#projects">My Projects</a>
+                            <a class="btn btn-tertiary inline-flex items-center gap-2" href="#about">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 16v-4"></path>
+                                    <path d="M12 8h.01"></path>
+                                </svg>
+                                <span>Contact</span>
 
-                        <a href="#about">Contact</a>
+                            </a>
 
+                            <a class="btn btn-tertiary inline-flex items-center gap-2" href="/resume.pdf"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 5v10"></path>
+                                    <path d="M15 12l-3 3-3-3"></path>
+                                    <path d="M5 19h14"></path>
+                                </svg>
+                                <span>Resume</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="w-full lg:basis-1/2"> <!-- Hero image-->
+                        <img class="w-full h-auto block max-h-[600px] object-cover" src="img/placeholderimage.png"
+                            alt="Hero Image">
                     </div>
 
                 </div>
 
-                <div class="hero-visual" aria-hidden="true">
-                    <!-- Decorative shape -->
-                </div>
+            </section>
 
-            </div>
+            <!-- Projects Section -->
+            <section class="py-8" id="projects">
 
-        </section>
+                <header class="space-y-4"> <!-- Projects header-->
 
-        <!-- Projects Section -->
-        <section id="projects">
+                    <div> <!-- Project intro-->
+                        <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">selected projects</p>
+                        <!-- Eyebrow -->
+                        <h1 class="text-2xl">
+                            My Work
+                        </h1>
+                    </div>
 
-            <header> <!-- Projects header-->
-
-                <p>Selected Projects</p> <!-- Eyebrow -->
-
-                <h1>My Work</h1>
-
-                <p>
-                    Projects that show how I think —
-                    <span>not just how I design.</span>
-                </p>
-
-            </header>
-
-            <div> <!-- Projects container-->
-
-                <div> <!-- Project item-->
-
-                    <img src="/images/placeholder.png" alt="Project 1 screenshot">
-
-                    <p>Decision Support · App</p> <!-- Eyebrow -->
-
-                    <h2>
-                        Recovery-based
-                        training decisions.
-                    </h2>
-
-                    <p>
-                        A decision-support system that helps fitness enthusiasts
-                        understand exactly how to train based on recovery data.
+                    <p class="text-base text-gray-400"> <!-- Hero description -->
+                        Projects that show how I think —
+                        <span class="underline decoration-orange-400">not just how I design.</span>.
                     </p>
 
-                    <div> <!-- Project chips-->
+                </header>
 
-                        <span>User Research</span>
+                <div> <!-- Projects container-->
 
-                        <span>Interaction Design</span>
+                    <div> <!-- Project item-->
 
-                        <span>Visual Design</span>
+                        <img src="/images/placeholder.png" alt="Project 1 screenshot">
+
+                        <p>Decision Support · App</p> <!-- Eyebrow -->
+
+                        <h2>
+                            Recovery-based
+                            training decisions.
+                        </h2>
+
+                        <p>
+                            A decision-support system that helps fitness enthusiasts
+                            understand exactly how to train based on recovery data.
+                        </p>
+
+                        <div> <!-- Project chips-->
+
+                            <span>User Research</span>
+
+                            <span>Interaction Design</span>
+
+                            <span>Visual Design</span>
+
+                        </div>
+
+                        <a href="/casestudies/smartrecoveryapp.html">
+                            View Case Study
+                        </a>
 
                     </div>
 
-                    <a href="/casestudies/smartrecoveryapp.html">
-                        View Case Study
-                    </a>
-
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+            <!-- Process Section -->
+            <section class="py-8" id="process">
 
-        <!-- Process Section -->
-        <section id="process">
+                <header class="space-y-4"> <!-- Process header-->
 
-            <header> <!-- Process header-->
+                    <div> <!-- Process intro-->
+                        <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">my process</p>
+                        <!-- Eyebrow -->
+                        <h1 class="text-2xl">
+                            How I Work
+                        </h1>
+                    </div>
 
-                <p>My Process</p> <!-- Eyebrow -->
+                    <p class="text-base text-gray-400"> <!-- Process description -->
+                        Here’s how I approach projects —
+                        from initial research to final delivery..
+                    </p>
 
-                <h1>How I Work</h1>
+                </header>
 
-                <p>
-                    Here’s how I approach projects —
-                    from initial research to final delivery.
-                </p>
-
-            </header>
-
-            <ol> <!-- Process steps -->
-
-                <li>
-                    <p>Research</p>
-                </li>
-
-                <li>
-                    <p>Concept</p>
-                </li>
-
-                <li>
-                    <p>Wireframe</p>
-                </li>
-
-                <li>
-                    <p>Visual Design</p>
-                </li>
-
-                <li>
-                    <p>Prototype</p>
-                </li>
-
-                <li>
-                    <p>Developer Handoff</p>
-                </li>
-
-            </ol>
-
-            <div> <!-- Capabilities -->
-
-                <ul>
+                <ol> <!-- Process steps -->
 
                     <li>
-
-                        <h3>Interaction Concepts</h3>
-
-                        <p>
-                            User flows, prototypes, and interaction logic —
-                            before a single screen is designed.
-                        </p>
-
+                        <p>Research</p>
                     </li>
 
                     <li>
-
-                        <h3>Design Systems</h3>
-
-                        <p>
-                            Token libraries, reusable components,
-                            and documentation teams actually use.
-                        </p>
-
+                        <p>Concept</p>
                     </li>
 
-                </ul>
+                    <li>
+                        <p>Wireframe</p>
+                    </li>
 
-            </div>
+                    <li>
+                        <p>Visual Design</p>
+                    </li>
 
-        </section>
+                    <li>
+                        <p>Prototype</p>
+                    </li>
 
-        <!-- About Section -->
-        <section id="about">
-
-            <header> <!-- About header-->
-
-                <p>About Me</p> <!-- Eyebrow -->
-
-                <h1>Who I Am</h1>
-
-                <p>
-                    A bit about me, my background,
-                    and how to get in touch.
-                </p>
-
-            </header>
-
-            <div> <!-- About content-->
-
-                <img src="/images/placeholder.png" alt="A photo of Julian Fohringer">
-
-                <h2>Julian Fohringer · UX/UI Designer</h2>
-
-                <p>
-                    Hi, I’m Julian — a UX/UI designer focused on creating intuitive
-                    and engaging digital experiences.
-                    With a background in graphic design and a strong eye for detail,
-                    I specialize in user-centered interfaces that not only look good
-                    but also work seamlessly.
-
-                    Outside of design, I enjoy exploring new design trends,
-                    spending time outdoors, and experimenting with new ideas and tools.
-                </p>
-
-                <ol>
-
-                    <li>Zell am See, Salzburg</li>
-
-                    <li>Remote Work</li>
-
-                    <li>Open to New Opportunities</li>
+                    <li>
+                        <p>Developer Handoff</p>
+                    </li>
 
                 </ol>
 
-            </div>
+                <div> <!-- Capabilities -->
 
-            <div> <!-- Quote-->
+                    <ul>
 
-                <blockquote>
-                    “Design is not just what it looks like and feels like.
-                    Design is how it works.”
-                    — Steve Jobs
-                </blockquote>
+                        <li>
 
-            </div>
+                            <h3>Interaction Concepts</h3>
 
-        </section>
+                            <p>
+                                User flows, prototypes, and interaction logic —
+                                before a single screen is designed.
+                            </p>
 
+                        </li>
+
+                        <li>
+
+                            <h3>Design Systems</h3>
+
+                            <p>
+                                Token libraries, reusable components,
+                                and documentation teams actually use.
+                            </p>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- About Section -->
+            <section class="py-8" id="about">
+
+                <header class="space-y-4"> <!-- About header-->
+
+                    <div> <!-- About intro-->
+                        <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">About Me</p>
+                        <!-- Eyebrow -->
+                        <h1 class="text-2xl">
+                            Who I Am
+                        </h1>
+                    </div>
+
+                    <p class="text-base text-gray-400"> <!-- About  description -->
+                        A bit about me, my background,
+                        and how to get in touch..
+                    </p>
+
+                </header>
+
+                <div> <!-- About content-->
+
+                    <img src="/images/placeholder.png" alt="A photo of Julian Fohringer">
+
+                    <h2>Julian Fohringer · UX/UI Designer</h2>
+
+                    <p>
+                        Hi, I’m Julian — a UX/UI designer focused on creating intuitive
+                        and engaging digital experiences.
+                        With a background in graphic design and a strong eye for detail,
+                        I specialize in user-centered interfaces that not only look good
+                        but also work seamlessly.
+
+                        Outside of design, I enjoy exploring new design trends,
+                        spending time outdoors, and experimenting with new ideas and tools.
+                    </p>
+
+                    <ol>
+
+                        <li>Zell am See, Salzburg</li>
+
+                        <li>Remote Work</li>
+
+                        <li>Open to New Opportunities</li>
+
+                    </ol>
+
+                </div>
+
+                <div> <!-- Quote-->
+
+                    <blockquote>
+                        “Design is not just what it looks like and feels like.
+                        Design is how it works.”
+                        — Steve Jobs
+                    </blockquote>
+
+                </div>
+
+            </section>
+
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="my-2 mx-24">
+    <footer class="w-full px-4 sm:px-6 lg:w-2/3 lg:mx-auto">
 
         <div>
 
