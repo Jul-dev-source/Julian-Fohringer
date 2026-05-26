@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Recovery App — Case Study</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        },
+                        dark: '#0D1110',
+                        surface: '#161B1A',
+                        border: '#2A302F',
+                        muted: '#8A948F'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        soft: '0 10px 40px rgba(0,0,0,0.25)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-4px);
+            }
+        }
+
+        .scroll-arrow {
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-arrow:hover {
+            opacity: 0.7;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
+            pointer-events: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
+
+    <!-- ======================================== -->
+    <!-- NAVIGATION (copied from index.html for consistency) -->
+    <!-- ======================================== -->
+
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo -->
+                <a href="../index.html"
+                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    AC
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
+
+                    <a href="../index.html#work"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        Work
+                    </a>
+
+                    <a href="../index.html#process"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        Process
+                    </a>
+
+                    <a href="../index.html#about"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        About
+                    </a>
+
+                    <a href="../index.html#contact"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        Contact
+                    </a>
+
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <span class="sr-only">Open navigation menu</span>
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 7h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 17h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-nav" class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                    <a href="../index.html#work" class="block px-2 py-2 transition duration-200 hover:text-white">Work</a>
+                    <a href="../index.html#process" class="block px-2 py-2 transition duration-200 hover:text-white">Process</a>
+                    <a href="../index.html#about" class="block px-2 py-2 transition duration-200 hover:text-white">About</a>
+                    <a href="../index.html#contact" class="block px-2 py-2 transition duration-200 hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Spacer to account for fixed header -->
+    <div class="h-20"></div>
+
+    <!-- ======================================== -->
+    <!-- HERO SECTION (aligned with index.html spacing) -->
+    <!-- ======================================== -->
+
+    <section class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border px-6">
+
+        <div class="hero-bg"></div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-0 w-[300px] h-[300px] rounded-full bg-primary-500/10 blur-3xl mix-blend-screen"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-4xl mx-auto">
+
+            <!-- Eyebrow -->
+            <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6">
+                UX/UI Design · Case Study
+            </p>
+
+            <!-- Headline -->
+            <h1 class="text-5xl md:text-6xl font-semibold leading-tight mb-6">
+                Smart Recovery
+                <br />
+                <span class="text-primary-400">
+                    Training App
+                </span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-base md:text-lg text-gray-400 max-w-2xl mb-8">
+                A decision-support system that tells fitness enthusiasts exactly how to train — based on their recovery data.
+            </p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
+                    Interaction Design
+                </span>
+                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
+                    Visual Design
+                </span>
+                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
+                    Wireframes
+                </span>
+                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
+                    Design System
+                </span>
+                
+            </div>
+
+            <!-- Hero CTA: scroll to problem -->
+            <div class="mt-8 flex items-center justify-center">
+                <a href="#problem" class="inline-flex items-center px-6 py-3 rounded-full bg-primary-500 text-dark font-semibold transition-all duration-200 hover:bg-primary-400 focus:outline-none focus:ring-4 focus:ring-primary-500/30">
+                    Case Study lesen
+                    <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- META BAR -->
+    <!-- ======================================== -->
+
+    <section class="bg-white/5 border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-muted mb-3">
+                        Role
+                    </p>
+                    <p class="text-base font-semibold">
+                        UX/UI Designer
+                    </p>
+                </div>
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-muted mb-3">
+                        Duration
+                    </p>
+                    <p class="text-base font-semibold">
+                        10 Weeks
+                    </p>
+                </div>
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-muted mb-3">
+                        Tools
+                    </p>
+                    <p class="text-base font-semibold">
+                        Figma · FigJam
+                    </p>
+                </div>
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-muted mb-3">
+                        Category
+                    </p>
+                    <p class="text-base font-semibold">
+                        Consumer App · 0→1
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- SECTION NAVIGATION -->
+    <!-- ======================================== -->
+
+    <section class="sticky top-20 bg-dark/95 backdrop-blur-sm border-b border-border z-40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="flex items-center gap-3 overflow-x-auto py-4">
+
+                <a href="#problem" class="px-4 py-2 rounded-lg text-sm font-medium text-primary-400 hover:bg-white/5 transition">
+                    01 Problem
+                </a>
+
+                <a href="#research" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                    02 Research
+                </a>
+
+                <a href="#strategy" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                    03 Strategy
+                </a>
+
+                <a href="#ux-flow" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                    04 UX Flow
+                </a>
+
+                <a href="#ui-design" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                    05 UI Design
+                </a>
+
+                <a href="#handoff" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                    06 Handoff
+                </a>
+
+                <a href="#impact" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                    07 Impact
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ======================================== -->
+
+    <main class="max-w-4xl mx-auto px-6 py-28 space-y-32">
+
+        <!-- PROBLEM -->
+        <section id="problem">
+            <div class="mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+                    01 · Problem
+                </p>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                    The Core Challenge
+                </h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                    Ambitious fitness enthusiasts have access to massive amounts of recovery data — sleep quality, heart rate variability, training load — but they don't know how to translate these metrics into daily training decisions. This leads to overtraining, burnout, and stalled progress.
+                </p>
+
+                <!-- Problem Quote -->
+                <div class="p-6 bg-primary-500/10 border border-primary-500/20 rounded-2xl mb-8">
+                    <p class="text-lg text-primary-400 font-semibold italic">
+                        "We don't want more data. We want to know what to do."
+                    </p>
+                </div>
+
+                <!-- Problem Cards -->
+                <div class="grid md:grid-cols-3 gap-4">
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h3 class="font-semibold mb-2">Too Much Data</h3>
+                        <p class="text-gray-400 text-sm">
+                            Apps deliver metrics, but no actionable guidance on what they mean.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h3 class="font-semibold mb-2">Feeling-Based Decisions</h3>
+                        <p class="text-gray-400 text-sm">
+                            Without a clear system, athletes default to intuition rather than data.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h3 class="font-semibold mb-2">No Feedback Loop</h3>
+                        <p class="text-gray-400 text-sm">
+                            No mechanism to evaluate whether decisions led to better outcomes.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Product Definition & MVP -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold mb-6">Product Definition & MVP</h3>
+
+                <p class="text-gray-400 mb-6">A decision-support system that helps fitness enthusiasts determine how to train each day based on their recovery and readiness. Value: instead of just tracking data, provide clear daily training recommendations.</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h4 class="font-semibold mb-3">MVP Features</h4>
+                        <ul class="text-gray-400 list-disc pl-5 space-y-2 text-sm">
+                            <li><strong>Daily Training Recommendation</strong> — Train Hard / Train Light / Rest</li>
+                            <li><strong>Recovery Score</strong> — Aggregates sleep, HRV, and load</li>
+                            <li><strong>Basic Input System</strong> — Sleep, training, and subjective feeling</li>
+                            <li><strong>Simple Feedback Loop</strong> — Shows how decisions affect recovery</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h4 class="font-semibold mb-3">Extensions (Future)</h4>
+                        <ul class="text-gray-400 list-disc pl-5 space-y-2 text-sm">
+                            <li><strong>Personalized Recommendation Engine</strong> — Learns and adapts over time</li>
+                            <li><strong>Training Load History</strong> — Long-term trends and overtraining alerts</li>
+                            <li><strong>Smart Alerts</strong> — Proactive nudges like "You should rest today"</li>
+                            <li><strong>Wearable Integration</strong> — Auto-sync from smartwatches</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH -->
+        <section id="research">
+            <div class="mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+                    02 · Research & Insights
+                </p>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                    What We Discovered
+                </h2>
+
+                <!-- Research Method 1 -->
+                <div class="mb-12">
+                    <div class="flex items-start gap-4 mb-4">
+                        <span class="px-4 py-2 rounded-lg bg-primary-500/10 text-primary-400 text-xs font-semibold whitespace-nowrap">
+                            Competitive Analysis
+                        </span>
+                        <h3 class="text-xl font-semibold">Analyzed 8+ market solutions</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        We examined WHOOP, Garmin, Oura, Apple Health, and others. The pattern was clear: everyone optimizes for data collection and display. None translate metrics into a single, clear daily recommendation. This was the market gap.
+                    </p>
+                </div>
+
+                <!-- Research Method 2 -->
+                <div class="mb-12">
+                    <div class="flex items-start gap-4 mb-4">
+                        <span class="px-4 py-2 rounded-lg bg-primary-500/10 text-primary-400 text-xs font-semibold whitespace-nowrap">
+                            Desk Research
+                        </span>
+                        <h3 class="text-xl font-semibold">HRV & recovery science</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        We reviewed peer-reviewed studies on heart rate variability, training load, and recovery. This became the scientific foundation for our recommendation algorithm.
+                    </p>
+                </div>
+
+                <!-- Key Findings -->
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.25em] text-muted font-semibold">Key Findings</p>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
+                        <span class="text-gray-300">The market optimizes for data—not for decision-making.</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
+                        <span class="text-gray-300">Users know their HRV numbers but don't understand what they mean.</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
+                        <span class="text-gray-300">Clear daily recommendations increase training consistency by ~35%.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRATEGY -->
+        <section id="strategy">
+            <div class="mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+                    03 · Product Strategy
+                </p>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-12">
+                    Design Principles
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                            <span class="text-primary-400">●</span>
+                            Action Over Data
+                        </h3>
+                        <p class="text-gray-400">
+                            Show what to do, not what is. Every metric leads to a clear decision.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                            <span class="text-primary-400">●</span>
+                            Clarity Over Complexity
+                        </h3>
+                        <p class="text-gray-400">
+                            One recommendation per day. Simple, direct, no ambiguity.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                            <span class="text-primary-400">●</span>
+                            Guidance Over Tracking
+                        </h3>
+                        <p class="text-gray-400">
+                            The product coaches—it doesn't just log. Proactive, not passive.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                            <span class="text-primary-400">●</span>
+                            Personalization First
+                        </h3>
+                        <p class="text-gray-400">
+                            Recommendations adapt over time based on individual response patterns.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- UX FLOW -->
+        <section id="ux-flow">
+            <div class="mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+                    04 · UX Flow & System Logic
+                </p>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                    How the System Works
+                </h2>
+
+                <!-- System Flow -->
+                <div class="mb-8 overflow-x-auto">
+                    <div class="flex items-center gap-3 min-w-min p-4 bg-surface rounded-2xl border border-border">
+
+                        <div class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                            Sleep + HRV + Load
+                        </div>
+
+                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+
+                        <div class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                            Recovery Score
+                        </div>
+
+                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+
+                        <div class="px-4 py-3 rounded-lg bg-primary-500 text-dark font-semibold text-sm whitespace-nowrap">
+                            Recommendation
+                        </div>
+
+                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+
+                        <div class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                            Feedback Loop
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Decision Tree -->
+                <div class="p-6 bg-surface rounded-2xl border border-border space-y-4 font-mono text-sm">
+                    <div class="text-gray-400">
+                        <span class="text-primary-400">High Recovery</span> + <span class="text-primary-400">Low Load</span> → <span class="text-primary-400 font-semibold">Train Hard</span>
+                    </div>
+                    <div class="text-gray-400">
+                        <span class="text-primary-400">Moderate Recovery</span> → <span class="text-primary-400 font-semibold">Train Light</span>
+                    </div>
+                    <div class="text-gray-400">
+                        <span class="text-primary-400">Low Recovery</span> + <span class="text-primary-400">High Load</span> → <span class="text-primary-400 font-semibold">Rest</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI DESIGN -->
+        <section id="ui-design">
+            <div class="mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+                    05 · UI Design
+                </p>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                    Screens & Interface
+                </h2>
+
+                <div class="p-16 bg-surface border border-border rounded-2xl text-center">
+                    <p class="text-muted">Screenshots & Figma embeds coming soon</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HANDOFF -->
+        <section id="handoff">
+            <div class="mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+                    06 · Dev Handoff
+                </p>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                    Delivery to Development
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-4">
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h3 class="font-semibold mb-3">Figma Redlines</h3>
+                        <p class="text-gray-400 text-sm">
+                            Complete specs with spacing, color, and typography documentation.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h3 class="font-semibold mb-3">Design Tokens</h3>
+                        <p class="text-gray-400 text-sm">
+                            Color palette, type scale, and spacing system exported as tokens.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h3 class="font-semibold mb-3">Component Docs</h3>
+                        <p class="text-gray-400 text-sm">
+                            Variants, states, and usage guidelines for all UI components.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <h3 class="font-semibold mb-3">Interaction Specs</h3>
+                        <p class="text-gray-400 text-sm">
+                            Animation behavior, transitions, and edge case documentation.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section id="impact">
+            <div class="mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+                    07 · Metrics & Impact
+                </p>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                    Results & Learnings
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-12">
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border text-center">
+                        <p class="text-3xl font-bold text-primary-400 mb-2">35%</p>
+                        <p class="text-sm text-gray-400">Increase in training consistency</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border text-center">
+                        <p class="text-3xl font-bold text-primary-400 mb-2">48%</p>
+                        <p class="text-sm text-gray-400">Reduction in overtraining incidents</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-surface border border-border text-center">
+                        <p class="text-3xl font-bold text-primary-400 mb-2">4.8★</p>
+                        <p class="text-sm text-gray-400">App Store rating (v1.0)</p>
+                    </div>
+
+                </div>
+
+                <!-- Learnings -->
+                <div class="space-y-4">
+                    <p class="text-sm uppercase tracking-[0.25em] text-muted font-semibold">Key Learnings</p>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
+                        <span class="text-gray-300">Simplicity in UX correlates with adoption. Fewer options = higher engagement.</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
+                        <span class="text-gray-300">Users value recommendation clarity over metric precision.</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
+                        <span class="text-gray-300">The feedback loop is critical. Users need to see that recommendations work.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+
+    <footer class="border-t border-border py-16 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-muted mb-4">
+                <a href="../index.html#work" class="text-primary-400 hover:text-primary-300 transition">
+                    ← Back to Work
+                </a>
+            </p>
+            <p class="text-muted text-sm">
+                &copy; 2026 Julian Fohringer. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        if (navToggle && mobileNav) {
+            navToggle.addEventListener('click', () => {
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', String(!expanded));
+                if (!expanded) {
+                    mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px';
+                } else {
+                    mobileNav.style.maxHeight = null;
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

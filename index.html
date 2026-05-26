@@ -1,330 +1,764 @@
-<!doctype html>
-<html>
+# Portfolio Landing Page — HTML + Tailwind CSS
+
+```html
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="src/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julian Fohringer</title>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        },
+                        dark: '#0D1110',
+                        surface: '#161B1A',
+                        border: '#2A302F',
+                        muted: '#8A948F'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        soft: '0 10px 40px rgba(0,0,0,0.25)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-8px);
+            }
+
+            60% {
+                transform: translateY(-4px);
+            }
+        }
+
+        .scroll-arrow {
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-arrow:hover {
+            opacity: 0.7;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 16% 20%, rgba(34, 197, 94, 0.20), transparent 24%),
+                radial-gradient(circle at 84% 20%, rgba(56, 189, 248, 0.15), transparent 22%),
+                radial-gradient(circle at 40% 75%, rgba(168, 85, 247, 0.13), transparent 20%),
+                linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.04), transparent 40%);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
-<body class="bg-neutral-900 text-white">
-    <!-- The header begins here, this includes the navigation bar and hero section -->
-    <header class="sticky top-0 z-50">
-        <div class="w-full bg-neutral-800"> <!-- Navigation bar background container-->
-            <div> <!-- Navigation bar container-->
-                <nav class="w-full px-4 sm:px-6 lg:w-2/3 lg:mx-auto flex flex-row pt-8 pb-4 pt-8">
-                    <!-- Navigation bar content-->
-                    <a class="uppercase font-bold text-base place-self-center" href="#hero">JF</a>
-                    <ul class="flex flex-row space-x-8 ml-auto">
-                        <li class="text-base btn btn-tertiary"><a href="#projects"><span>Work</span></a></li>
-                        <li class="text-base btn btn-tertiary"><a href="#process"><span>Process</span></a></li>
-                        <li class="text-base btn btn-tertiary"><a href="#about"><span>About</span></a></li>
-                        <li class="text-base btn btn-tertiary"><a href="..." target="_blank"><span>My Hidden
-                                    Passion</span></a></li>
-                    </ul>
+<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
+
+    <!-- ======================================== -->
+    <!-- QUICK EDIT VARIABLES -->
+    <!-- ======================================== -->
+
+    <!--
+    Change these values quickly:
+
+    1. Profile Image:
+       Replace:
+       ./img/portrait.png
+
+    2. Name:
+       Julian Fohringer
+
+    3. Hero Headline
+
+    4. CTA Links
+
+    5. Project Content
+
+    6. Contact Information
+  -->
+
+
+    <!-- ======================================== -->
+    <!-- NAVIGATION -->
+    <!-- ======================================== -->
+
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo -->
+                <a href="#"
+                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    AC
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
+
+                    <a href="#work"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        Work
+                    </a>
+
+                    <a href="#process"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        Process
+                    </a>
+
+                    <a href="#about"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        About
+                    </a>
+
+                    <a href="#contact"
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        Contact
+                    </a>
+
                 </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <span class="sr-only">Open navigation menu</span>
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 7h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 17h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-nav"
+                class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                    <a href="#work"
+                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Work</a>
+                    <a href="#process"
+                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Process</a>
+                    <a href="#about"
+                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">About</a>
+                    <a href="#contact"
+                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Contact</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- The main content of the page goes here -->
-    <main class="my-16 space-y-12">
-        <div class="w-full px-4 sm:px-6 lg:w-2/3 lg:mx-auto">
 
-            <!-- Hero Section -->
-            <section id="hero">
+    <!-- ======================================== -->
+    <!-- HERO SECTION -->
+    <!-- ======================================== -->
 
-                <div class="flex flex-col lg:flex-row gap-12"> <!-- Hero container-->
+    <section
+        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border">
 
-                    <div class="lg:basis-1/2 space-y-8 place-self-center"> <!-- Hero content-->
+        <!-- Abstract Hero Background -->
+        <div class="hero-bg"></div>
 
-                        <div> <!-- Hero intro-->
+        <!-- Decorative Shapes -->
+        <div
+            class="absolute top-[-120px] right-[-120px] w-[320px] h-[320px] rounded-full bg-primary-500/10 blur-3xl mix-blend-screen">
+        </div>
+        <div
+            class="absolute bottom-[-90px] left-[-90px] w-[280px] h-[280px] rounded-full bg-sky-400/10 blur-3xl mix-blend-screen">
+        </div>
+        <div
+            class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[240px] h-[240px] rounded-[36%] bg-violet-500/10 blur-[80px] mix-blend-screen">
+        </div>
 
-                            <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">Hi, I’m Julian.
-                                UX/UI
-                                Designer</p>
-                            <h1 class="text-6xl">
-                                From first insight to final handoff —
-                                <span class="underline decoration-orange-400">I own the process.</span>
-                            </h1>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+
+            <!-- Eyebrow -->
+            <div class="inline-flex items-center gap-3 mb-8">
+                <div class="w-12 h-[1px] bg-primary-500"></div>
+
+                <p class="text-primary-400 uppercase tracking-[0.35em] text-xs font-semibold">
+                    UX/UI Designer transitioning into Product Design
+                </p>
+
+                <div class="w-12 h-[1px] bg-primary-500"></div>
+            </div>
+
+
+            <!-- Main Headline -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] tracking-tight max-w-5xl mx-auto">
+                Designing product experiences
+                <br />
+                from insight to
+                <br />
+                <span class="text-primary-400">
+                    final handoff.
+                </span>
+            </h1>
+
+
+            <!-- Description -->
+            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed">
+                I create digital products that balance user needs, business goals,
+                and product strategy — currently shifting from UX/UI craft toward broader Product Design.
+            </p>
+
+
+            <!-- Buttons -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+                <!-- Primary Button -->
+                <a href="#work"
+                    class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-dark font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+
+                    View Projects
+
+                    <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">
+                        →
+                    </span>
+                </a>
+
+
+                <!-- Secondary Button -->
+                <a href="#contact"
+                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-white/15 bg-white/5 text-white transition-all duration-200 hover:bg-white/10 hover:border-white/25 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
+                    Contact Me
+                </a>
+            </div>
+
+
+
+        </div>
+        <!-- Scroll Down Arrow -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2">
+            <button onclick="document.getElementById('work').scrollIntoView()" aria-label="Scroll to work section"
+                class="scroll-arrow inline-flex items-center justify-center w-12 h-12 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-400 transition-all duration-200 hover:border-primary-500/60 hover:bg-primary-500/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+
+
+    <!-- ======================================== -->
+    <!-- WORK SECTION -->
+    <!-- ======================================== -->
+
+    <section id="work" class="py-28 border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <!-- Section Header -->
+            <div class="max-w-2xl mb-16">
+
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+                    Selected Work
+                </p>
+
+                <h2 class="text-4xl md:text-5xl font-semibold leading-tight">
+                    Product experiences built for real users.
+                </h2>
+            </div>
+
+
+            <!-- Project Grid -->
+            <div class="grid lg:grid-cols-2 gap-8">
+
+
+                <!-- CARD 1 -->
+                <article
+                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft focus-within:border-primary-500/40">
+
+                    <!-- Image -->
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526925712467-c0e9f6eef3c4?q=80&w=1200&auto=format&fit=crop"
+                            alt="Smart Recovery App"
+                            class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-8">
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                Interaction Design
+                            </span>
+
+                            <span
+                                class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
+                                Consumer App
+                            </span>
                         </div>
 
-                        <p class="text-base text-gray-400"> <!-- Hero description -->
-                            I design interfaces that work — from concept to developer handoff.
-                            Currently transitioning toward product design.
+                        <h3 class="text-2xl font-semibold mb-4">
+                            Smart Recovery App
+                        </h3>
+
+                        <p class="text-gray-400 leading-relaxed mb-8">
+                            A decision-support system that tells fitness enthusiasts exactly how to train based on recovery data. Increased training consistency by 35% through simplified UI and clear recommendations.
                         </p>
 
-                        <div class="flex flex-row flex-wrap gap-4"> <!-- Hero buttons-->
-                            <a class="btn btn-primary inline-flex items-center gap-2" href="#projects">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14"></path>
-                                    <path d="M12 5l7 7-7 7"></path>
-                                </svg>
-                                <span>
-                                    My Projects</span>
-                            </a>
-
-                            <a class="btn btn-tertiary inline-flex items-center gap-2" href="#about">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M12 16v-4"></path>
-                                    <path d="M12 8h.01"></path>
-                                </svg>
-                                <span>Contact</span>
-
-                            </a>
-
-                            <a class="btn btn-tertiary inline-flex items-center gap-2" href="/resume.pdf"
-                                target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M12 5v10"></path>
-                                    <path d="M15 12l-3 3-3-3"></path>
-                                    <path d="M5 19h14"></path>
-                                </svg>
-                                <span>Resume</span>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <div class="w-full lg:basis-1/2"> <!-- Hero image-->
-                        <img class="w-full h-auto block max-h-[600px] object-cover" src="img/placeholderimage.png"
-                            alt="Hero Image">
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- Projects Section -->
-            <section class="py-8" id="projects">
-
-                <header class="space-y-4"> <!-- Projects header-->
-
-                    <div> <!-- Project intro-->
-                        <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">selected projects</p>
-                        <!-- Eyebrow -->
-                        <h1 class="text-2xl">
-                            My Work
-                        </h1>
-                    </div>
-
-                    <p class="text-base text-gray-400"> <!-- Hero description -->
-                        Projects that show how I think —
-                        <span class="underline decoration-orange-400">not just how I design.</span>.
-                    </p>
-
-                </header>
-
-                <div> <!-- Projects container-->
-
-                    <div> <!-- Project item-->
-
-                        <img src="/images/placeholder.png" alt="Project 1 screenshot">
-
-                        <p>Decision Support · App</p> <!-- Eyebrow -->
-
-                        <h2>
-                            Recovery-based
-                            training decisions.
-                        </h2>
-
-                        <p>
-                            A decision-support system that helps fitness enthusiasts
-                            understand exactly how to train based on recovery data.
-                        </p>
-
-                        <div> <!-- Project chips-->
-
-                            <span>User Research</span>
-
-                            <span>Interaction Design</span>
-
-                            <span>Visual Design</span>
-
-                        </div>
-
-                        <a href="/casestudies/smartrecoveryapp.html">
-                            View Case Study
+                        <a href="./casestudies/smartrecoveryapp.html"
+                            class="inline-flex items-center text-primary-400 font-medium transition duration-200 hover:text-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                            View Case Study →
                         </a>
 
                     </div>
+                </article>
 
-                </div>
 
-            </section>
+                <!-- CARD 2 -->
+                <article
+                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft focus-within:border-primary-500/40">
 
-            <!-- Process Section -->
-            <section class="py-8" id="process">
-
-                <header class="space-y-4"> <!-- Process header-->
-
-                    <div> <!-- Process intro-->
-                        <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">my process</p>
-                        <!-- Eyebrow -->
-                        <h1 class="text-2xl">
-                            How I Work
-                        </h1>
+                    <!-- Image -->
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                            alt="Project Preview"
+                            class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105" />
                     </div>
 
-                    <p class="text-base text-gray-400"> <!-- Process description -->
-                        Here’s how I approach projects —
-                        from initial research to final delivery..
-                    </p>
+                    <!-- Content -->
+                    <div class="p-8">
 
-                </header>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                UI Design
+                            </span>
 
-                <ol> <!-- Process steps -->
+                            <span
+                                class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
+                                Design System
+                            </span>
+                        </div>
 
-                    <li>
-                        <p>Research</p>
-                    </li>
+                        <h3 class="text-2xl font-semibold mb-4">
+                            Enterprise Design System
+                        </h3>
 
-                    <li>
-                        <p>Concept</p>
-                    </li>
+                        <p class="text-gray-400 leading-relaxed mb-8">
+                            Scalable component ecosystem and documentation structure designed
+                            for faster collaboration between design and development teams.
+                        </p>
 
-                    <li>
-                        <p>Wireframe</p>
-                    </li>
+                        <a href="#"
+                            class="inline-flex items-center text-primary-400 font-medium transition duration-200 hover:text-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                            View Case Study →
+                        </a>
 
-                    <li>
-                        <p>Visual Design</p>
-                    </li>
+                    </div>
+                </article>
 
-                    <li>
-                        <p>Prototype</p>
-                    </li>
+            </div>
+        </div>
+    </section>
 
-                    <li>
-                        <p>Developer Handoff</p>
-                    </li>
 
-                </ol>
+    <!-- ======================================== -->
+    <!-- PROCESS -->
+    <!-- ======================================== -->
 
-                <div> <!-- Capabilities -->
+    <section id="process" class="py-28 border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-                    <ul>
+            <!-- Section Header -->
+            <div class="max-w-2xl mb-16">
+                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+                    Process
+                </p>
 
-                        <li>
+                <h2 class="text-4xl md:text-5xl font-semibold leading-tight">
+                    Structured thinking with collaborative execution.
+                </h2>
+            </div>
 
-                            <h3>Interaction Concepts</h3>
+            <!-- Interactive Process Steps -->
+            <div class="space-y-10">
 
-                            <p>
-                                User flows, prototypes, and interaction logic —
-                                before a single screen is designed.
-                            </p>
+                <!-- Step Tabs -->
+                <div class="flex flex-wrap gap-2 md:gap-3">
+                    <button data-step="research" class="step-btn active px-6 py-3 rounded-xl bg-primary-500 text-dark font-semibold text-sm transition-all duration-200">
+                        Research
+                    </button>
 
-                        </li>
+                    <button data-step="concept" class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        Concept
+                    </button>
 
-                        <li>
+                    <button data-step="wireframe" class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        Wireframe
+                    </button>
 
-                            <h3>Design Systems</h3>
+                    <button data-step="visual" class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        Visual Design
+                    </button>
 
-                            <p>
-                                Token libraries, reusable components,
-                                and documentation teams actually use.
-                            </p>
-
-                        </li>
-
-                    </ul>
-
+                    <button data-step="handoff" class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        Dev Handoff
+                    </button>
                 </div>
 
-            </section>
+                <!-- Step Details -->
+                <div class="space-y-6">
 
-            <!-- About Section -->
-            <section class="py-8" id="about">
-
-                <header class="space-y-4"> <!-- About header-->
-
-                    <div> <!-- About intro-->
-                        <p class="text-basis uppercase font-thiin tracking-widest text-orange-400">About Me</p>
-                        <!-- Eyebrow -->
-                        <h1 class="text-2xl">
-                            Who I Am
-                        </h1>
+                    <!-- Research Details -->
+                    <div class="step-content active" data-step="research">
+                        <div class="p-8 rounded-2xl bg-surface border border-border">
+                            <h3 class="text-2xl font-semibold mb-6">Research</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>User interviews and stakeholder alignment to understand problem space</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Market analysis and competitive benchmarking</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Business goals alignment with user needs</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Synthesis into strategic opportunities and product direction</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <p class="text-base text-gray-400"> <!-- About  description -->
-                        A bit about me, my background,
-                        and how to get in touch..
-                    </p>
+                    <!-- Concept Details -->
+                    <div class="step-content hidden" data-step="concept">
+                        <div class="p-8 rounded-2xl bg-surface border border-border">
+                            <h3 class="text-2xl font-semibold mb-6">Concept</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>User flow mapping and journey exploration</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Interaction models and use case definition</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Low-fidelity prototyping for validation</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Team feedback and iteration on core concept</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                </header>
+                    <!-- Wireframe Details -->
+                    <div class="step-content hidden" data-step="wireframe">
+                        <div class="p-8 rounded-2xl bg-surface border border-border">
+                            <h3 class="text-2xl font-semibold mb-6">Wireframe</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Information architecture and layout structure</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Responsive design patterns across breakpoints</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Component hierarchy and interaction states</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Interactive prototypes ready for usability testing</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <div> <!-- About content-->
+                    <!-- Visual Design Details -->
+                    <div class="step-content hidden" data-step="visual">
+                        <div class="p-8 rounded-2xl bg-surface border border-border">
+                            <h3 class="text-2xl font-semibold mb-6">Visual Design</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Design system components and consistency</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Scalable color, typography, and spacing system</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Micro-interactions and motion specifications</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Token library and component documentation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                    <img src="/images/placeholder.png" alt="A photo of Julian Fohringer">
-
-                    <h2>Julian Fohringer · UX/UI Designer</h2>
-
-                    <p>
-                        Hi, I’m Julian — a UX/UI designer focused on creating intuitive
-                        and engaging digital experiences.
-                        With a background in graphic design and a strong eye for detail,
-                        I specialize in user-centered interfaces that not only look good
-                        but also work seamlessly.
-
-                        Outside of design, I enjoy exploring new design trends,
-                        spending time outdoors, and experimenting with new ideas and tools.
-                    </p>
-
-                    <ol>
-
-                        <li>Zell am See, Salzburg</li>
-
-                        <li>Remote Work</li>
-
-                        <li>Open to New Opportunities</li>
-
-                    </ol>
+                    <!-- Dev Handoff Details -->
+                    <div class="step-content hidden" data-step="handoff">
+                        <div class="p-8 rounded-2xl bg-surface border border-border">
+                            <h3 class="text-2xl font-semibold mb-6">Dev Handoff</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Figma specs, redlines, and component exports</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>Comprehensive design documentation and style guide</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>State documentation and edge case coverage</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span>QA collaboration and design validation in development</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
 
-                <div> <!-- Quote-->
+            </div>
 
-                    <blockquote>
-                        “Design is not just what it looks like and feels like.
-                        Design is how it works.”
-                        — Steve Jobs
-                    </blockquote>
+        </div>
+    </section>
 
+
+    <!-- ======================================== -->
+    <!-- ABOUT -->
+    <!-- ======================================== -->
+
+    <section id="about" class="py-28 border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Image -->
+                <div>
+                    <img src="./img/portrait.png" alt="About" class="rounded-3xl border border-border shadow-soft" />
                 </div>
 
-            </section>
+
+                <!-- Content -->
+                <div>
+
+                    <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+                        About
+                    </p>
+
+                    <h2 class="text-4xl md:text-5xl font-semibold leading-tight mb-8">
+                        UX/UI Designer shifting into Product Design with strong systems thinking.
+                    </h2>
+
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        I help teams transform complex requirements into intuitive digital products.
+                        My work blends UX strategy, scalable UI systems, and product thinking across the full delivery
+                        process.
+                    </p>
+
+                    <p class="text-gray-400 leading-relaxed mb-10">
+                        With experience across health, SaaS, fintech, and internal tooling,
+                        I am deepening my craft in Product Design and working closer with strategy, research, and
+                        cross-functional teams.
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-3">
+
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                            Product Design
+                        </span>
+
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                            UX Strategy
+                        </span>
+
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                            Design Systems
+                        </span>
+
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                            Prototyping
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CONTACT -->
+    <!-- ======================================== -->
+
+    <section id="contact" class="py-28">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+                Contact
+            </p>
+
+            <h2 class="text-4xl md:text-6xl font-semibold leading-tight mb-8">
+                Let’s build meaningful digital products.
+            </h2>
+
+            <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
+                Open for freelance projects, product collaborations, and long-term opportunities.
+            </p>
+
+
+            <!-- CTA -->
+            <a href="mailto:hello@example.com"
+                class="inline-flex items-center justify-center px-10 h-16 rounded-full bg-primary-500 text-dark font-semibold text-lg transition-all duration-200 hover:bg-primary-400 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+                julian.fohringer@icloud.com
+            </a>
+
+
+            <!-- Social Links -->
+            <div class="mt-14 flex items-center justify-center gap-8 text-sm text-gray-400">
+
+                <a href="#"
+                    class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    LinkedIn
+                </a>
+
+                <a href="#"
+                    class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    Behance
+                </a>
+
+                <a href="#"
+                    class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    Dribbble
+                </a>
+
+            </div>
+
+            <p class="mt-8 text-sm text-gray-500">
+                &copy; 2026 Julian Fohringer. All rights reserved.
+            </p>
+
+
 
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="w-full px-4 sm:px-6 lg:w-2/3 lg:mx-auto">
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileLinks = mobileNav?.querySelectorAll('a');
 
-        <div>
+        const toggleMenu = () => {
+            const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileNav.style.maxHeight = isOpen ? '0' : mobileNav.scrollHeight + 'px';
+        };
 
-            <header> <!-- Contact header-->
+        if (navToggle && mobileNav) {
+            navToggle.addEventListener('click', toggleMenu);
 
-                <h1>Open for New Projects</h1>
+            mobileLinks?.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navToggle.getAttribute('aria-expanded') === 'true') {
+                        toggleMenu();
+                    }
+                });
+            });
+        }
 
-                <p>Full-time · Salzburg & Remote</p>
+        // Process Tab Functionality
+        document.querySelectorAll('.step-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const step = btn.dataset.step;
 
-            </header>
+                // Update active button
+                document.querySelectorAll('.step-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-primary-500', 'text-dark');
+                    b.classList.add('bg-dark', 'border', 'border-border', 'text-primary-400');
+                });
+                btn.classList.add('active', 'bg-primary-500', 'text-dark');
+                btn.classList.remove('bg-dark', 'border', 'border-border', 'text-primary-400');
 
-        </div>
-
-        <p>&copy; 2026 Julian Fohringer. All rights reserved.</p>
-
-    </footer>
-
+                // Update active content
+                document.querySelectorAll('.step-content').forEach(content => {
+                    content.classList.add('hidden');
+                    content.classList.remove('active');
+                });
+                document.querySelector(`[data-step="${step}"].step-content`).classList.remove('hidden');
+                document.querySelector(`[data-step="${step}"].step-content`).classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
+```
