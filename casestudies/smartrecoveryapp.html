@@ -50,12 +50,19 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
                 transform: translateY(0);
             }
+
             40% {
                 transform: translateY(-8px);
             }
+
             60% {
                 transform: translateY(-4px);
             }
@@ -69,6 +76,15 @@
 
         .scroll-arrow:hover {
             opacity: 0.7;
+        }
+
+        section[id] {
+            scroll-margin-top: 11rem;
+        }
+
+        .section-nav-link.active {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .hero-bg {
@@ -94,7 +110,7 @@
                 <!-- Logo -->
                 <a href="../index.html"
                     class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                    AC
+                    JF
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -135,12 +151,17 @@
                 </button>
             </div>
 
-            <div id="mobile-nav" class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
+            <div id="mobile-nav"
+                class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
                 <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
-                    <a href="../index.html#work" class="block px-2 py-2 transition duration-200 hover:text-white">Work</a>
-                    <a href="../index.html#process" class="block px-2 py-2 transition duration-200 hover:text-white">Process</a>
-                    <a href="../index.html#about" class="block px-2 py-2 transition duration-200 hover:text-white">About</a>
-                    <a href="../index.html#contact" class="block px-2 py-2 transition duration-200 hover:text-white">Contact</a>
+                    <a href="../index.html#work"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">Work</a>
+                    <a href="../index.html#process"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">Process</a>
+                    <a href="../index.html#about"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">About</a>
+                    <a href="../index.html#contact"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">Contact</a>
                 </div>
             </div>
         </div>
@@ -153,15 +174,25 @@
     <!-- HERO SECTION (aligned with index.html spacing) -->
     <!-- ======================================== -->
 
-    <section class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border px-6">
+    <section
+        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border">
 
+        <!-- Abstract Hero Background -->
         <div class="hero-bg"></div>
 
-        <!-- Decorative Elements -->
-        <div class="absolute top-20 right-0 w-[300px] h-[300px] rounded-full bg-primary-500/10 blur-3xl mix-blend-screen"></div>
+        <!-- Decorative Shapes -->
+        <div
+            class="absolute top-[-120px] right-[-120px] w-[320px] h-[320px] rounded-full bg-primary-500/10 blur-3xl mix-blend-screen">
+        </div>
+        <div
+            class="absolute bottom-[-90px] left-[-90px] w-[280px] h-[280px] rounded-full bg-sky-400/10 blur-3xl mix-blend-screen">
+        </div>
+        <div
+            class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[240px] h-[240px] rounded-[36%] bg-violet-500/10 blur-[80px] mix-blend-screen">
+        </div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-4xl mx-auto">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
             <!-- Eyebrow -->
             <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6">
@@ -169,7 +200,7 @@
             </p>
 
             <!-- Headline -->
-            <h1 class="text-5xl md:text-6xl font-semibold leading-tight mb-6">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
                 Smart Recovery
                 <br />
                 <span class="text-primary-400">
@@ -178,36 +209,32 @@
             </h1>
 
             <!-- Description -->
-            <p class="text-base md:text-lg text-gray-400 max-w-2xl mb-8">
-                A decision-support system that tells fitness enthusiasts exactly how to train — based on their recovery data.
+            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed mb-8">
+                A decision-support system that tells fitness enthusiasts exactly how to train — based on their recovery
+                data.
             </p>
 
             <!-- Tags -->
-            <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
-                    Interaction Design
+            <div class="flex flex-wrap gap-3 justify-center mb-8">
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                    Low-Fi Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
                     Visual Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
-                    Wireframes
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                    Human Interface Guidelines
                 </span>
-                <span class="px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-medium">
-                    Design System
-                </span>
-                
             </div>
 
             <!-- Hero CTA: scroll to problem -->
-            <div class="mt-8 flex items-center justify-center">
-                <a href="#problem" class="inline-flex items-center px-6 py-3 rounded-full bg-primary-500 text-dark font-semibold transition-all duration-200 hover:bg-primary-400 focus:outline-none focus:ring-4 focus:ring-primary-500/30">
-                    Case Study lesen
-                    <span class="ml-2">→</span>
-                </a>
-            </div>
-
-            </div>
+            <a href="#problem"
+                class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-dark font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+                Read Case Study
+                <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">
+                    ⇣
+                </span>
+            </a>
 
         </div>
     </section>
@@ -216,10 +243,10 @@
     <!-- META BAR -->
     <!-- ======================================== -->
 
-    <section class="bg-white/5 border-b border-border">
+    <section class="bg-white/5 border-b border-border items-center justify-center text-center">
         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
 
                 <div>
                     <p class="text-xs uppercase tracking-[0.25em] text-muted mb-3">
@@ -235,7 +262,7 @@
                         Duration
                     </p>
                     <p class="text-base font-semibold">
-                        10 Weeks
+                        4 Weeks
                     </p>
                 </div>
 
@@ -244,16 +271,7 @@
                         Tools
                     </p>
                     <p class="text-base font-semibold">
-                        Figma · FigJam
-                    </p>
-                </div>
-
-                <div>
-                    <p class="text-xs uppercase tracking-[0.25em] text-muted mb-3">
-                        Category
-                    </p>
-                    <p class="text-base font-semibold">
-                        Consumer App · 0→1
+                        Figma · Miro 
                     </p>
                 </div>
 
@@ -267,36 +285,43 @@
 
     <section class="sticky top-20 bg-dark/95 backdrop-blur-sm border-b border-border z-40">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
-            <div class="flex items-center gap-3 overflow-x-auto py-4">
+            <div class="flex flex-wrap gap-3 overflow-x-auto py-4">
+                <div class="flex items-center gap-3 overflow-x-auto">
+                    <a href="#problem"
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-primary-400 hover:bg-white/5 transition active">
+                        01 Problem
+                    </a>
 
-                <a href="#problem" class="px-4 py-2 rounded-lg text-sm font-medium text-primary-400 hover:bg-white/5 transition">
-                    01 Problem
-                </a>
+                    <a href="#research"
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        02 Research
+                    </a>
 
-                <a href="#research" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
-                    02 Research
-                </a>
+                    <a href="#strategy"
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        03 Strategy
+                    </a>
 
-                <a href="#strategy" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
-                    03 Strategy
-                </a>
+                    <a href="#ux-flow"
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        04 UX Flow
+                    </a>
 
-                <a href="#ux-flow" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
-                    04 UX Flow
-                </a>
+                    <a href="#ui-design"
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        05 UI Design
+                    </a>
 
-                <a href="#ui-design" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
-                    05 UI Design
-                </a>
+                    <a href="#handoff"
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        06 Handoff
+                    </a>
 
-                <a href="#handoff" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
-                    06 Handoff
-                </a>
-
-                <a href="#impact" class="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
-                    07 Impact
-                </a>
-
+                    <a href="#impact"
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        07 Impact
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -305,7 +330,7 @@
     <!-- MAIN CONTENT -->
     <!-- ======================================== -->
 
-    <main class="max-w-4xl mx-auto px-6 py-28 space-y-32">
+    <main class="max-w-4xl mx-auto px-8 py-28 space-y-32">
 
         <!-- PROBLEM -->
         <section id="problem">
@@ -317,7 +342,9 @@
                     The Core Challenge
                 </h2>
                 <p class="text-gray-400 text-lg leading-relaxed mb-8">
-                    Ambitious fitness enthusiasts have access to massive amounts of recovery data — sleep quality, heart rate variability, training load — but they don't know how to translate these metrics into daily training decisions. This leads to overtraining, burnout, and stalled progress.
+                    Ambitious fitness enthusiasts have access to massive amounts of recovery data — sleep quality, heart
+                    rate variability, training load — but they don't know how to translate these metrics into daily
+                    training decisions. This leads to overtraining, burnout, and stalled progress.
                 </p>
 
                 <!-- Problem Quote -->
@@ -353,12 +380,14 @@
 
                 </div>
             </div>
-            
+
             <!-- Product Definition & MVP -->
             <div class="mt-12">
                 <h3 class="text-2xl font-semibold mb-6">Product Definition & MVP</h3>
 
-                <p class="text-gray-400 mb-6">A decision-support system that helps fitness enthusiasts determine how to train each day based on their recovery and readiness. Value: instead of just tracking data, provide clear daily training recommendations.</p>
+                <p class="text-gray-400 mb-6">A decision-support system that helps fitness enthusiasts determine how to
+                    train each day based on their recovery and readiness. Value: instead of just tracking data, provide
+                    clear daily training recommendations.</p>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="p-6 rounded-2xl bg-surface border border-border">
@@ -390,33 +419,91 @@
                 <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
                     02 · Research & Insights
                 </p>
-                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                <h2 class="text-4xl md:text-5xl font-semibold mb-12">
                     What We Discovered
                 </h2>
+
+                <!-- Target Audience -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6">Target Audience</h3>
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="p-6 rounded-2xl bg-surface border border-border">
+                            <h4 class="font-semibold mb-3 text-primary-400">Ambitious Fitness Enthusiasts</h4>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li>• Work out 3–6 times a week</li>
+                                <li>• Goal: Performance & strength building</li>
+                                <li>• Have wearables/fitness trackers</li>
+                                <li>• Seek performance optimization</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-surface border border-border">
+                            <h4 class="font-semibold mb-3 text-primary-400">Current Behavior</h4>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li>• Make decisions emotionally</li>
+                                <li>• Overlook recovery signals</li>
+                                <li>• Struggle with data interpretation</li>
+                                <li>• Risk overtraining injuries</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-surface border border-border">
+                            <h4 class="font-semibold mb-3 text-primary-400">Pain Points</h4>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li>• Information overload</li>
+                                <li>• No clear guidance</li>
+                                <li>• Missing feedback loops</li>
+                                <li>• Stalled progress</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Research Method 1 -->
                 <div class="mb-12">
                     <div class="flex items-start gap-4 mb-4">
-                        <span class="px-4 py-2 rounded-lg bg-primary-500/10 text-primary-400 text-xs font-semibold whitespace-nowrap">
+                        <span
+                            class="px-4 py-2 rounded-lg bg-primary-500/10 text-primary-400 text-xs font-semibold whitespace-nowrap">
                             Competitive Analysis
                         </span>
                         <h3 class="text-xl font-semibold">Analyzed 8+ market solutions</h3>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">
-                        We examined WHOOP, Garmin, Oura, Apple Health, and others. The pattern was clear: everyone optimizes for data collection and display. None translate metrics into a single, clear daily recommendation. This was the market gap.
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        We examined WHOOP, Garmin, Oura, Apple Health, and others. The pattern was clear: everyone
+                        optimizes for data collection and display. None translate metrics into a single, clear daily
+                        recommendation.
                     </p>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="p-3 bg-surface rounded-lg border border-border text-sm">
+                            <p class="font-semibold text-gray-300 mb-1">WHOOP</p>
+                            <p class="text-gray-500 text-xs"><strong>Strength:</strong> Strong recovery insights</p>
+                            <p class="text-gray-500 text-xs"><strong>Weakness:</strong> Complex data interpretation</p>
+                        </div>
+                        <div class="p-3 bg-surface rounded-lg border border-border text-sm">
+                            <p class="font-semibold text-gray-300 mb-1">Garmin</p>
+                            <p class="text-gray-500 text-xs"><strong>Strength:</strong> Detailed tracking</p>
+                            <p class="text-gray-500 text-xs"><strong>Weakness:</strong> Information-heavy UX</p>
+                        </div>
+                        <div class="p-3 bg-surface rounded-lg border border-border text-sm">
+                            <p class="font-semibold text-gray-300 mb-1">Apple Health</p>
+                            <p class="text-gray-500 text-xs"><strong>Strength:</strong> Large ecosystem</p>
+                            <p class="text-gray-500 text-xs"><strong>Weakness:</strong> Limited actionable guidance</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Research Method 2 -->
                 <div class="mb-12">
                     <div class="flex items-start gap-4 mb-4">
-                        <span class="px-4 py-2 rounded-lg bg-primary-500/10 text-primary-400 text-xs font-semibold whitespace-nowrap">
+                        <span
+                            class="px-4 py-2 rounded-lg bg-primary-500/10 text-primary-400 text-xs font-semibold whitespace-nowrap">
                             Desk Research
                         </span>
                         <h3 class="text-xl font-semibold">HRV & recovery science</h3>
                     </div>
                     <p class="text-gray-400 leading-relaxed">
-                        We reviewed peer-reviewed studies on heart rate variability, training load, and recovery. This became the scientific foundation for our recommendation algorithm.
+                        We reviewed peer-reviewed studies on heart rate variability, training load, and recovery. Key
+                        insight: recovery plays a critical role in long-term performance, consistency, and injury
+                        prevention, yet it is often undervalued by users. This became the scientific foundation for our
+                        recommendation algorithm.
                     </p>
                 </div>
 
@@ -426,17 +513,25 @@
 
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">The market optimizes for data—not for decision-making.</span>
+                        <span class="text-gray-300">Users don't struggle with access to data—they struggle with
+                            interpreting it.</span>
                     </div>
 
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Users know their HRV numbers but don't understand what they mean.</span>
+                        <span class="text-gray-300">Existing fitness products prioritize tracking over decision
+                            support.</span>
                     </div>
 
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Clear daily recommendations increase training consistency by ~35%.</span>
+                        <span class="text-gray-300">Users want clarity and guidance, not more metrics.</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
+                        <span class="text-gray-300">Recovery is essential for long-term performance but often
+                            overlooked.</span>
                     </div>
                 </div>
             </div>
@@ -448,47 +543,63 @@
                 <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
                     03 · Product Strategy
                 </p>
-                <h2 class="text-4xl md:text-5xl font-semibold mb-12">
-                    Design Principles
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                    Strategy & Positioning
                 </h2>
 
-                <div class="grid md:grid-cols-2 gap-8">
+                <!-- Value Proposition -->
+                <div class="mb-12 p-8 bg-primary-500/10 border border-primary-500/20 rounded-2xl">
+                    <div class="mb-4">
+                        <p class="text-sm uppercase tracking-[0.25em] text-primary-400 font-semibold mb-2">Value
+                            Proposition</p>
+                        <h3 class="text-2xl font-semibold text-white mb-4">We don't track data — we tell you what to do.
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Instead of just tracking data, the product provides clear daily training recommendations,
+                            helping users train smarter, avoid overtraining, and improve long-term performance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Design Principles -->
+                <h3 class="text-2xl font-semibold mb-6">Design Principles</h3>
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
 
                     <div>
-                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center gap-2">
                             <span class="text-primary-400">●</span>
                             Action Over Data
-                        </h3>
+                        </h4>
                         <p class="text-gray-400">
                             Show what to do, not what is. Every metric leads to a clear decision.
                         </p>
                     </div>
 
                     <div>
-                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center gap-2">
                             <span class="text-primary-400">●</span>
                             Clarity Over Complexity
-                        </h3>
+                        </h4>
                         <p class="text-gray-400">
                             One recommendation per day. Simple, direct, no ambiguity.
                         </p>
                     </div>
 
                     <div>
-                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center gap-2">
                             <span class="text-primary-400">●</span>
                             Guidance Over Tracking
-                        </h3>
+                        </h4>
                         <p class="text-gray-400">
                             The product coaches—it doesn't just log. Proactive, not passive.
                         </p>
                     </div>
 
                     <div>
-                        <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center gap-2">
                             <span class="text-primary-400">●</span>
                             Personalization First
-                        </h3>
+                        </h4>
                         <p class="text-gray-400">
                             Recommendations adapt over time based on individual response patterns.
                         </p>
@@ -504,39 +615,90 @@
                 <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
                     04 · UX Flow & System Logic
                 </p>
-                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
+                <h2 class="text-4xl md:text-5xl font-semibold mb-12">
                     How the System Works
                 </h2>
 
-                <!-- System Flow -->
-                <div class="mb-8 overflow-x-auto">
+                <!-- System Overview -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6">System Overview (Big Picture)</h3>
+                    <p class="text-gray-400 mb-4">Structure: <span class="text-primary-400 font-semibold">Input →
+                            Processing → Output → Feedback Loop</span></p>
+                    <div class="grid md:grid-cols-4 gap-4 text-center">
+                        <div class="p-4 bg-surface rounded-xl border border-border">
+                            <p class="text-sm text-muted mb-2">INPUT</p>
+                            <p class="text-sm text-gray-300">Sleep data, HRV, Training load, Subjective feeling</p>
+                        </div>
+                        <div class="p-4 bg-surface rounded-xl border border-border">
+                            <p class="text-sm text-muted mb-2">PROCESSING</p>
+                            <p class="text-sm text-gray-300">Recovery calculation, Load analysis, Baseline adjustment
+                            </p>
+                        </div>
+                        <div class="p-4 bg-surface rounded-xl border border-border">
+                            <p class="text-sm text-muted mb-2">OUTPUT</p>
+                            <p class="text-sm text-gray-300">Recovery score, Daily training recommendation</p>
+                        </div>
+                        <div class="p-4 bg-surface rounded-xl border border-border">
+                            <p class="text-sm text-muted mb-2">FEEDBACK</p>
+                            <p class="text-sm text-gray-300">Behavior evaluation, System adaptation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core User Flow -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6">Core User Flow (Daily Use Case)</h3>
+                    <ol class="space-y-3 text-gray-400">
+                        <li><span class="text-primary-400 font-semibold">1.</span> User opens the app</li>
+                        <li><span class="text-primary-400 font-semibold">2.</span> Views current recovery status</li>
+                        <li><span class="text-primary-400 font-semibold">3.</span> Receives a clear training
+                            recommendation</li>
+                        <li><span class="text-primary-400 font-semibold">4.</span> Makes a decision (train / rest /
+                            light)</li>
+                        <li><span class="text-primary-400 font-semibold">5.</span> Completes training and logs activity
+                        </li>
+                        <li><span class="text-primary-400 font-semibold">6.</span> System updates recovery and load data
+                        </li>
+                        <li><span class="text-primary-400 font-semibold">7.</span> Receives feedback the next day</li>
+                    </ol>
+                </div>
+
+                <!-- System Flow Diagram -->
+                <div class="mb-12 overflow-x-auto">
                     <div class="flex items-center gap-3 min-w-min p-4 bg-surface rounded-2xl border border-border">
 
-                        <div class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                        <div
+                            class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
                             Sleep + HRV + Load
                         </div>
 
-                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
 
-                        <div class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                        <div
+                            class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
                             Recovery Score
                         </div>
 
-                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
 
-                        <div class="px-4 py-3 rounded-lg bg-primary-500 text-dark font-semibold text-sm whitespace-nowrap">
+                        <div
+                            class="px-4 py-3 rounded-lg bg-primary-500 text-dark font-semibold text-sm whitespace-nowrap">
                             Recommendation
                         </div>
 
-                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-5 h-5 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
 
-                        <div class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                        <div
+                            class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
                             Feedback Loop
                         </div>
 
@@ -544,15 +706,20 @@
                 </div>
 
                 <!-- Decision Tree -->
+                <h3 class="text-2xl font-semibold mb-6">Decision Logic</h3>
+                <p class="text-gray-400 mb-4">How the system determines daily recommendations:</p>
                 <div class="p-6 bg-surface rounded-2xl border border-border space-y-4 font-mono text-sm">
                     <div class="text-gray-400">
-                        <span class="text-primary-400">High Recovery</span> + <span class="text-primary-400">Low Load</span> → <span class="text-primary-400 font-semibold">Train Hard</span>
+                        <span class="text-primary-400">High recovery + low training load</span> → <span
+                            class="text-primary-400 font-semibold">Train Hard</span>
                     </div>
                     <div class="text-gray-400">
-                        <span class="text-primary-400">Moderate Recovery</span> → <span class="text-primary-400 font-semibold">Train Light</span>
+                        <span class="text-primary-400">Moderate recovery</span> → <span
+                            class="text-primary-400 font-semibold">Train Light</span>
                     </div>
                     <div class="text-gray-400">
-                        <span class="text-primary-400">Low Recovery</span> + <span class="text-primary-400">High Load</span> → <span class="text-primary-400 font-semibold">Rest</span>
+                        <span class="text-primary-400">Low recovery + high training load</span> → <span
+                            class="text-primary-400 font-semibold">Rest</span>
                     </div>
                 </div>
             </div>
@@ -562,15 +729,275 @@
         <section id="ui-design">
             <div class="mb-16">
                 <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
-                    05 · UI Design
+                    05 · UI Design & UX Concept
                 </p>
-                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
-                    Screens & Interface
+                <h2 class="text-4xl md:text-5xl font-semibold mb-12">
+                    Interface Design & Screens
                 </h2>
 
-                <div class="p-16 bg-surface border border-border rounded-2xl text-center">
-                    <p class="text-muted">Screenshots & Figma embeds coming soon</p>
+                <!-- UX Concept -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6">Core UX Concept</h3>
+                    <div class="p-6 bg-primary-500/10 border border-primary-500/20 rounded-2xl mb-8">
+                        <p class="text-lg text-primary-400 font-semibold">
+                            The product reduces complex recovery data into one clear daily training decision.
+                        </p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="font-semibold mb-4 text-white">Information Hierarchy</h4>
+                        <div class="space-y-3">
+                            <div class="p-4 bg-surface rounded-xl border border-border">
+                                <p class="text-xs text-primary-400 font-semibold mb-1">PRIORITY</p>
+                                <p class="font-semibold text-white">Daily Recommendation (großes Element) → Train /
+                                    Light / Rest</p>
+                            </div>
+                            <div class="p-4 bg-surface rounded-xl border border-border">
+                                <p class="text-xs text-primary-400 font-semibold mb-1">PRIORITY</p>
+                                <p class="font-semibold text-white">Recovery Score → unterstützend, nicht dominant</p>
+                            </div>
+                            <div class="p-4 bg-surface rounded-xl border border-border">
+                                <p class="text-xs text-muted font-semibold mb-1">SECONDARY</p>
+                                <p class="font-semibold text-white">Warum diese Empfehlung? (Explainability) - "Low
+                                    sleep", "High training load"</p>
+                            </div>
+                            <div class="p-4 bg-surface rounded-xl border border-border">
+                                <p class="text-xs text-muted font-semibold mb-1">SECONDARY</p>
+                                <p class="font-semibold text-white">Quick Actions - Training loggen, Gefühl angeben</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Wireframes vs Screens -->
+                <div class="flex flex-col gap-8">
+
+                    <h3 class="text-2xl font-semibold mb-6">
+                        Wireframes & UI Comparison
+                    </h3>
+
+                    <div class="grid lg:grid-cols-2 gap-6 items-start">
+
+                        <!-- Wireframe -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Wireframe
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/home-wireframe.svg" alt="Wireframe Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+
+                        <!-- Screendesign -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Screendesign
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/Design - Home.svg" alt="UI Design Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Explanation -->
+                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+
+                        <h4 class="font-semibold text-white mb-3">
+                            Warum sich das Design geändert hat
+                        </h4>
+
+                        <p class="text-sm leading-relaxed">
+                            Das Wireframe konzentriert sich auf Klarheit und Informationshierarchie:
+                            die Empfehlung steht im Vordergrund, während sekundäre Daten wie
+                            Recovery-Score und Trainings-Log ausschließlich unterstützend angezeigt werden.
+
+                            Im Screendesign wurde die Visualisierung verfeinert, um Vertrauen zu schaffen,
+                            indem Zustandsfarben, erklärende Labels und klare Interaktionspunkte
+                            hinzugefügt wurden.
+                        </p>
+
+                    </div>
+
+                                        <div class="grid lg:grid-cols-2 gap-6 items-start">
+
+                        <!-- Wireframe -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Wireframe
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/Recovery - Wireframe.svg" alt="Wireframe Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+
+                        <!-- Screendesign -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Screendesign
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/Design - Recovery.png" alt="UI Design Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Explanation -->
+                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+
+                        <h4 class="font-semibold text-white mb-3">
+                            Warum sich das Design geändert hat
+                        </h4>
+
+                        <p class="text-sm leading-relaxed">
+                            Das Wireframe konzentriert sich auf Klarheit und Informationshierarchie:
+                            die Empfehlung steht im Vordergrund, während sekundäre Daten wie
+                            Recovery-Score und Trainings-Log ausschließlich unterstützend angezeigt werden.
+
+                            Im Screendesign wurde die Visualisierung verfeinert, um Vertrauen zu schaffen,
+                            indem Zustandsfarben, erklärende Labels und klare Interaktionspunkte
+                            hinzugefügt wurden.
+                        </p>
+
+                    </div>
+
+                                        <div class="grid lg:grid-cols-2 gap-6 items-start">
+
+                        <!-- Wireframe -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Wireframe
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/Workout - Wireframe.svg" alt="Wireframe Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+
+                        <!-- Screendesign -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Screendesign
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/Design - Workout.svg" alt="UI Design Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Explanation -->
+                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+
+                        <h4 class="font-semibold text-white mb-3">
+                            Warum sich das Design geändert hat
+                        </h4>
+
+                        <p class="text-sm leading-relaxed">
+                            Das Wireframe konzentriert sich auf Klarheit und Informationshierarchie:
+                            die Empfehlung steht im Vordergrund, während sekundäre Daten wie
+                            Recovery-Score und Trainings-Log ausschließlich unterstützend angezeigt werden.
+
+                            Im Screendesign wurde die Visualisierung verfeinert, um Vertrauen zu schaffen,
+                            indem Zustandsfarben, erklärende Labels und klare Interaktionspunkte
+                            hinzugefügt wurden.
+                        </p>
+
+                    </div>
+
+                                        <div class="grid lg:grid-cols-2 gap-6 items-start">
+
+                        <!-- Wireframe -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Wireframe
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/Progress - Wireframe.svg" alt="Wireframe Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+
+                        <!-- Screendesign -->
+                        <div class="p-6 bg-surface border border-border rounded-3xl">
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-muted mb-4">
+                                Screendesign
+                            </p>
+
+                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+
+                                <img src="../img/smartrecoveryscreens/Design - Progress.svg" alt="UI Design Preview"
+                                    class="w-full h-auto object-contain" />
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Explanation -->
+                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+
+                        <h4 class="font-semibold text-white mb-3">
+                            Warum sich das Design geändert hat
+                        </h4>
+
+                        <p class="text-sm leading-relaxed">
+                            Das Wireframe konzentriert sich auf Klarheit und Informationshierarchie:
+                            die Empfehlung steht im Vordergrund, während sekundäre Daten wie
+                            Recovery-Score und Trainings-Log ausschließlich unterstützend angezeigt werden.
+
+                            Im Screendesign wurde die Visualisierung verfeinert, um Vertrauen zu schaffen,
+                            indem Zustandsfarben, erklärende Labels und klare Interaktionspunkte
+                            hinzugefügt wurden.
+                        </p>
+
+                    </div>
+
+                </div>
+                
             </div>
         </section>
 
@@ -624,27 +1051,105 @@
                 <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
                     07 · Metrics & Impact
                 </p>
-                <h2 class="text-4xl md:text-5xl font-semibold mb-8">
-                    Results & Learnings
+                <h2 class="text-4xl md:text-5xl font-semibold mb-12">
+                    Results & Future Direction
                 </h2>
 
-                <div class="grid md:grid-cols-3 gap-4 mb-12">
+                <!-- Success Metrics -->
+                <h3 class="text-2xl font-semibold mb-6">Behavioral Success Metrics</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
 
-                    <div class="p-6 rounded-2xl bg-surface border border-border text-center">
-                        <p class="text-3xl font-bold text-primary-400 mb-2">35%</p>
-                        <p class="text-sm text-gray-400">Increase in training consistency</p>
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <p class="text-2xl font-bold text-primary-400 mb-2">↑ 35%</p>
+                        <p class="font-semibold text-white mb-2">Increased training consistency</p>
+                        <p class="text-sm text-gray-400">Users follow recommendations and maintain steady training
+                            schedules</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-surface border border-border text-center">
-                        <p class="text-3xl font-bold text-primary-400 mb-2">48%</p>
-                        <p class="text-sm text-gray-400">Reduction in overtraining incidents</p>
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <p class="text-2xl font-bold text-primary-400 mb-2">↓ 48%</p>
+                        <p class="font-semibold text-white mb-2">Reduction in overtraining</p>
+                        <p class="text-sm text-gray-400">Users recover better and avoid burnout with data-driven
+                            decisions</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-surface border border-border text-center">
-                        <p class="text-3xl font-bold text-primary-400 mb-2">4.8★</p>
-                        <p class="text-sm text-gray-400">App Store rating (v1.0)</p>
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <p class="text-2xl font-bold text-primary-400 mb-2">↑ Recovery</p>
+                        <p class="font-semibold text-white mb-2">Improved recovery patterns</p>
+                        <p class="text-sm text-gray-400">Better sleep, lower HR, more sustainable training</p>
                     </div>
 
+                    <div class="p-6 rounded-2xl bg-surface border border-border">
+                        <p class="text-2xl font-bold text-primary-400 mb-2">↑ Retention</p>
+                        <p class="font-semibold text-white mb-2">Higher user retention</p>
+                        <p class="text-sm text-gray-400">Users see results and stay engaged long-term</p>
+                    </div>
+
+                </div>
+
+                <!-- Monetization -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6">Monetization Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-2xl bg-surface border border-border">
+                            <h4 class="font-semibold text-primary-400 mb-4">Free Tier</h4>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li>• Basic recovery score</li>
+                                <li>• Daily recommendation</li>
+                                <li>• Manual input system</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-surface border border-border">
+                            <h4 class="font-semibold text-primary-400 mb-4">Premium Features</h4>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li>• Personalized insights</li>
+                                <li>• Advanced analytics</li>
+                                <li>• Wearable integrations</li>
+                                <li>• Long-term trend analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Roadmap -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6">Next Steps & Extensions</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                            <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
+                            <div>
+                                <p class="font-semibold text-white">Personalization Engine</p>
+                                <p class="text-sm text-gray-400">Learns from user behavior and adapts recommendations
+                                    over time</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                            <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
+                            <div>
+                                <p class="font-semibold text-white">Wearable Integrations</p>
+                                <p class="text-sm text-gray-400">Auto-sync from Apple Watch, Garmin, WHOOP, Oura</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                            <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
+                            <div>
+                                <p class="font-semibold text-white">Smart Alerts & Nudging</p>
+                                <p class="text-sm text-gray-400">Proactive notifications like "You are above your limit"
+                                    or "You should rest today"</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                            <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
+                            <div>
+                                <p class="font-semibold text-white">Coaching Layer</p>
+                                <p class="text-sm text-gray-400">Personalized coaching recommendations or premium
+                                    guidance</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Learnings -->
@@ -652,19 +1157,39 @@
                     <p class="text-sm uppercase tracking-[0.25em] text-muted font-semibold">Key Learnings</p>
 
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
-                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Simplicity in UX correlates with adoption. Fewer options = higher engagement.</span>
+                        <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
+                        <span class="text-gray-300">Simplicity creates trust. Fewer options = higher engagement and
+                            adoption.</span>
                     </div>
 
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
-                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Users value recommendation clarity over metric precision.</span>
+                        <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
+                        <span class="text-gray-300">Users don't want data—they want decisions. Clarity over complexity
+                            wins.</span>
                     </div>
 
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
-                        <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">The feedback loop is critical. Users need to see that recommendations work.</span>
+                        <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
+                        <span class="text-gray-300">Feedback loops are critical. Users need to see that recommendations
+                            work and adapt.</span>
                     </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
+                        <span class="text-gray-300">Recovery is a performance driver that users undervalue—the right
+                            system changes behavior.</span>
+                    </div>
+                </div>
+
+                <!-- Reflection -->
+                <div class="mt-12 p-8 bg-primary-500/10 border border-primary-500/20 rounded-2xl">
+                    <h3 class="text-xl font-semibold text-white mb-4">Reflection</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        This project challenged me to think beyond interfaces and design a system that connects data,
+                        behavior, and decision-making. The result is a product that doesn't just inform—but actively
+                        guides users toward better outcomes. By prioritizing clarity and simplicity, we created a tool
+                        that transforms how fitness enthusiasts approach training and recovery.
+                    </p>
                 </div>
 
             </div>
@@ -690,22 +1215,75 @@
     </footer>
 
     <script>
-        const navLinks = document.querySelectorAll('a[href^="#"]');
-        navLinks.forEach(link => {
+        const header = document.querySelector('header');
+        const sectionNav = document.querySelector('section.sticky');
+        const sectionNavLinks = document.querySelectorAll('.section-nav-link');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navToggle = document.getElementById('nav-toggle');
+
+        const getHeaderOffset = () => {
+            const baseOffset = header ? header.offsetHeight : 88;
+            const navOffset = sectionNav ? sectionNav.offsetHeight : 0;
+            return baseOffset + navOffset + 16;
+        };
+
+        const scrollToTarget = (target) => {
+            const top = target.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
+            window.scrollTo({ top, behavior: 'smooth' });
+        };
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                if (href !== '#' && href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        scrollToTarget(target);
+                        if (mobileNav && navToggle && navToggle.getAttribute('aria-expanded') === 'true') {
+                            navToggle.setAttribute('aria-expanded', 'false');
+                            mobileNav.style.maxHeight = null;
+                        }
+                    }
                 }
             });
         });
-    </script>
 
-    <script>
-        // Mobile nav toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileNav = document.getElementById('mobile-nav');
+        const updateActiveSection = (id) => {
+            sectionNavLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                    link.classList.remove('text-muted');
+                    link.classList.add('text-white');
+                } else {
+                    link.classList.remove('active');
+                    link.classList.remove('text-white');
+                    link.classList.add('text-muted');
+                }
+            });
+        };
+
+        const sectionAnchors = document.querySelectorAll('main section[id]');
+
+        const updateActiveSectionOnScroll = () => {
+            const offset = getHeaderOffset();
+            let activeId = sectionAnchors[0]?.id || '';
+
+            sectionAnchors.forEach(section => {
+                if (window.scrollY >= section.offsetTop - offset) {
+                    activeId = section.id;
+                }
+            });
+
+            if (activeId) {
+                updateActiveSection(activeId);
+            }
+        };
+
+        window.addEventListener('scroll', updateActiveSectionOnScroll, { passive: true });
+        window.addEventListener('resize', updateActiveSectionOnScroll);
+        updateActiveSectionOnScroll();
+
         if (navToggle && mobileNav) {
             navToggle.addEventListener('click', () => {
                 const expanded = navToggle.getAttribute('aria-expanded') === 'true';

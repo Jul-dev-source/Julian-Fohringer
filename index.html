@@ -143,7 +143,7 @@
                 <!-- Logo -->
                 <a href="#"
                     class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                    AC
+                    JF
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -277,6 +277,20 @@
                     class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-white/15 bg-white/5 text-white transition-all duration-200 hover:bg-white/10 hover:border-white/25 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
                     Contact Me
                 </a>
+
+
+                <!-- Download Resume Button -->
+                <a href="./src/Resume.pdf" download
+                    class="group inline-flex items-center justify-center px-8 h-14 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-400 font-semibold transition-all duration-200 hover:bg-primary-500/15 hover:border-primary-500/60 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
+
+                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+
+                    Download Resume
+                </a>
             </div>
 
 
@@ -311,7 +325,7 @@
                 </p>
 
                 <h2 class="text-4xl md:text-5xl font-semibold leading-tight">
-                    Product experiences built for real users.
+                    Product experiences built for users.
                 </h2>
             </div>
 
@@ -322,40 +336,46 @@
 
                 <!-- CARD 1 -->
                 <article
-                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft focus-within:border-primary-500/40">
+                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft focus-within:border-primary-500/40 flex flex-col h-full">
 
                     <!-- Image -->
                     <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1526925712467-c0e9f6eef3c4?q=80&w=1200&auto=format&fit=crop"
+                        <img src="./img/smartrecoveryscreens/coverimage.svg"
                             alt="Smart Recovery App"
                             class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105" />
                     </div>
 
                     <!-- Content -->
-                    <div class="p-8">
+                    <div class="p-8 flex flex-col flex-1">
 
                         <div class="flex flex-wrap gap-2 mb-6">
                             <span
                                 class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
-                                Interaction Design
+                                Low-Fi Design
+                            </span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                Visual Design
                             </span>
 
                             <span
                                 class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
-                                Consumer App
+                                Human Interface Guidelines
                             </span>
+
+
                         </div>
 
                         <h3 class="text-2xl font-semibold mb-4">
-                            Smart Recovery App
+                            Improve your training with data-driven recovery insights.
                         </h3>
 
                         <p class="text-gray-400 leading-relaxed mb-8">
-                            A decision-support system that tells fitness enthusiasts exactly how to train based on recovery data. Increased training consistency by 35% through simplified UI and clear recommendations.
+                            Smart Recovery is a mobile application that provides athletes with personalized recovery insights based on their training data, helping them optimize performance and prevent injuries.
                         </p>
 
                         <a href="./casestudies/smartrecoveryapp.html"
-                            class="inline-flex items-center text-primary-400 font-medium transition duration-200 hover:text-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                            class="inline-flex items-center text-primary-400 font-medium transition duration-200 hover:text-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm mt-auto">
                             View Case Study →
                         </a>
 
@@ -365,41 +385,50 @@
 
                 <!-- CARD 2 -->
                 <article
-                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft focus-within:border-primary-500/40">
+                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft focus-within:border-primary-500/40 flex flex-col h-full">
 
                     <!-- Image -->
                     <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                        <img src="./img/zeeus/coverimage.svg"
                             alt="Project Preview"
                             class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105" />
                     </div>
 
                     <!-- Content -->
-                    <div class="p-8">
+                    <div class="p-8 flex flex-col flex-1">
 
                         <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                Research
+                            </span>
+                            
                             <span
                                 class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
                                 UI Design
                             </span>
 
                             <span
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                Prototyping
+                            </span>
+
+                            <span
                                 class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
-                                Design System
+                                Self created DS
                             </span>
                         </div>
 
                         <h3 class="text-2xl font-semibold mb-4">
-                            Enterprise Design System
+                            Feel lonely? Get to know new people.
                         </h3>
 
                         <p class="text-gray-400 leading-relaxed mb-8">
-                            Scalable component ecosystem and documentation structure designed
-                            for faster collaboration between design and development teams.
+                            ZeeUs is a social networking app designed to connect people based on shared interests and activities, fostering meaningful connections and reducing feelings of loneliness in a digital age.
                         </p>
 
-                        <a href="#"
-                            class="inline-flex items-center text-primary-400 font-medium transition duration-200 hover:text-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        <a href="./casestudies/zeeusapp.html"
+                            class="inline-flex items-center text-primary-400 font-medium transition duration-200 hover:text-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm mt-auto">
                             View Case Study →
                         </a>
 
@@ -624,9 +653,7 @@
                     </p>
 
                     <p class="text-gray-400 leading-relaxed mb-10">
-                        With experience across health, SaaS, fintech, and internal tooling,
-                        I am deepening my craft in Product Design and working closer with strategy, research, and
-                        cross-functional teams.
+                        With experience in UX/UI Design and Product Management, I’m passionate about crafting user-centered solutions that drive business impact. I’m currently focused on expanding my expertise into broader Product Design, where I can leverage my research and design skills to influence product strategy and execution at a higher level.
                     </p>
 
 
@@ -686,19 +713,10 @@
             <!-- Social Links -->
             <div class="mt-14 flex items-center justify-center gap-8 text-sm text-gray-400">
 
-                <a href="#"
+
+                <a href="https://www.linkedin.com/in/julian-fohringer"
                     class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                     LinkedIn
-                </a>
-
-                <a href="#"
-                    class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                    Behance
-                </a>
-
-                <a href="#"
-                    class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                    Dribbble
                 </a>
 
             </div>
@@ -735,6 +753,45 @@
             });
         }
 
+        // Section Navigation Active State
+        const navLinks = document.querySelectorAll('nav a[href^="#"], #mobile-nav a[href^="#"]');
+        const sections = ['work', 'process', 'about', 'contact'];
+
+        const updateActiveNav = () => {
+            let currentSection = '';
+
+            // Find the current section in viewport
+            for (const sectionId of sections) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    // If section is in upper half of viewport, mark it as current
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom > 0) {
+                        currentSection = sectionId;
+                    }
+                }
+            }
+
+            // Update nav links
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                const linkSection = href.substring(1); // Remove # from href
+
+                if (linkSection === currentSection) {
+                    link.classList.add('text-white', 'font-semibold');
+                    link.classList.remove('text-muted');
+                } else {
+                    link.classList.remove('text-white', 'font-semibold');
+                    link.classList.add('text-muted');
+                }
+            });
+        };
+
+        // Update on scroll
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        // Initial call
+        updateActiveNav();
+
         // Process Tab Functionality
         document.querySelectorAll('.step-btn').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -761,4 +818,3 @@
 </body>
 
 </html>
-```
