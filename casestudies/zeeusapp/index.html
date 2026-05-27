@@ -45,7 +45,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
         <!-- Browser Icon -->
-    <link rel="icon" type="image/png" href="../src/logo.png" />
+    <link rel="icon" type="image/png" href="../../src/logo.png" />
 
 
     <style>
@@ -82,6 +82,25 @@
             opacity: 0.7;
         }
 
+        .fade-section {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.85s ease, transform 0.85s ease;
+        }
+
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-section.delay-150 {
+            transition-delay: 0.15s;
+        }
+
+        .fade-section.delay-300 {
+            transition-delay: 0.3s;
+        }
+
         section[id] {
             scroll-margin-top: 11rem;
         }
@@ -112,7 +131,7 @@
             <div class="flex items-center justify-between h-20">
 
                 <!-- Logo -->
-                <a href="../index.html"
+                <a href="../../index.html"
                     class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                     JF
                 </a>
@@ -120,22 +139,22 @@
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
 
-                    <a href="../index.html#work"
+                    <a href="../../index.html#work"
                         class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Work
                     </a>
 
-                    <a href="../index.html#process"
+                    <a href="../../index.html#process"
                         class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Process
                     </a>
 
-                    <a href="../index.html#about"
+                    <a href="../../index.html#about"
                         class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         About
                     </a>
 
-                    <a href="../index.html#contact"
+                    <a href="../../index.html#contact"
                         class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Contact
                     </a>
@@ -179,7 +198,7 @@
     <!-- ======================================== -->
 
     <section
-        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border">
+        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border fade-section delay-150">
 
         <!-- Abstract Hero Background -->
         <div class="hero-bg"></div>
@@ -249,7 +268,7 @@
     <!-- META BAR -->
     <!-- ======================================== -->
 
-    <section class="bg-white/5 border-b border-border items-center justify-center text-center">
+    <section class="bg-white/5 border-b border-border items-center justify-center text-center fade-section delay-150">
         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -294,7 +313,7 @@
     <!-- ======================================== -->
 
 
-<main class="max-w-4xl mx-auto px-6 lg:px-10 py-16 ">
+<main class="max-w-4xl mx-auto px-6 lg:px-10 py-16 fade-section delay-300">
 
     <!-- Headline -->
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6 items-center justify-center text-center">
@@ -375,6 +394,21 @@
         };
 
         const sectionAnchors = document.querySelectorAll('main section[id]');
+        const fadeSections = document.querySelectorAll('.fade-section');
+
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -10% 0px'
+        });
+
+        fadeSections.forEach(section => fadeObserver.observe(section));
 
         const updateActiveSectionOnScroll = () => {
             const offset = getHeaderOffset();

@@ -107,6 +107,22 @@
             opacity: 0.8;
             pointer-events: none;
         }
+
+        .fade-section {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-section.delay-150 {
+            transition-delay: 0.15s;
+        }
     </style>
 </head>
 
@@ -210,7 +226,7 @@
     <!-- ======================================== -->
 
     <section
-        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border">
+        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border fade-section visible delay-150">
 
         <!-- Abstract Hero Background -->
         <div class="hero-bg"></div>
@@ -318,7 +334,7 @@
     <!-- WORK SECTION -->
     <!-- ======================================== -->
 
-    <section id="work" class="py-28 border-b border-border">
+    <section id="work" class="py-28 border-b border-border fade-section">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
             <!-- Section Header -->
@@ -448,7 +464,7 @@
     <!-- PROCESS -->
     <!-- ======================================== -->
 
-    <section id="process" class="py-28 border-b border-border">
+    <section id="process" class="py-28 border-b border-border fade-section">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
             <!-- Section Header -->
@@ -628,7 +644,7 @@
     <!-- ABOUT -->
     <!-- ======================================== -->
 
-    <section id="about" class="py-28 border-b border-border">
+    <section id="about" class="py-28 border-b border-border fade-section">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -691,7 +707,7 @@
     <!-- CONTACT -->
     <!-- ======================================== -->
 
-    <section id="contact" class="py-28">
+    <section id="contact" class="py-28 fade-section">
         <div class="max-w-4xl mx-auto px-6 text-center">
 
             <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
@@ -795,6 +811,23 @@
         window.addEventListener('scroll', updateActiveNav, { passive: true });
         // Initial call
         updateActiveNav();
+
+        // Fade-in animations for sections on load and scroll
+        const fadeSections = document.querySelectorAll('.fade-section');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -10% 0px'
+        });
+
+        fadeSections.forEach(section => sectionObserver.observe(section));
 
         // Process Tab Functionality
         document.querySelectorAll('.step-btn').forEach(btn => {
