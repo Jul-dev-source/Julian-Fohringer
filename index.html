@@ -98,6 +98,10 @@
             overflow: hidden;
         }
 
+        .hero-section {
+            padding-top: calc(5rem + env(safe-area-inset-top));
+        }
+
         .hero-bg::after {
             content: '';
             position: absolute;
@@ -225,7 +229,7 @@
     <!-- ======================================== -->
 
     <section
-        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border fade-section visible delay-150">
+        class="relative overflow-hidden min-h-screen pt-24 md:pt-20 hero-section flex items-center justify-center border-b border-border fade-section visible delay-150">
 
         <!-- Abstract Hero Background -->
         <div class="hero-bg"></div>
@@ -317,7 +321,7 @@
 
         </div>
         <!-- Scroll Down Arrow -->
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2">
+        <div class="absolute bottom-12 right-6 left-auto md:right-10">
             <button onclick="document.getElementById('work').scrollIntoView()" aria-label="Scroll to work section"
                 class="scroll-arrow inline-flex items-center justify-center w-12 h-12 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-400 transition-all duration-200 hover:border-primary-500/60 hover:bg-primary-500/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
