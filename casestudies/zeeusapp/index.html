@@ -119,10 +119,67 @@
             pointer-events: none;
             overflow: hidden;
         }
+
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: 60;
+        }
+
+        .skip-link:focus-visible {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: 0.75rem 1rem;
+            background: #2563EB;
+            color: #FFFFFF;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+        }
+
+        nav a,
+        .section-nav-link {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        #mobile-nav a {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        a:not(.skip-link):hover,
+        a:not(.skip-link):focus-visible {
+            text-decoration: underline;
+        }
+
+        :focus-visible {
+            outline: 3px solid #2563EB;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-background text-secondary font-sans selection:bg-primary-500 selection:text-white">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ======================================== -->
     <!-- NAVIGATION (copied from index.html for consistency) -->
@@ -316,7 +373,7 @@
     <!-- ======================================== -->
 
 
-    <main class="max-w-4xl mx-auto px-6 lg:px-10 py-16 fade-section delay-300">
+    <main id="main-content" class="max-w-4xl mx-auto px-6 lg:px-10 py-16 fade-section delay-300">
 
         <!-- Headline -->
         <h1

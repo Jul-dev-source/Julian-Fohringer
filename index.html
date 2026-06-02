@@ -59,6 +59,10 @@
             scroll-behavior: smooth;
         }
 
+        section[id] {
+            scroll-margin-top: 6rem;
+        }
+
         @keyframes bounce {
 
             0%,
@@ -113,6 +117,63 @@
             pointer-events: none;
         }
 
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: 60;
+        }
+
+        .skip-link:focus-visible {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: 0.75rem 1rem;
+            background: #2563EB;
+            color: #FFFFFF;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+        }
+
+        nav a,
+        .section-nav-link {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        #mobile-nav a,
+        .social-links a {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        a:not(.skip-link):hover,
+        a:not(.skip-link):focus-visible {
+            text-decoration: underline;
+        }
+
+        :focus-visible {
+            outline: 3px solid #2563EB;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
         .fade-section {
             opacity: 0;
             transform: translateY(32px);
@@ -132,6 +193,7 @@
 </head>
 
 <body class="bg-background text-secondary font-sans selection:bg-primary-500 selection:text-white">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ======================================== -->
     <!-- QUICK EDIT VARIABLES -->
@@ -230,6 +292,7 @@
     <!-- HERO SECTION -->
     <!-- ======================================== -->
 
+    <main id="main-content">
     <section
         class="relative overflow-hidden min-h-screen pt-24 md:pt-20 hero-section flex items-center justify-center border-b border-border fade-section visible delay-150">
 
@@ -298,7 +361,7 @@
 
 
                 <!-- Resume Button -->
-                <a href="https://drive.google.com/file/d/1p30M7RcZSgZbfnR8zSVVQMgnwTuPOAtO/view?usp=sharing" target="_blank"
+            <a href="https://drive.google.com/file/d/1p30M7RcZSgZbfnR8zSVVQMgnwTuPOAtO/view?usp=sharing" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-secondary/20 bg-secondary/5 text-secondary transition-all duration-200 hover:bg-secondary/10 hover:border-secondary/40 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
                     Resume
                 </a>
@@ -649,7 +712,7 @@
 
                 <!-- Image -->
                 <div>
-                    <img src="./src/portrait.png" alt="About" class="rounded-3xl border border-border shadow-soft" />
+                    <img src="./src/portrait.png" alt="Portrait of Julian Fohringer" class="rounded-3xl border border-border shadow-soft" />
                 </div>
 
 
@@ -735,8 +798,8 @@
             <div class="mt-14 flex items-center justify-center gap-8 text-sm text-gray-600">
 
 
-                <a href="https://www.linkedin.com/in/julian-fohringer" target="_blank"
-                    class="transition duration-200 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                <a href="https://www.linkedin.com/in/julian-fohringer" target="_blank" rel="noopener noreferrer"
+                    class="transition duration-200 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm social-links">
                     LinkedIn
                 </a>
 
@@ -750,6 +813,8 @@
 
         </div>
     </section>
+
+    </main>
 
     <script>
         const navToggle = document.getElementById('nav-toggle');
