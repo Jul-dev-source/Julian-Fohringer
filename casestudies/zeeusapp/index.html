@@ -15,27 +15,29 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d'
+                            50: '#EFF6FF',
+                            100: '#DBEAFE',
+                            200: '#BFDBFE',
+                            300: '#93C5FD',
+                            400: '#60A5FA',
+                            500: '#2563EB',
+                            600: '#1D4ED8',
+                            700: '#1E40AF',
+                            800: '#1E3A8A',
+                            900: '#172554'
                         },
-                        dark: '#0D1110',
-                        surface: '#161B1A',
-                        border: '#2A302F',
-                        muted: '#8A948F'
+                        secondary: '#0F172A',
+                        accent: '#14B8A6',
+                        background: '#FFFFFF',
+                        surface: '#F8FAFC',
+                        border: '#E2E8F0',
+                        muted: '#64748B'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        soft: '0 10px 40px rgba(0,0,0,0.25)'
+                        soft: '0 10px 40px rgba(0,0,0,0.08)'
                     }
                 }
             }
@@ -113,26 +115,26 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
             pointer-events: none;
             overflow: hidden;
         }
     </style>
 </head>
 
-<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
+<body class="bg-background text-secondary font-sans selection:bg-primary-500 selection:text-white">
 
     <!-- ======================================== -->
     <!-- NAVIGATION (copied from index.html for consistency) -->
     <!-- ======================================== -->
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
             <div class="flex items-center justify-between h-20">
 
                 <!-- Logo -->
                 <a href="../../index.html"
-                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-600 text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                     JF
                 </a>
 
@@ -140,22 +142,22 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
 
                     <a href="../../index.html#work"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Work
                     </a>
 
                     <a href="../../index.html#process"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Process
                     </a>
 
                     <a href="../../index.html#about"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         About
                     </a>
 
                     <a href="../../index.html#contact"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Contact
                     </a>
 
@@ -163,7 +165,7 @@
 
                 <!-- Mobile Menu Button -->
                 <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-secondary/20 bg-secondary/5 text-secondary transition duration-200 hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <span class="sr-only">Open navigation menu</span>
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -176,15 +178,15 @@
 
             <div id="mobile-nav"
                 class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
-                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-border">
                     <a href="../../index.html#work"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Work</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary">Work</a>
                     <a href="../../index.html#process"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Process</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary">Process</a>
                     <a href="../../index.html#about"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">About</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary">About</a>
                     <a href="../../index.html#contact"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Contact</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary">Contact</a>
                 </div>
             </div>
         </div>
@@ -218,7 +220,7 @@
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
             <!-- Eyebrow -->
-            <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6">
+            <p class="text-primary-600 uppercase tracking-[0.3em] text-xs font-semibold mb-6">
                 UX/UI Design · Case Study
             </p>
 
@@ -226,29 +228,29 @@
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
                 ZeeUs
                 <br />
-                <span class="text-primary-400">
+                <span class="text-primary-600">
                     Social Media App
                 </span>
             </h1>
 
             <!-- Description -->
-            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed mb-8">
+            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-600 leading-relaxed mb-8">
                 A social media app designed to connect people based on shared interests and activities, fostering
                 meaningful connections and reducing feelings of loneliness in a digital age.
             </p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-3 justify-center mb-8">
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                     Research
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                     UI Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                     Prototyping
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                     Self created DS
                 </span>
             </div>

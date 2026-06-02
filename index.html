@@ -20,27 +20,29 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d'
+                            50: '#EFF6FF',
+                            100: '#DBEAFE',
+                            200: '#BFDBFE',
+                            300: '#93C5FD',
+                            400: '#60A5FA',
+                            500: '#2563EB',
+                            600: '#1D4ED8',
+                            700: '#1E40AF',
+                            800: '#1E3A8A',
+                            900: '#172554'
                         },
-                        dark: '#0D1110',
-                        surface: '#161B1A',
-                        border: '#2A302F',
-                        muted: '#8A948F'
+                        secondary: '#0F172A',
+                        accent: '#14B8A6',
+                        background: '#FFFFFF',
+                        surface: '#F8FAFC',
+                        border: '#E2E8F0',
+                        muted: '#64748B'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        soft: '0 10px 40px rgba(0,0,0,0.25)'
+                        soft: '0 10px 40px rgba(0,0,0,0.08)'
                     }
                 }
             }
@@ -90,10 +92,10 @@
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(circle at 16% 20%, rgba(34, 197, 94, 0.20), transparent 24%),
-                radial-gradient(circle at 84% 20%, rgba(56, 189, 248, 0.15), transparent 22%),
-                radial-gradient(circle at 40% 75%, rgba(168, 85, 247, 0.13), transparent 20%),
-                linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
+                radial-gradient(circle at 16% 20%, rgba(37, 99, 235, 0.08), transparent 24%),
+                radial-gradient(circle at 84% 20%, rgba(20, 184, 166, 0.06), transparent 22%),
+                radial-gradient(circle at 40% 75%, rgba(59, 130, 246, 0.06), transparent 20%),
+                linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
             pointer-events: none;
             overflow: hidden;
         }
@@ -129,7 +131,7 @@
     </style>
 </head>
 
-<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
+<body class="bg-background text-secondary font-sans selection:bg-primary-500 selection:text-white">
 
     <!-- ======================================== -->
     <!-- QUICK EDIT VARIABLES -->
@@ -159,13 +161,13 @@
     <!-- NAVIGATION -->
     <!-- ======================================== -->
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
             <div class="flex items-center justify-between h-20">
 
                 <!-- Logo -->
                 <a href="#"
-                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-600 text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                     JF
                 </a>
 
@@ -173,22 +175,22 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
 
                     <a href="#work"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Work
                     </a>
 
                     <a href="#process"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Process
                     </a>
 
                     <a href="#about"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         About
                     </a>
 
                     <a href="#contact"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Contact
                     </a>
 
@@ -196,7 +198,7 @@
 
                 <!-- Mobile Menu Button -->
                 <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-secondary/20 bg-secondary/5 text-secondary transition duration-200 hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <span class="sr-only">Open navigation menu</span>
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -209,15 +211,15 @@
 
             <div id="mobile-nav"
                 class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
-                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-border">
                     <a href="#work"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Work</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Work</a>
                     <a href="#process"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Process</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Process</a>
                     <a href="#about"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">About</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">About</a>
                     <a href="#contact"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Contact</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Contact</a>
                 </div>
             </div>
         </div>
@@ -253,7 +255,7 @@
             <div class="inline-flex items-center gap-3 mb-8">
                 <div class="w-12 h-[1px] bg-primary-500"></div>
 
-                <p class="text-primary-400 uppercase tracking-[0.35em] text-xs font-semibold">
+                <p class="text-primary-600 uppercase tracking-[0.35em] text-xs font-semibold">
                     UX/UI Designer transitioning into Product Design
                 </p>
 
@@ -262,21 +264,14 @@
 
 
             <!-- Main Headline -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] tracking-tight max-w-5xl mx-auto">
-                Designing product experiences
-                <br />
-                from insight to
-                <br />
-                <span class="text-primary-400">
-                    final handoff.
-                </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] tracking-tight max-w-5xl mx-auto text-secondary">
+                Bridging user needs, business goals and scalable design systems.
             </h1>
 
 
             <!-- Description -->
-            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed">
-                I create digital products that balance user needs, business goals,
-                and product strategy — currently shifting from UX/UI craft toward broader Product Design.
+            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-600 leading-relaxed">
+                Designing intuitive digital products through research, strategy, and systems thinking.
             </p>
 
 
@@ -297,23 +292,15 @@
 
                 <!-- Secondary Button -->
                 <a href="#contact"
-                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-white/15 bg-white/5 text-white transition-all duration-200 hover:bg-white/10 hover:border-white/25 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
+                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-secondary/20 bg-secondary/5 text-secondary transition-all duration-200 hover:bg-secondary/10 hover:border-secondary/40 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
                     Contact Me
                 </a>
 
 
-                <!-- Download Resume Button -->
-                <a href="./src/Resume.pdf" download
-                    class="group inline-flex items-center justify-center px-8 h-14 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-400 font-semibold transition-all duration-200 hover:bg-primary-500/15 hover:border-primary-500/60 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
-
-                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-
-                    Download Resume
+                <!-- Resume Button -->
+                <a href="https://drive.google.com/file/d/1p30M7RcZSgZbfnR8zSVVQMgnwTuPOAtO/view?usp=sharing" target="_blank"
+                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-secondary/20 bg-secondary/5 text-secondary transition-all duration-200 hover:bg-secondary/10 hover:border-secondary/40 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
+                    Resume
                 </a>
             </div>
 
@@ -323,7 +310,7 @@
         <!-- Scroll Down Arrow -->
         <div class="absolute bottom-12 right-6 left-auto md:right-10">
             <button onclick="document.getElementById('work').scrollIntoView()" aria-label="Scroll to work section"
-                class="scroll-arrow inline-flex items-center justify-center w-12 h-12 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-400 transition-all duration-200 hover:border-primary-500/60 hover:bg-primary-500/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                class="scroll-arrow inline-flex items-center justify-center w-12 h-12 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-600 transition-all duration-200 hover:border-primary-500/60 hover:bg-primary-500/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -344,7 +331,7 @@
             <!-- Section Header -->
             <div class="max-w-2xl mb-16">
 
-                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+                <p class="text-primary-600 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
                     Selected Work
                 </p>
 
@@ -373,16 +360,16 @@
 
                         <div class="flex flex-wrap gap-2 mb-6">
                             <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-600 text-xs font-medium border border-primary-500/20">
                                 Low-Fi Design
                             </span>
                             <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-600 text-xs font-medium border border-primary-500/20">
                                 Visual Design
                             </span>
 
                             <span
-                                class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
+                                class="px-3 py-1 rounded-full bg-secondary/5 text-gray-600 text-xs border border-secondary/10">
                                 Human Interface Guidelines
                             </span>
 
@@ -393,14 +380,14 @@
                             Improve your training with data-driven recovery insights.
                         </h3>
 
-                        <p class="text-gray-400 leading-relaxed mb-8">
+                        <p class="text-gray-600 leading-relaxed mb-8">
                             Smart Recovery is a mobile application that provides athletes with personalized recovery
                             insights based on their training data, helping them optimize performance and prevent
                             injuries.
                         </p>
 
                         <a href="./casestudies/smartrecoveryapp/index.html"
-                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-white/5 transition-all duration-200 hover:text-primary-300 hover:bg-white/10 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
+                            class="inline-flex items-center justify-center px-4 py-2 text-primary-600 font-medium border border-primary-500/30 rounded-full bg-secondary/5 transition-all duration-200 hover:text-primary-700 hover:bg-secondary/10 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
                             View Case Study →
                         </a>
 
@@ -423,22 +410,22 @@
 
                         <div class="flex flex-wrap gap-2 mb-6">
                             <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-600 text-xs font-medium border border-primary-500/20">
                                 Research
                             </span>
 
                             <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-600 text-xs font-medium border border-primary-500/20">
                                 UI Design
                             </span>
 
                             <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
+                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-600 text-xs font-medium border border-primary-500/20">
                                 Prototyping
                             </span>
 
                             <span
-                                class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
+                                class="px-3 py-1 rounded-full bg-secondary/5 text-gray-600 text-xs border border-secondary/10">
                                 Self created DS
                             </span>
                         </div>
@@ -447,14 +434,14 @@
                             Feel lonely? Get to know new people.
                         </h3>
 
-                        <p class="text-gray-400 leading-relaxed mb-8">
+                        <p class="text-gray-600 leading-relaxed mb-8">
                             ZeeUs is a social networking app designed to connect people based on shared interests and
                             activities, fostering meaningful connections and reducing feelings of loneliness in a
                             digital age.
                         </p>
 
                         <a href="./casestudies/zeeusapp/index.html"
-                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-white/5 transition-all duration-200 hover:text-primary-300 hover:bg-white/10 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
+                            class="inline-flex items-center justify-center px-4 py-2 text-primary-600 font-medium border border-primary-500/30 rounded-full bg-secondary/5 transition-all duration-200 hover:text-primary-700 hover:bg-secondary/10 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
                             View Case Study →
                         </a>
 
@@ -475,7 +462,7 @@
 
             <!-- Section Header -->
             <div class="max-w-2xl mb-16">
-                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+                <p class="text-primary-600 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
                     Process
                 </p>
 
@@ -490,27 +477,27 @@
                 <!-- Step Tabs -->
                 <div class="flex flex-wrap gap-2 md:gap-3">
                     <button data-step="research"
-                        class="step-btn active px-6 py-3 rounded-xl bg-primary-500 text-dark font-semibold text-sm transition-all duration-200">
+                        class="step-btn active px-6 py-3 rounded-xl bg-primary-500 text-white font-semibold text-sm transition-all duration-200">
                         Research
                     </button>
 
                     <button data-step="concept"
-                        class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        class="step-btn px-6 py-3 rounded-xl bg-surface border border-border text-primary-600 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
                         Concept
                     </button>
 
                     <button data-step="wireframe"
-                        class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        class="step-btn px-6 py-3 rounded-xl bg-surface border border-border text-primary-600 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
                         Wireframe
                     </button>
 
                     <button data-step="visual"
-                        class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        class="step-btn px-6 py-3 rounded-xl bg-surface border border-border text-primary-600 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
                         Visual Design
                     </button>
 
                     <button data-step="handoff"
-                        class="step-btn px-6 py-3 rounded-xl bg-dark border border-border text-primary-400 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
+                        class="step-btn px-6 py-3 rounded-xl bg-surface border border-border text-primary-600 font-semibold text-sm transition-all duration-200 hover:border-primary-500/40">
                         Dev Handoff
                     </button>
                 </div>
@@ -522,21 +509,21 @@
                     <div class="step-content active" data-step="research">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Research</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-gray-600">
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>User interviews and stakeholder alignment to understand problem space</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Market analysis and competitive benchmarking</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Business goals alignment with user needs</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Synthesis into strategic opportunities and product direction</span>
                                 </li>
                             </ul>
@@ -547,21 +534,21 @@
                     <div class="step-content hidden" data-step="concept">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Concept</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-gray-600">
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>User flow mapping and journey exploration</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Interaction models and use case definition</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Low-fidelity prototyping for validation</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Team feedback and iteration on core concept</span>
                                 </li>
                             </ul>
@@ -572,21 +559,21 @@
                     <div class="step-content hidden" data-step="wireframe">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Wireframe</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-gray-600">
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Information architecture and layout structure</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Responsive design patterns across breakpoints</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Component hierarchy and interaction states</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Interactive prototypes ready for usability testing</span>
                                 </li>
                             </ul>
@@ -597,21 +584,21 @@
                     <div class="step-content hidden" data-step="visual">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Visual Design</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-gray-600">
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Design system components and consistency</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Scalable color, typography, and spacing system</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Micro-interactions and motion specifications</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Token library and component documentation</span>
                                 </li>
                             </ul>
@@ -622,21 +609,21 @@
                     <div class="step-content hidden" data-step="handoff">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Dev Handoff</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-gray-600">
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Figma specs, redlines, and component exports</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>Comprehensive design documentation and style guide</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>State documentation and edge case coverage</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="text-primary-400 font-bold">→</span>
+                                    <span class="text-primary-600 font-bold">→</span>
                                     <span>QA collaboration and design validation in development</span>
                                 </li>
                             </ul>
@@ -669,7 +656,7 @@
                 <!-- Content -->
                 <div>
 
-                    <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+                    <p class="text-primary-600 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
                         About
                     </p>
 
@@ -677,13 +664,13 @@
                         UX/UI Designer shifting into Product Design with strong systems thinking.
                     </h2>
 
-                    <p class="text-gray-400 leading-relaxed mb-6">
+                    <p class="text-gray-600 leading-relaxed mb-6">
                         I help teams transform complex requirements into intuitive digital products.
                         My work blends UX strategy, scalable UI systems, and product thinking across the full delivery
                         process.
                     </p>
 
-                    <p class="text-gray-400 leading-relaxed mb-10">
+                    <p class="text-gray-600 leading-relaxed mb-10">
                         With experience in UX/UI Design and Product Management, I’m passionate about crafting
                         user-centered solutions that drive business impact. I’m currently focused on expanding my
                         expertise into broader Product Design, where I can leverage my research and design skills to
@@ -693,19 +680,19 @@
 
                     <div class="flex flex-wrap gap-3">
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                             Product Design
                         </span>
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                             UX Strategy
                         </span>
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                             Design Systems
                         </span>
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
                             Prototyping
                         </span>
 
@@ -724,7 +711,7 @@
     <section id="contact" class="py-28 fade-section">
         <div class="max-w-4xl mx-auto px-6 text-center">
 
-            <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
+            <p class="text-primary-600 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
                 Contact
             </p>
 
@@ -732,24 +719,24 @@
                 Let’s build meaningful digital products.
             </h2>
 
-            <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
+            <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
                 Open for freelance projects, product collaborations, and long-term opportunities.
             </p>
 
 
             <!-- CTA -->
             <a href="mailto:julian.fohringer@icloud.com"
-                class="inline-flex items-center justify-center px-10 h-16 rounded-full bg-primary-500 text-dark font-semibold text-lg transition-all duration-200 hover:bg-primary-400 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+                class="inline-flex items-center justify-center px-10 h-16 rounded-full bg-primary-500 text-white font-semibold text-lg transition-all duration-200 hover:bg-primary-600 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
                 julian.fohringer@icloud.com
             </a>
 
 
             <!-- Social Links -->
-            <div class="mt-14 flex items-center justify-center gap-8 text-sm text-gray-400">
+            <div class="mt-14 flex items-center justify-center gap-8 text-sm text-gray-600">
 
 
                 <a href="https://www.linkedin.com/in/julian-fohringer" target="_blank"
-                    class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    class="transition duration-200 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                     LinkedIn
                 </a>
 
@@ -850,11 +837,11 @@
 
                 // Update active button
                 document.querySelectorAll('.step-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-primary-500', 'text-dark');
-                    b.classList.add('bg-dark', 'border', 'border-border', 'text-primary-400');
+                    b.classList.remove('active', 'bg-primary-500', 'text-white');
+                    b.classList.add('bg-surface', 'border', 'border-border', 'text-primary-600');
                 });
-                btn.classList.add('active', 'bg-primary-500', 'text-dark');
-                btn.classList.remove('bg-dark', 'border', 'border-border', 'text-primary-400');
+                btn.classList.add('active', 'bg-primary-500', 'text-white');
+                btn.classList.remove('bg-surface', 'border', 'border-border', 'text-primary-600');
 
                 // Update active content
                 document.querySelectorAll('.step-content').forEach(content => {
