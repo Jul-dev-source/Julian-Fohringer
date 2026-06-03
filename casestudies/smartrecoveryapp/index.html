@@ -9,38 +9,33 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Global theme -->
-    <link rel="stylesheet" href="../../src/theme.css">
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: {
-                            50: 'var(--color-primary-50)',
-                            100: 'var(--color-primary-100)',
-                            200: 'var(--color-primary-200)',
-                            300: 'var(--color-primary-300)',
-                            400: 'var(--color-primary-400)',
-                            500: 'var(--color-primary-500)',
-                            600: 'var(--color-primary-600)',
-                            700: 'var(--color-primary-700)',
-                            800: 'var(--color-primary-800)',
-                            900: 'var(--color-primary-900)'
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
                         },
-                        secondary: 'var(--color-text)',
-                        accent: 'var(--color-accent)',
-                        background: 'var(--color-background)',
-                        surface: 'var(--color-surface)',
-                        border: 'var(--color-border)',
-                        muted: 'var(--color-muted)'
+                        dark: '#0D1110',
+                        surface: '#161B1A',
+                        border: '#2A302F',
+                        muted: '#8A948F'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        soft: '0 10px 40px rgba(0,0,0,0.08)'
+                        soft: '0 10px 40px rgba(0,0,0,0.25)'
                     }
                 }
             }
@@ -111,90 +106,33 @@
         }
 
         .section-nav-link.active {
-            color: var(--color-primary-500);
-            background-color: rgba(var(--color-primary-500-rgb), 0.08);
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, var(--color-background) 0%, var(--color-surface) 100%);
+            background: linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
             pointer-events: none;
             overflow: hidden;
-        }
-
-        .skip-link {
-            position: absolute;
-            left: -999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            z-index: 60;
-        }
-
-        .skip-link:focus-visible {
-            left: 1rem;
-            top: 1rem;
-            width: auto;
-            height: auto;
-            padding: 0.75rem 1rem;
-            background: var(--color-primary-500);
-            color: var(--color-text);
-            border-radius: 0.5rem;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(var(--color-primary-500-rgb), 0.25);
-        }
-
-        nav a,
-        .section-nav-link {
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        #mobile-nav a {
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-        }
-
-        a:not(.skip-link):hover,
-        a:not(.skip-link):focus-visible {
-            text-decoration: underline;
-        }
-
-        :focus-visible {
-            outline: 3px solid var(--color-primary-500);
-            outline-offset: 4px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation: none !important;
-                transition: none !important;
-                scroll-behavior: auto !important;
-            }
         }
     </style>
 </head>
 
-<body class="bg-background text-secondary font-sans selection:bg-primary-500 selection:text-white">
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
 
     <!-- ======================================== -->
     <!-- NAVIGATION (copied from index.html for consistency) -->
     <!-- ======================================== -->
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-background/70 border-b border-border">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
             <div class="flex items-center justify-between h-20">
 
                 <!-- Logo -->
                 <a href="../../index.html"
-                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-600 text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                     JF
                 </a>
 
@@ -202,22 +140,22 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
 
                     <a href="../../index.html#work"
-                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Work
                     </a>
 
                     <a href="../../index.html#process"
-                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Process
                     </a>
 
                     <a href="../../index.html#about"
-                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         About
                     </a>
 
                     <a href="../../index.html#contact"
-                        class="transition duration-200 hover:text-secondary focus:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Contact
                     </a>
 
@@ -225,7 +163,7 @@
 
                 <!-- Mobile Menu Button -->
                 <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-secondary/20 bg-secondary/5 text-secondary transition duration-200 hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <span class="sr-only">Open navigation menu</span>
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -238,15 +176,15 @@
 
             <div id="mobile-nav"
                 class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
-                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-border">
-                    <a href="../../index.html#work"
-                        class="block px-2 py-2 transition duration-200 hover:text-secondary">Work</a>
-                    <a href="../../index.html#process"
-                        class="block px-2 py-2 transition duration-200 hover:text-secondary">Process</a>
-                    <a href="../../index.html#about"
-                        class="block px-2 py-2 transition duration-200 hover:text-secondary">About</a>
-                    <a href="../../index.html#contact"
-                        class="block px-2 py-2 transition duration-200 hover:text-secondary">Contact</a>
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                    <a href="../index.html#work"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">Work</a>
+                    <a href="../index.html#process"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">Process</a>
+                    <a href="../index.html#about"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">About</a>
+                    <a href="../index.html#contact"
+                        class="block px-2 py-2 transition duration-200 hover:text-white">Contact</a>
                 </div>
             </div>
         </div>
@@ -280,7 +218,7 @@
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
             <!-- Eyebrow -->
-            <p class="text-primary-600 uppercase tracking-[0.3em] text-xs font-semibold mb-6">
+            <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6">
                 UX/UI Design · Case Study
             </p>
 
@@ -288,7 +226,7 @@
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
                 Smart Recovery
                 <br />
-                <span class="text-primary-600">
+                <span class="text-primary-400">
                     Training App
                 </span>
             </h1>
@@ -301,13 +239,13 @@
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-3 justify-center mb-8">
-                <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
                     Low-Fi Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
                     Visual Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-sm text-gray-600">
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
                     Human Interface Guidelines
                 </span>
             </div>
@@ -368,37 +306,37 @@
     <!-- SECTION NAVIGATION -->
     <!-- ======================================== -->
 
-    <section class="sticky top-20 bg-background/95 backdrop-blur-sm border-b border-border z-40 fade-section delay-250">
+    <section class="sticky top-20 bg-dark/95 backdrop-blur-sm border-b border-border z-40 fade-section delay-250">
         <div class="w-full px-8">
             <div class="max-w-4xl mx-auto flex flex-wrap gap-3 overflow-x-auto py-4">
                 <div class="flex items-center justify-between w-full px-8">
                     <a href="#problem"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-secondary/10 transition active">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-white/5 transition active">
                         01 Problem
                     </a>
 
                     <a href="#research"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-secondary hover:bg-secondary/10 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
                         02 Research
                     </a>
 
                     <a href="#strategy"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-secondary hover:bg-secondary/10 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
                         03 Strategy
                     </a>
 
                     <a href="#ux-flow"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-secondary hover:bg-secondary/10 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
                         04 UX Flow
                     </a>
 
                     <a href="#ui-design"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-secondary hover:bg-secondary/10 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
                         05 UI Design
                     </a>
 
                     <a href="#impact"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-secondary hover:bg-secondary/10 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
                         06 Impact
                     </a>
                 </div>
@@ -410,7 +348,7 @@
     <!-- MAIN CONTENT -->
     <!-- ======================================== -->
 
-    <main id="main-content" class="max-w-4xl mx-auto px-8 py-28 space-y-32">
+    <main class="max-w-4xl mx-auto px-8 py-28 space-y-32">
 
         <!-- PROBLEM -->
         <section id="problem" class="fade-section">
@@ -807,7 +745,7 @@
 
         <!-- UI DESIGN -->
         <section id="ui-design" class="fade-section">
-            <div class="max-w-7xl mx-auto px-6 lg:px-10 mb-16">
+            <div class="mb-16">
                 <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">
                     05 · UI Design & UX Concept
                 </p>
@@ -857,7 +795,7 @@
                         Wireframes & UI Comparison
                     </h3>
 
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">
+                    <div class="grid lg:grid-cols-2 gap-6 items-start">
 
                         <!-- Wireframe -->
                         <div class="p-6 bg-surface border border-border rounded-3xl">
@@ -868,7 +806,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/wireframe-home.webp" alt="Smart Recovery home wireframe preview showing daily recommendation layout"
+                                <img src="../smartrecoveryapp/assets/wireframe-home.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -884,7 +822,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/design-home.webp" alt="Smart Recovery home UI design preview with dashboard and recommendations"
+                                <img src="../smartrecoveryapp/assets/design-home.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -911,7 +849,7 @@
 
                     </div>
 
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">
+                    <div class="grid lg:grid-cols-2 gap-6 items-start">
 
                         <!-- Wireframe -->
                         <div class="p-6 bg-surface border border-border rounded-3xl">
@@ -922,7 +860,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/wireframe-recovery.webp" alt="Smart Recovery recovery wireframe preview showing rest and recovery insights"
+                                <img src="../smartrecoveryapp/assets/wireframe-recovery.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -938,7 +876,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/design-recovery.webp" alt="Smart Recovery recovery UI design preview with recovery guidance and metrics"
+                                <img src="../smartrecoveryapp/assets/design-recovery.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -964,7 +902,7 @@
 
                     </div>
 
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">
+                    <div class="grid lg:grid-cols-2 gap-6 items-start">
 
                         <!-- Wireframe -->
                         <div class="p-6 bg-surface border border-border rounded-3xl">
@@ -975,7 +913,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/wireframe-workout.webp" alt="Smart Recovery workout wireframe preview showing plan and analytics"
+                                <img src="../smartrecoveryapp/assets/wireframe-workout.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -991,7 +929,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/design-workout.webp" alt="Smart Recovery workout UI design preview with exercise guidance"
+                                <img src="../smartrecoveryapp/assets/design-workout.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -1017,7 +955,7 @@
 
                     </div>
 
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">
+                    <div class="grid lg:grid-cols-2 gap-6 items-start">
 
                         <!-- Wireframe -->
                         <div class="p-6 bg-surface border border-border rounded-3xl">
@@ -1028,7 +966,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/wireframe-progress.webp" alt="Smart Recovery progress wireframe preview with tracking and trends"
+                                <img src="../smartrecoveryapp/assets/wireframe-progress.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -1044,7 +982,7 @@
 
                             <div class="bg-dark rounded-3xl border border-white/10 p-4">
 
-                                <img src="./assets/design-progress.webp" alt="Smart Recovery progress UI design preview with visual analytics"
+                                <img src="../smartrecoveryapp/assets/design-progress.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
 
                             </div>
@@ -1062,10 +1000,12 @@
 
                         <p class="text-sm leading-relaxed">
                             The wireframe explored how long-term recovery and training trends could be visualized in a
-                            simple and understandable way. The analytics experience was refined with clearer chart
-                            structures, stronger visual hierarchy, and more focused insights that highlight behavioral
-                            patterns instead of overwhelming users with raw data. The result is a cleaner and more
-                            motivational progress experience that encourages consistency and smarter recovery habits.
+                            simple and understandable way. In the final UI, the analytics experience was refined with
+                            clearer chart structures, stronger visual hierarchy, and more focused insights that
+                            highlight behavioral patterns instead of overwhelming users with raw data. The result is a
+                            cleaner and more motivational progress experience that encourages consistency and smarter
+                            recovery habits.
+                        </p>
                         </p>
 
                     </div>

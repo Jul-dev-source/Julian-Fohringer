@@ -25,6 +25,8 @@
   /* Backgrounds */
   --color-background: #FFFFFF;
   --color-surface: #F8FAFC;
+  --color-background-rgb: 255, 255, 255;
+  --color-surface-rgb: 248, 250, 252;
 
   /* Text */
   --color-text: #0F172A;
@@ -35,7 +37,10 @@
   --color-border: #E2E8F0;
 
   /* Muted */
-  --color-muted: #64748B;
+  /* Muted color used for secondary UI (nav, helper text) — increased contrast */
+  --color-muted: #475569;
+  --color-text-secondary: #94A3B8;
+  --color-muted-light: #64748B;
 
   /* Status */
   --color-success: #22C55E;
@@ -63,3 +68,14 @@
 .bg-primary-500 { background-color: var(--color-primary-500) !important; }
 .text-primary-500 { color: var(--color-primary-500) !important; }
 .border-border { border-color: var(--color-border) !important; }
+/* Convenience utilities mapping legacy gray classes to theme tokens */
+.text-muted { color: var(--color-muted) !important; }
+.text-secondary { color: var(--color-text-secondary) !important; }
+.text-muted-light { color: var(--color-muted-light) !important; }
+.text-muted-lighter { color: rgba(var(--color-text-rgb), 0.6) !important; }
+
+/* Map common Tailwind gray text classes to theme tokens for consistent contrast */
+.text-gray-600 { color: var(--color-muted) !important; }
+.text-gray-500 { color: var(--color-text-secondary) !important; }
+.text-gray-400 { color: var(--color-muted-light) !important; }
+.text-gray-300 { color: rgba(var(--color-text-rgb), 0.6) !important; }
