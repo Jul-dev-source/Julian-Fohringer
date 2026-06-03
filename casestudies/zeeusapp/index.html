@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,28 +14,31 @@
             theme: {
                 extend: {
                     colors: {
+
                         primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d'
+                            50: '#f5f8ff',
+                            100: '#eaf0ff',
+                            200: '#d6e2ff',
+                            300: '#b4caff',
+                            400: '#86a9ff',
+                            500: '#5b84f7',
+                            600: '#3f63e6',
+                            700: '#2748c7',
+                            800: '#1b377f',
+                            900: '#102a5c'
                         },
-                        dark: '#0D1110',
-                        surface: '#161B1A',
-                        border: '#2A302F',
-                        muted: '#8A948F'
+                        background: '#F8FAFC',
+                        surface: '#FFFFFF',
+                        border: '#E2E8F0',
+                        muted: '#64748B',
+                        text: '#0F172A'
+
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        soft: '0 10px 40px rgba(0,0,0,0.25)'
+                        soft: '0 12px 32px rgba(15,23,42,0.08)'
                     }
                 }
             }
@@ -106,27 +109,27 @@
         }
 
         .section-nav-link.active {
-            color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.1);
+            color: #102a5c;
+            background-color: rgba(91, 132, 247, 0.12);
         }
 
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
+            background: linear-gradient(180deg, #FAFBFC 0%, #EEF4FF 100%);
             pointer-events: none;
             overflow: hidden;
         }
     </style>
 </head>
 
-<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
+<body class="bg-background text-text font-sans selection:bg-primary-500 selection:text-text">
 
     <!-- ======================================== -->
     <!-- NAVIGATION (copied from index.html for consistency) -->
     <!-- ======================================== -->
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/90 border-b border-border">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
             <div class="flex items-center justify-between h-20">
 
@@ -140,22 +143,22 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
 
                     <a href="../../index.html#work"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Work
                     </a>
 
                     <a href="../../index.html#process"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Process
                     </a>
 
                     <a href="../../index.html#about"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         About
                     </a>
 
                     <a href="../../index.html#contact"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Contact
                     </a>
 
@@ -163,7 +166,7 @@
 
                 <!-- Mobile Menu Button -->
                 <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-border bg-white text-text transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <span class="sr-only">Open navigation menu</span>
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -176,15 +179,15 @@
 
             <div id="mobile-nav"
                 class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
-                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-border">
                     <a href="../index.html#work"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Work</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">Work</a>
                     <a href="../index.html#process"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Process</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">Process</a>
                     <a href="../index.html#about"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">About</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">About</a>
                     <a href="../index.html#contact"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Contact</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">Contact</a>
                 </div>
             </div>
         </div>
@@ -232,30 +235,30 @@
             </h1>
 
             <!-- Description -->
-            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed mb-8">
+            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed mb-8">
                 A social media app designed to connect people based on shared interests and activities, fostering
                 meaningful connections and reducing feelings of loneliness in a digital age.
             </p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-3 justify-center mb-8">
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-slate-600">
                     Research
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-slate-600">
                     UI Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-slate-600">
                     Prototyping
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-slate-600">
                     Self created DS
                 </span>
             </div>
 
             <!-- Hero CTA: scroll to problem -->
             <a href="#problem"
-                class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-dark font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+                class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-white font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
                 Read Case Study
                 <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">
                     ⇣
@@ -269,7 +272,8 @@
     <!-- META BAR -->
     <!-- ======================================== -->
 
-    <section class="bg-white/5 border-b border-border items-center justify-center text-center fade-section delay-150">
+    <section
+        class="bg-primary-50 border-b border-border items-center justify-center text-center fade-section delay-150">
         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8">
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -335,11 +339,14 @@
 
     <footer class="border-t border-border py-16 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <p class="text-muted mb-4">
-                <a href="../index.html#work" class="text-primary-400 hover:text-primary-300 transition">
-                    ← Back to Work
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+                <a href="../smartrecoveryapp/index.html" class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[var(--color-surface-secondary)]/80 text-[var(--color-text-primary)] border border-[var(--color-border)]/80 transition duration-200 hover:bg-[var(--color-surface-secondary)]/100 hover:text-[var(--color-text-primary)]">
+                    View Smart Recovery Case Study
                 </a>
-            </p>
+                <a href="../../index.html#work" class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[var(--color-primary)] text-[var(--color-background)] font-semibold transition duration-200 hover:bg-[var(--color-primary-hover)]">
+                    Back to all case studies
+                </a>
+            </div>
             <p class="text-muted text-sm">
                 &copy; 2026 Julian Fohringer. All rights reserved.
             </p>
@@ -386,10 +393,10 @@
                 if (link.getAttribute('href') === `#${id}`) {
                     link.classList.add('active');
                     link.classList.remove('text-muted');
-                    link.classList.add('text-white');
+                    link.classList.add('text-text');
                 } else {
                     link.classList.remove('active');
-                    link.classList.remove('text-white');
+                    link.classList.remove('text-text');
                     link.classList.add('text-muted');
                 }
             });

@@ -14,28 +14,31 @@
             theme: {
                 extend: {
                     colors: {
+
                         primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d'
+                            50: '#f5f8ff',
+                            100: '#eaf0ff',
+                            200: '#d6e2ff',
+                            300: '#b4caff',
+                            400: '#86a9ff',
+                            500: '#5b84f7',
+                            600: '#3f63e6',
+                            700: '#2748c7',
+                            800: '#1b377f',
+                            900: '#102a5c'
                         },
-                        dark: '#0D1110',
-                        surface: '#161B1A',
-                        border: '#2A302F',
-                        muted: '#8A948F'
+                        background: '#F8FAFC',
+                        surface: '#FFFFFF',
+                        border: '#E2E8F0',
+                        muted: '#64748B',
+                        text: '#0F172A'
+
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        soft: '0 10px 40px rgba(0,0,0,0.25)'
+                        soft: '0 12px 32px rgba(15,23,42,0.08)'
                     }
                 }
             }
@@ -106,27 +109,27 @@
         }
 
         .section-nav-link.active {
-            color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.1);
+            color: #102a5c;
+            background-color: rgba(91, 132, 247, 0.12);
         }
 
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
+            background: linear-gradient(180deg, #FAFBFC 0%, #EEF4FF 100%);
             pointer-events: none;
             overflow: hidden;
         }
     </style>
 </head>
 
-<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
+<body class="bg-background text-text font-sans selection:bg-primary-500 selection:text-text">
 
     <!-- ======================================== -->
     <!-- NAVIGATION (copied from index.html for consistency) -->
     <!-- ======================================== -->
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/90 border-b border-border">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
             <div class="flex items-center justify-between h-20">
 
@@ -140,22 +143,22 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
 
                     <a href="../../index.html#work"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Work
                     </a>
 
                     <a href="../../index.html#process"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Process
                     </a>
 
                     <a href="../../index.html#about"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         About
                     </a>
 
                     <a href="../../index.html#contact"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Contact
                     </a>
 
@@ -163,7 +166,7 @@
 
                 <!-- Mobile Menu Button -->
                 <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-border bg-white text-text transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <span class="sr-only">Open navigation menu</span>
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -176,15 +179,15 @@
 
             <div id="mobile-nav"
                 class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
-                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-border">
                     <a href="../index.html#work"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Work</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">Work</a>
                     <a href="../index.html#process"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Process</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">Process</a>
                     <a href="../index.html#about"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">About</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">About</a>
                     <a href="../index.html#contact"
-                        class="block px-2 py-2 transition duration-200 hover:text-white">Contact</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text">Contact</a>
                 </div>
             </div>
         </div>
@@ -232,27 +235,27 @@
             </h1>
 
             <!-- Description -->
-            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed mb-8">
+            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed mb-8">
                 A decision-support system that tells fitness enthusiasts exactly how to train — based on their recovery
                 data.
             </p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-3 justify-center mb-8">
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-slate-600">
                     Low-Fi Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-slate-600">
                     Visual Design
                 </span>
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-slate-600">
                     Human Interface Guidelines
                 </span>
             </div>
 
             <!-- Hero CTA: scroll to problem -->
             <a href="#problem"
-                class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-dark font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+                class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-white font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
                 Read Case Study
                 <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">
                     ⇣
@@ -266,7 +269,8 @@
     <!-- META BAR -->
     <!-- ======================================== -->
 
-    <section class="bg-white/5 border-b border-border items-center justify-center text-center fade-section delay-150">
+    <section
+        class="bg-primary-50 border-b border-border items-center justify-center text-center fade-section delay-150">
         <div class="max-w-4xl mx-auto px-8 py-8">
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -306,37 +310,37 @@
     <!-- SECTION NAVIGATION -->
     <!-- ======================================== -->
 
-    <section class="sticky top-20 bg-dark/95 backdrop-blur-sm border-b border-border z-40 fade-section delay-250">
+    <section class="sticky top-20 bg-white/95 backdrop-blur-sm border-b border-border z-40 fade-section delay-250">
         <div class="w-full px-8">
             <div class="max-w-4xl mx-auto flex flex-wrap gap-3 overflow-x-auto py-4">
                 <div class="flex items-center justify-between w-full px-8">
                     <a href="#problem"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-white/5 transition active">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-50 transition active">
                         01 Problem
                     </a>
 
                     <a href="#research"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-text hover:bg-primary-50 transition">
                         02 Research
                     </a>
 
                     <a href="#strategy"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-text hover:bg-primary-50 transition">
                         03 Strategy
                     </a>
 
                     <a href="#ux-flow"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-text hover:bg-primary-50 transition">
                         04 UX Flow
                     </a>
 
                     <a href="#ui-design"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-text hover:bg-primary-50 transition">
                         05 UI Design
                     </a>
 
                     <a href="#impact"
-                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-white hover:bg-white/5 transition">
+                        class="section-nav-link px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-text hover:bg-primary-50 transition">
                         06 Impact
                     </a>
                 </div>
@@ -359,7 +363,7 @@
                 <h2 class="text-4xl md:text-5xl font-semibold mb-8">
                     The Core Challenge
                 </h2>
-                <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                <p class="text-slate-600 text-lg leading-relaxed mb-8">
                     Ambitious fitness enthusiasts have access to massive amounts of recovery data — sleep quality, heart
                     rate variability, training load — but they don't know how to translate these metrics into daily
                     training decisions. This leads to overtraining, burnout, and stalled progress.
@@ -377,21 +381,21 @@
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h3 class="font-semibold mb-2">Too Much Data</h3>
-                        <p class="text-gray-400 text-sm">
+                        <p class="text-slate-600 text-sm">
                             Apps deliver metrics, but no actionable guidance on what they mean.
                         </p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h3 class="font-semibold mb-2">Feeling-Based Decisions</h3>
-                        <p class="text-gray-400 text-sm">
+                        <p class="text-slate-600 text-sm">
                             Without a clear system, athletes default to intuition rather than data.
                         </p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h3 class="font-semibold mb-2">No Feedback Loop</h3>
-                        <p class="text-gray-400 text-sm">
+                        <p class="text-slate-600 text-sm">
                             No mechanism to evaluate whether decisions led to better outcomes.
                         </p>
                     </div>
@@ -403,14 +407,14 @@
             <div class="mt-12">
                 <h3 class="text-2xl font-semibold mb-6">Product Definition & MVP</h3>
 
-                <p class="text-gray-400 mb-6">A decision-support system that helps fitness enthusiasts determine how to
+                <p class="text-slate-600 mb-6">A decision-support system that helps fitness enthusiasts determine how to
                     train each day based on their recovery and readiness. Value: instead of just tracking data, provide
                     clear daily training recommendations.</p>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h4 class="font-semibold mb-3">MVP Features</h4>
-                        <ul class="text-gray-400 list-disc pl-5 space-y-2 text-sm">
+                        <ul class="text-slate-600 list-disc pl-5 space-y-2 text-sm">
                             <li><strong>Daily Training Recommendation</strong> — Train Hard / Train Light / Rest</li>
                             <li><strong>Recovery Score</strong> — Aggregates sleep, HRV, and load</li>
                             <li><strong>Basic Input System</strong> — Sleep, training, and subjective feeling</li>
@@ -420,7 +424,7 @@
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h4 class="font-semibold mb-3">Extensions (Future)</h4>
-                        <ul class="text-gray-400 list-disc pl-5 space-y-2 text-sm">
+                        <ul class="text-slate-600 list-disc pl-5 space-y-2 text-sm">
                             <li><strong>Personalized Recommendation Engine</strong> — Learns and adapts over time</li>
                             <li><strong>Training Load History</strong> — Long-term trends and overtraining alerts</li>
                             <li><strong>Smart Alerts</strong> — Proactive nudges like "You should rest today"</li>
@@ -447,7 +451,7 @@
                     <div class="grid md:grid-cols-3 gap-4 mb-8">
                         <div class="p-6 rounded-2xl bg-surface border border-border">
                             <h4 class="font-semibold mb-3 text-primary-400">Ambitious Fitness Enthusiasts</h4>
-                            <ul class="text-gray-400 text-sm space-y-2">
+                            <ul class="text-slate-600 text-sm space-y-2">
                                 <li>• Work out 3–6 times a week</li>
                                 <li>• Goal: Performance & strength building</li>
                                 <li>• Have wearables/fitness trackers</li>
@@ -456,7 +460,7 @@
                         </div>
                         <div class="p-6 rounded-2xl bg-surface border border-border">
                             <h4 class="font-semibold mb-3 text-primary-400">Current Behavior</h4>
-                            <ul class="text-gray-400 text-sm space-y-2">
+                            <ul class="text-slate-600 text-sm space-y-2">
                                 <li>• Make decisions emotionally</li>
                                 <li>• Overlook recovery signals</li>
                                 <li>• Struggle with data interpretation</li>
@@ -465,7 +469,7 @@
                         </div>
                         <div class="p-6 rounded-2xl bg-surface border border-border">
                             <h4 class="font-semibold mb-3 text-primary-400">Pain Points</h4>
-                            <ul class="text-gray-400 text-sm space-y-2">
+                            <ul class="text-slate-600 text-sm space-y-2">
                                 <li>• Information overload</li>
                                 <li>• No clear guidance</li>
                                 <li>• Missing feedback loops</li>
@@ -484,26 +488,26 @@
                         </span>
                         <h3 class="text-xl font-semibold">Analyzed 8+ market solutions</h3>
                     </div>
-                    <p class="text-gray-400 leading-relaxed mb-4">
+                    <p class="text-slate-600 leading-relaxed mb-4">
                         We examined WHOOP, Garmin, Oura, Apple Health, and others. The pattern was clear: everyone
                         optimizes for data collection and display. None translate metrics into a single, clear daily
                         recommendation.
                     </p>
                     <div class="grid md:grid-cols-3 gap-3">
                         <div class="p-3 bg-surface rounded-lg border border-border text-sm">
-                            <p class="font-semibold text-gray-300 mb-1">WHOOP</p>
-                            <p class="text-gray-500 text-xs"><strong>Strength:</strong> Strong recovery insights</p>
-                            <p class="text-gray-500 text-xs"><strong>Weakness:</strong> Complex data interpretation</p>
+                            <p class="font-semibold text-slate-600 mb-1">WHOOP</p>
+                            <p class="text-slate-500 text-xs"><strong>Strength:</strong> Strong recovery insights</p>
+                            <p class="text-slate-500 text-xs"><strong>Weakness:</strong> Complex data interpretation</p>
                         </div>
                         <div class="p-3 bg-surface rounded-lg border border-border text-sm">
-                            <p class="font-semibold text-gray-300 mb-1">Garmin</p>
-                            <p class="text-gray-500 text-xs"><strong>Strength:</strong> Detailed tracking</p>
-                            <p class="text-gray-500 text-xs"><strong>Weakness:</strong> Information-heavy UX</p>
+                            <p class="font-semibold text-slate-600 mb-1">Garmin</p>
+                            <p class="text-slate-500 text-xs"><strong>Strength:</strong> Detailed tracking</p>
+                            <p class="text-slate-500 text-xs"><strong>Weakness:</strong> Information-heavy UX</p>
                         </div>
                         <div class="p-3 bg-surface rounded-lg border border-border text-sm">
-                            <p class="font-semibold text-gray-300 mb-1">Apple Health</p>
-                            <p class="text-gray-500 text-xs"><strong>Strength:</strong> Large ecosystem</p>
-                            <p class="text-gray-500 text-xs"><strong>Weakness:</strong> Limited actionable guidance</p>
+                            <p class="font-semibold text-slate-600 mb-1">Apple Health</p>
+                            <p class="text-slate-500 text-xs"><strong>Strength:</strong> Large ecosystem</p>
+                            <p class="text-slate-500 text-xs"><strong>Weakness:</strong> Limited actionable guidance</p>
                         </div>
                     </div>
                 </div>
@@ -517,7 +521,7 @@
                         </span>
                         <h3 class="text-xl font-semibold">HRV & recovery science</h3>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">
+                    <p class="text-slate-600 leading-relaxed">
                         We reviewed peer-reviewed studies on heart rate variability, training load, and recovery. Key
                         insight: recovery plays a critical role in long-term performance, consistency, and injury
                         prevention, yet it is often undervalued by users. This became the scientific foundation for our
@@ -529,26 +533,26 @@
                 <div class="space-y-3">
                     <p class="text-sm uppercase tracking-[0.25em] text-muted font-semibold">Key Findings</p>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Users don't struggle with access to data—they struggle with
+                        <span class="text-slate-600">Users don't struggle with access to data—they struggle with
                             interpreting it.</span>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Existing fitness products prioritize tracking over decision
+                        <span class="text-slate-600">Existing fitness products prioritize tracking over decision
                             support.</span>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Users want clarity and guidance, not more metrics.</span>
+                        <span class="text-slate-600">Users want clarity and guidance, not more metrics.</span>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">→</span>
-                        <span class="text-gray-300">Recovery is essential for long-term performance but often
+                        <span class="text-slate-600">Recovery is essential for long-term performance but often
                             overlooked.</span>
                     </div>
                 </div>
@@ -570,9 +574,9 @@
                     <div class="mb-4">
                         <p class="text-sm uppercase tracking-[0.25em] text-primary-400 font-semibold mb-2">Value
                             Proposition</p>
-                        <h3 class="text-2xl font-semibold text-white mb-4">We don't track data — we tell you what to do.
+                        <h3 class="text-2xl font-semibold text-text mb-4">We don't track data — we tell you what to do.
                         </h3>
-                        <p class="text-gray-300 leading-relaxed">
+                        <p class="text-slate-600 leading-relaxed">
                             Instead of just tracking data, the product provides clear daily training recommendations,
                             helping users train smarter, avoid overtraining, and improve long-term performance.
                         </p>
@@ -588,7 +592,7 @@
                             <span class="text-primary-400">●</span>
                             Action Over Data
                         </h4>
-                        <p class="text-gray-400">
+                        <p class="text-slate-600">
                             Show what to do, not what is. Every metric leads to a clear decision.
                         </p>
                     </div>
@@ -598,7 +602,7 @@
                             <span class="text-primary-400">●</span>
                             Clarity Over Complexity
                         </h4>
-                        <p class="text-gray-400">
+                        <p class="text-slate-600">
                             One recommendation per day. Simple, direct, no ambiguity.
                         </p>
                     </div>
@@ -608,7 +612,7 @@
                             <span class="text-primary-400">●</span>
                             Guidance Over Tracking
                         </h4>
-                        <p class="text-gray-400">
+                        <p class="text-slate-600">
                             The product coaches—it doesn't just log. Proactive, not passive.
                         </p>
                     </div>
@@ -618,7 +622,7 @@
                             <span class="text-primary-400">●</span>
                             Personalization First
                         </h4>
-                        <p class="text-gray-400">
+                        <p class="text-slate-600">
                             Recommendations adapt over time based on individual response patterns.
                         </p>
                     </div>
@@ -640,25 +644,25 @@
                 <!-- System Overview -->
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-6">System Overview (Big Picture)</h3>
-                    <p class="text-gray-400 mb-4">Structure: <span class="text-primary-400 font-semibold">Input →
+                    <p class="text-slate-600 mb-4">Structure: <span class="text-primary-400 font-semibold">Input →
                             Processing → Output → Feedback Loop</span></p>
                     <div class="grid md:grid-cols-4 gap-4 text-center">
                         <div class="p-4 bg-surface rounded-xl border border-border">
                             <p class="text-sm text-muted mb-2">INPUT</p>
-                            <p class="text-sm text-gray-300">Sleep data, HRV, Training load, Subjective feeling</p>
+                            <p class="text-sm text-slate-600">Sleep data, HRV, Training load, Subjective feeling</p>
                         </div>
                         <div class="p-4 bg-surface rounded-xl border border-border">
                             <p class="text-sm text-muted mb-2">PROCESSING</p>
-                            <p class="text-sm text-gray-300">Recovery calculation, Load analysis, Baseline adjustment
+                            <p class="text-sm text-slate-600">Recovery calculation, Load analysis, Baseline adjustment
                             </p>
                         </div>
                         <div class="p-4 bg-surface rounded-xl border border-border">
                             <p class="text-sm text-muted mb-2">OUTPUT</p>
-                            <p class="text-sm text-gray-300">Recovery score, Daily training recommendation</p>
+                            <p class="text-sm text-slate-600">Recovery score, Daily training recommendation</p>
                         </div>
                         <div class="p-4 bg-surface rounded-xl border border-border">
                             <p class="text-sm text-muted mb-2">FEEDBACK</p>
-                            <p class="text-sm text-gray-300">Behavior evaluation, System adaptation</p>
+                            <p class="text-sm text-slate-600">Behavior evaluation, System adaptation</p>
                         </div>
                     </div>
                 </div>
@@ -666,7 +670,7 @@
                 <!-- Core User Flow -->
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-6">Core User Flow (Daily Use Case)</h3>
-                    <ol class="space-y-3 text-gray-400">
+                    <ol class="space-y-3 text-slate-600">
                         <li><span class="text-primary-400 font-semibold">1.</span> User opens the app</li>
                         <li><span class="text-primary-400 font-semibold">2.</span> Views current recovery status</li>
                         <li><span class="text-primary-400 font-semibold">3.</span> Receives a clear training
@@ -686,7 +690,7 @@
                     <div class="flex items-center gap-3 min-w-min p-4 bg-surface rounded-2xl border border-border">
 
                         <div
-                            class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                            class="px-4 py-3 rounded-lg bg-white border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
                             Sleep + HRV + Load
                         </div>
 
@@ -696,7 +700,7 @@
                         </svg>
 
                         <div
-                            class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                            class="px-4 py-3 rounded-lg bg-white border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
                             Recovery Score
                         </div>
 
@@ -706,7 +710,7 @@
                         </svg>
 
                         <div
-                            class="px-4 py-3 rounded-lg bg-primary-500 text-dark font-semibold text-sm whitespace-nowrap">
+                            class="px-4 py-3 rounded-lg bg-primary-500 text-white font-semibold text-sm whitespace-nowrap">
                             Recommendation
                         </div>
 
@@ -716,7 +720,7 @@
                         </svg>
 
                         <div
-                            class="px-4 py-3 rounded-lg bg-dark border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
+                            class="px-4 py-3 rounded-lg bg-white border border-border text-primary-400 font-semibold text-sm whitespace-nowrap">
                             Feedback Loop
                         </div>
 
@@ -725,17 +729,17 @@
 
                 <!-- Decision Tree -->
                 <h3 class="text-2xl font-semibold mb-6">Decision Logic</h3>
-                <p class="text-gray-400 mb-4">How the system determines daily recommendations:</p>
+                <p class="text-slate-600 mb-4">How the system determines daily recommendations:</p>
                 <div class="p-6 bg-surface rounded-2xl border border-border space-y-4 font-mono text-sm">
-                    <div class="text-gray-400">
+                    <div class="text-slate-600">
                         <span class="text-primary-400">High recovery + low training load</span> → <span
                             class="text-primary-400 font-semibold">Train Hard</span>
                     </div>
-                    <div class="text-gray-400">
+                    <div class="text-slate-600">
                         <span class="text-primary-400">Moderate recovery</span> → <span
                             class="text-primary-400 font-semibold">Train Light</span>
                     </div>
-                    <div class="text-gray-400">
+                    <div class="text-slate-600">
                         <span class="text-primary-400">Low recovery + high training load</span> → <span
                             class="text-primary-400 font-semibold">Rest</span>
                     </div>
@@ -763,25 +767,25 @@
                     </div>
 
                     <div class="mb-8">
-                        <h4 class="font-semibold mb-4 text-white">Information Hierarchy</h4>
+                        <h4 class="font-semibold mb-4 text-text">Information Hierarchy</h4>
                         <div class="space-y-3">
                             <div class="p-4 bg-surface rounded-xl border border-border">
                                 <p class="text-xs text-primary-400 font-semibold mb-1">PRIORITY</p>
-                                <p class="font-semibold text-white">Daily Recommendation (primary element) → Train /
+                                <p class="font-semibold text-text">Daily Recommendation (primary element) → Train /
                                     Light / Rest</p>
                             </div>
                             <div class="p-4 bg-surface rounded-xl border border-border">
                                 <p class="text-xs text-primary-400 font-semibold mb-1">PRIORITY</p>
-                                <p class="font-semibold text-white">Recovery Score → supportive, not dominant</p>
+                                <p class="font-semibold text-text">Recovery Score → supportive, not dominant</p>
                             </div>
                             <div class="p-4 bg-surface rounded-xl border border-border">
                                 <p class="text-xs text-muted font-semibold mb-1">SECONDARY</p>
-                                <p class="font-semibold text-white">Why this recommendation? (Explainability) - "Low
+                                <p class="font-semibold text-text">Why this recommendation? (Explainability) - "Low
                                     sleep", "High training load"</p>
                             </div>
                             <div class="p-4 bg-surface rounded-xl border border-border">
                                 <p class="text-xs text-muted font-semibold mb-1">SECONDARY</p>
-                                <p class="font-semibold text-white">Quick Actions - Log training, record how you feel
+                                <p class="font-semibold text-text">Quick Actions - Log training, record how you feel
                                 </p>
                             </div>
                         </div>
@@ -804,7 +808,7 @@
                                 Wireframe
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/wireframe-home.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
@@ -820,7 +824,7 @@
                                 UI Design
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/design-home.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
@@ -832,9 +836,9 @@
 
 
                     <!-- Explanation -->
-                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+                    <div class="p-6 bg-primary-50 border border-border rounded-3xl text-slate-600">
 
-                        <h4 class="font-semibold text-white mb-3">
+                        <h4 class="font-semibold text-text mb-3">
                             Thoughts behind the design
                         </h4>
 
@@ -858,7 +862,7 @@
                                 Wireframe
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/wireframe-recovery.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
@@ -874,7 +878,7 @@
                                 UI Design
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/design-recovery.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
@@ -886,9 +890,9 @@
 
 
                     <!-- Explanation -->
-                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+                    <div class="p-6 bg-primary-50 border border-border rounded-3xl text-slate-600">
 
-                        <h4 class="font-semibold text-white mb-3">
+                        <h4 class="font-semibold text-text mb-3">
                             Thoughts behind the design
                         </h4>
 
@@ -911,7 +915,7 @@
                                 Wireframe
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/wireframe-workout.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
@@ -927,7 +931,7 @@
                                 UI Design
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/design-workout.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
@@ -939,9 +943,9 @@
 
 
                     <!-- Explanation -->
-                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+                    <div class="p-6 bg-primary-50 border border-border rounded-3xl text-slate-600">
 
-                        <h4 class="font-semibold text-white mb-3">
+                        <h4 class="font-semibold text-text mb-3">
                             Thoughts behind the design
                         </h4>
 
@@ -964,7 +968,7 @@
                                 Wireframe
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/wireframe-progress.webp" alt="Wireframe Preview"
                                     class="w-full h-auto object-contain" />
@@ -980,7 +984,7 @@
                                 UI Design
                             </p>
 
-                            <div class="bg-dark rounded-3xl border border-white/10 p-4">
+                            <div class="bg-white rounded-3xl border border-border p-4">
 
                                 <img src="../smartrecoveryapp/assets/design-progress.webp" alt="UI Design Preview"
                                     class="w-full h-auto object-contain" />
@@ -992,9 +996,9 @@
 
 
                     <!-- Explanation -->
-                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl text-gray-300">
+                    <div class="p-6 bg-primary-50 border border-border rounded-3xl text-slate-600">
 
-                        <h4 class="font-semibold text-white mb-3">
+                        <h4 class="font-semibold text-text mb-3">
                             Thoughts behind the design
                         </h4>
 
@@ -1029,28 +1033,28 @@
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h3 class="font-semibold mb-3">Figma Redlines</h3>
-                        <p class="text-gray-400 text-sm">
+                        <p class="text-slate-600 text-sm">
                             Complete specs with spacing, color, and typography documentation.
                         </p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h3 class="font-semibold mb-3">Design Tokens</h3>
-                        <p class="text-gray-400 text-sm">
+                        <p class="text-slate-600 text-sm">
                             Color palette, type scale, and spacing system exported as tokens.
                         </p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h3 class="font-semibold mb-3">Component Docs</h3>
-                        <p class="text-gray-400 text-sm">
+                        <p class="text-slate-600 text-sm">
                             Variants, states, and usage guidelines for all UI components.
                         </p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <h3 class="font-semibold mb-3">Interaction Specs</h3>
-                        <p class="text-gray-400 text-sm">
+                        <p class="text-slate-600 text-sm">
                             Animation behavior, transitions, and edge case documentation.
                         </p>
                     </div>
@@ -1075,28 +1079,28 @@
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <p class="text-2xl font-bold text-primary-400 mb-2">↑ 35%</p>
-                        <p class="font-semibold text-white mb-2">Increased training consistency</p>
-                        <p class="text-sm text-gray-400">Users follow recommendations and maintain steady training
+                        <p class="font-semibold text-text mb-2">Increased training consistency</p>
+                        <p class="text-sm text-slate-600">Users follow recommendations and maintain steady training
                             schedules</p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <p class="text-2xl font-bold text-primary-400 mb-2">↓ 48%</p>
-                        <p class="font-semibold text-white mb-2">Reduction in overtraining</p>
-                        <p class="text-sm text-gray-400">Users recover better and avoid burnout with data-driven
+                        <p class="font-semibold text-text mb-2">Reduction in overtraining</p>
+                        <p class="text-sm text-slate-600">Users recover better and avoid burnout with data-driven
                             decisions</p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <p class="text-2xl font-bold text-primary-400 mb-2">↑ Recovery</p>
-                        <p class="font-semibold text-white mb-2">Improved recovery patterns</p>
-                        <p class="text-sm text-gray-400">Better sleep, lower HR, more sustainable training</p>
+                        <p class="font-semibold text-text mb-2">Improved recovery patterns</p>
+                        <p class="text-sm text-slate-600">Better sleep, lower HR, more sustainable training</p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-surface border border-border">
                         <p class="text-2xl font-bold text-primary-400 mb-2">↑ Retention</p>
-                        <p class="font-semibold text-white mb-2">Higher user retention</p>
-                        <p class="text-sm text-gray-400">Users see results and stay engaged long-term</p>
+                        <p class="font-semibold text-text mb-2">Higher user retention</p>
+                        <p class="text-sm text-slate-600">Users see results and stay engaged long-term</p>
                     </div>
 
                 </div>
@@ -1107,7 +1111,7 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="p-6 rounded-2xl bg-surface border border-border">
                             <h4 class="font-semibold text-primary-400 mb-4">Free Tier</h4>
-                            <ul class="text-gray-400 text-sm space-y-2">
+                            <ul class="text-slate-600 text-sm space-y-2">
                                 <li>• Basic recovery score</li>
                                 <li>• Daily recommendation</li>
                                 <li>• Manual input system</li>
@@ -1115,7 +1119,7 @@
                         </div>
                         <div class="p-6 rounded-2xl bg-surface border border-border">
                             <h4 class="font-semibold text-primary-400 mb-4">Premium Features</h4>
-                            <ul class="text-gray-400 text-sm space-y-2">
+                            <ul class="text-slate-600 text-sm space-y-2">
                                 <li>• Personalized insights</li>
                                 <li>• Advanced analytics</li>
                                 <li>• Wearable integrations</li>
@@ -1129,37 +1133,38 @@
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-6">Next Steps & Extensions</h3>
                     <div class="space-y-3">
-                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                             <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
                             <div>
-                                <p class="font-semibold text-white">Personalization Engine</p>
-                                <p class="text-sm text-gray-400">Learns from user behavior and adapts recommendations
+                                <p class="font-semibold text-text">Personalization Engine</p>
+                                <p class="text-sm text-slate-600">Learns from user behavior and adapts recommendations
                                     over time</p>
                             </div>
                         </div>
 
-                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                             <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
                             <div>
-                                <p class="font-semibold text-white">Wearable Integrations</p>
-                                <p class="text-sm text-gray-400">Auto-sync from Apple Watch, Garmin, WHOOP, Oura</p>
+                                <p class="font-semibold text-text">Wearable Integrations</p>
+                                <p class="text-sm text-slate-600">Auto-sync from Apple Watch, Garmin, WHOOP, Oura</p>
                             </div>
                         </div>
 
-                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                             <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
                             <div>
-                                <p class="font-semibold text-white">Smart Alerts & Nudging</p>
-                                <p class="text-sm text-gray-400">Proactive notifications like "You are above your limit"
+                                <p class="font-semibold text-text">Smart Alerts & Nudging</p>
+                                <p class="text-sm text-slate-600">Proactive notifications like "You are above your
+                                    limit"
                                     or "You should rest today"</p>
                             </div>
                         </div>
 
-                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                        <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                             <span class="text-primary-400 font-bold flex-shrink-0">⚡</span>
                             <div>
-                                <p class="font-semibold text-white">Coaching Layer</p>
-                                <p class="text-sm text-gray-400">Personalized coaching recommendations or premium
+                                <p class="font-semibold text-text">Coaching Layer</p>
+                                <p class="text-sm text-slate-600">Personalized coaching recommendations or premium
                                     guidance</p>
                             </div>
                         </div>
@@ -1170,35 +1175,35 @@
                 <div class="space-y-4">
                     <p class="text-sm uppercase tracking-[0.25em] text-muted font-semibold">Key Learnings</p>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
-                        <span class="text-gray-300">Simplicity creates trust. Fewer options = higher engagement and
+                        <span class="text-slate-600">Simplicity creates trust. Fewer options = higher engagement and
                             adoption.</span>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
-                        <span class="text-gray-300">Users don't want data—they want decisions. Clarity over complexity
+                        <span class="text-slate-600">Users don't want data—they want decisions. Clarity over complexity
                             wins.</span>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
-                        <span class="text-gray-300">Feedback loops are critical. Users need to see that recommendations
+                        <span class="text-slate-600">Feedback loops are critical. Users need to see that recommendations
                             work and adapt.</span>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-3">
+                    <div class="p-4 rounded-xl bg-primary-50 border border-border flex gap-3">
                         <span class="text-primary-400 font-bold flex-shrink-0">✓</span>
-                        <span class="text-gray-300">Recovery is a performance driver that users undervalue—the right
+                        <span class="text-slate-600">Recovery is a performance driver that users undervalue—the right
                             system changes behavior.</span>
                     </div>
                 </div>
 
                 <!-- Reflection -->
                 <div class="mt-12 p-8 bg-primary-500/10 border border-primary-500/20 rounded-2xl">
-                    <h3 class="text-xl font-semibold text-white mb-4">Reflection</h3>
-                    <p class="text-gray-300 leading-relaxed">
+                    <h3 class="text-xl font-semibold text-text mb-4">Reflection</h3>
+                    <p class="text-slate-600 leading-relaxed">
                         This project challenged me to think beyond interfaces and design a system that connects data,
                         behavior, and decision-making. The result is a product that doesn't just inform—but actively
                         guides users toward better outcomes. By prioritizing clarity and simplicity, we created a tool
@@ -1217,11 +1222,14 @@
 
     <footer class="border-t border-border py-16 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <p class="text-muted mb-4">
-                <a href="../index.html#work" class="text-primary-400 hover:text-primary-300 transition">
-                    ← Back to Work
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+                <a href="../zeeusapp/index.html" class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[var(--color-surface-secondary)]/80 text-[var(--color-text-primary)] border border-[var(--color-border)]/80 transition duration-200 hover:bg-[var(--color-surface-secondary)]/100 hover:text-[var(--color-text-primary)]">
+                    View Zeeus Case Study
                 </a>
-            </p>
+                <a href="../../index.html#work" class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[var(--color-primary)] text-[var(--color-background)] font-semibold transition duration-200 hover:bg-[var(--color-primary-hover)]">
+                    Back to all case studies
+                </a>
+            </div>
             <p class="text-muted text-sm">
                 &copy; 2026 Julian Fohringer. All rights reserved.
             </p>
@@ -1268,10 +1276,10 @@
                 if (link.getAttribute('href') === `#${id}`) {
                     link.classList.add('active');
                     link.classList.remove('text-muted');
-                    link.classList.add('text-white');
+                    link.classList.add('text-text');
                 } else {
                     link.classList.remove('active');
-                    link.classList.remove('text-white');
+                    link.classList.remove('text-text');
                     link.classList.add('text-muted');
                 }
             });

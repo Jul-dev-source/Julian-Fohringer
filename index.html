@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,21 +20,23 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d'
+                            50: '#f5f8ff',
+                            100: '#eaf0ff',
+                            200: '#d6e2ff',
+                            300: '#b4caff',
+                            400: '#86a9ff',
+                            500: '#5b84f7',
+                            600: '#3f63e6',
+                            700: '#2748c7',
+                            800: '#1b377f',
+                            900: '#102a5c'
                         },
-                        dark: '#0D1110',
-                        surface: '#161B1A',
-                        border: '#2A302F',
-                        muted: '#8A948F'
+
+                        background: '#FAFBFC',
+                        surface: '#FFFFFF',
+                        border: '#E5E7EB',
+                        muted: '#6B7280',
+                        text: '#111827'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
@@ -90,10 +92,10 @@
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(circle at 16% 20%, rgba(34, 197, 94, 0.20), transparent 24%),
+                radial-gradient(circle at 16% 20%, rgba(63, 99, 230, 0.12), transparent 24%),
                 radial-gradient(circle at 84% 20%, rgba(56, 189, 248, 0.15), transparent 22%),
                 radial-gradient(circle at 40% 75%, rgba(168, 85, 247, 0.13), transparent 20%),
-                linear-gradient(180deg, #090f0e 0%, #0f1715 100%);
+                linear-gradient(180deg, #FAFBFC 0%, #F5F8FF 100%);
             pointer-events: none;
             overflow: hidden;
         }
@@ -125,7 +127,7 @@
     </style>
 </head>
 
-<body class="bg-dark text-white font-sans selection:bg-primary-500 selection:text-white">
+<body class="bg-background text-text font-sans selection:bg-primary-500 selection:text-text">
 
     <!-- ======================================== -->
     <!-- QUICK EDIT VARIABLES -->
@@ -155,7 +157,7 @@
     <!-- NAVIGATION -->
     <!-- ======================================== -->
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-dark/70 border-b border-border">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/90 border-b border-border">
         <div class="max-w-7xl mx-auto px-6 lg:px-10">
             <div class="flex items-center justify-between h-20">
 
@@ -169,22 +171,22 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
 
                     <a href="#work"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Work
                     </a>
 
                     <a href="#process"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Process
                     </a>
 
                     <a href="#about"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         About
                     </a>
 
                     <a href="#contact"
-                        class="transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                         Contact
                     </a>
 
@@ -192,7 +194,7 @@
 
                 <!-- Mobile Menu Button -->
                 <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-black/30 text-white transition duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-border bg-white text-text transition duration-200 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <span class="sr-only">Open navigation menu</span>
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -205,15 +207,15 @@
 
             <div id="mobile-nav"
                 class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
-                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-white/10">
+                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-border">
                     <a href="#work"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Work</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Work</a>
                     <a href="#process"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Process</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Process</a>
                     <a href="#about"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">About</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">About</a>
                     <a href="#contact"
-                        class="block px-2 py-2 transition duration-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Contact</a>
+                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Contact</a>
                 </div>
             </div>
         </div>
@@ -259,20 +261,13 @@
 
             <!-- Main Headline -->
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] tracking-tight max-w-5xl mx-auto">
-                Designing product experiences
-                <br />
-                from insight to
-                <br />
-                <span class="text-primary-400">
-                    final handoff.
-                </span>
+                Bridging user needs, business goals and scalable design systems.
             </h1>
 
 
             <!-- Description -->
-            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed">
-                I create digital products that balance user needs, business goals,
-                and product strategy — currently shifting from UX/UI craft toward broader Product Design.
+            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-muted leading-relaxed">
+                Designing intuitive digital products through research, strategy, and systems thinking.
             </p>
 
 
@@ -281,26 +276,27 @@
 
                 <!-- Primary Button -->
                 <a href="#work"
-                    class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-dark font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+                    class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-white font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
 
-                    View Projects
+                    View Work
 
                     <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">
-                        →
+
                     </span>
                 </a>
 
 
                 <!-- Secondary Button -->
                 <a href="#contact"
-                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-white/15 bg-white/5 text-white transition-all duration-200 hover:bg-white/10 hover:border-white/25 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
+                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-border bg-primary-50 text-text transition-all duration-200 hover:bg-primary-100 hover:border-border active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
                     Contact Me
                 </a>
 
 
                 <!-- Download Resume Button -->
-                <a href="https://drive.google.com/file/d/1p30M7RcZSgZbfnR8zSVVQMgnwTuPOAtO/view?usp=sharing" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-white/15 bg-white/5 text-white transition-all duration-200 hover:bg-white/10 hover:border-white/25 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
+                <a href="https://drive.google.com/file/d/1p30M7RcZSgZbfnR8zSVVQMgnwTuPOAtO/view?usp=sharing"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-border bg-primary-50 text-text transition-all duration-200 hover:bg-primary-100 hover:border-border active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
                     Resume
                 </a>
             </div>
@@ -369,8 +365,7 @@
                                 Visual Design
                             </span>
 
-                            <span
-                                class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
+                            <span class="px-3 py-1 rounded-full bg-primary-50 text-muted text-xs border border-border">
                                 Human Interface Guidelines
                             </span>
 
@@ -381,14 +376,14 @@
                             Improve your training with data-driven recovery insights.
                         </h3>
 
-                        <p class="text-gray-400 leading-relaxed mb-8">
+                        <p class="text-muted leading-relaxed mb-8">
                             Smart Recovery is a mobile application that provides athletes with personalized recovery
                             insights based on their training data, helping them optimize performance and prevent
                             injuries.
                         </p>
 
                         <a href="./casestudies/smartrecoveryapp/index.html"
-                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-white/5 transition-all duration-200 hover:text-primary-300 hover:bg-white/10 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
+                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-primary-50 transition-all duration-200 hover:text-primary-300 hover:bg-primary-100 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
                             View Case Study →
                         </a>
 
@@ -425,8 +420,7 @@
                                 Prototyping
                             </span>
 
-                            <span
-                                class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs border border-white/10">
+                            <span class="px-3 py-1 rounded-full bg-primary-50 text-muted text-xs border border-border">
                                 Self created DS
                             </span>
                         </div>
@@ -435,14 +429,14 @@
                             Feel lonely? Get to know new people.
                         </h3>
 
-                        <p class="text-gray-400 leading-relaxed mb-8">
+                        <p class="text-muted leading-relaxed mb-8">
                             ZeeUs is a social networking app designed to connect people based on shared interests and
                             activities, fostering meaningful connections and reducing feelings of loneliness in a
                             digital age.
                         </p>
 
                         <a href="./casestudies/zeeusapp/index.html"
-                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-white/5 transition-all duration-200 hover:text-primary-300 hover:bg-white/10 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
+                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-primary-50 transition-all duration-200 hover:text-primary-300 hover:bg-primary-100 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
                             View Case Study →
                         </a>
 
@@ -478,7 +472,7 @@
                 <!-- Step Tabs -->
                 <div class="flex flex-wrap gap-2 md:gap-3">
                     <button data-step="research"
-                        class="step-btn active px-6 py-3 rounded-xl bg-primary-500 text-dark font-semibold text-sm transition-all duration-200">
+                        class="step-btn active px-6 py-3 rounded-xl bg-primary-500 text-white font-semibold text-sm transition-all duration-200">
                         Research
                     </button>
 
@@ -510,7 +504,7 @@
                     <div class="step-content active" data-step="research">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Research</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-muted">
                                 <li class="flex gap-3">
                                     <span class="text-primary-400 font-bold">→</span>
                                     <span>User interviews and stakeholder alignment to understand problem space</span>
@@ -535,7 +529,7 @@
                     <div class="step-content hidden" data-step="concept">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Concept</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-muted">
                                 <li class="flex gap-3">
                                     <span class="text-primary-400 font-bold">→</span>
                                     <span>User flow mapping and journey exploration</span>
@@ -560,7 +554,7 @@
                     <div class="step-content hidden" data-step="wireframe">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Wireframe</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-muted">
                                 <li class="flex gap-3">
                                     <span class="text-primary-400 font-bold">→</span>
                                     <span>Information architecture and layout structure</span>
@@ -585,7 +579,7 @@
                     <div class="step-content hidden" data-step="visual">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Visual Design</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-muted">
                                 <li class="flex gap-3">
                                     <span class="text-primary-400 font-bold">→</span>
                                     <span>Design system components and consistency</span>
@@ -610,7 +604,7 @@
                     <div class="step-content hidden" data-step="handoff">
                         <div class="p-8 rounded-2xl bg-surface border border-border">
                             <h3 class="text-2xl font-semibold mb-6">Dev Handoff</h3>
-                            <ul class="space-y-3 text-gray-300">
+                            <ul class="space-y-3 text-muted">
                                 <li class="flex gap-3">
                                     <span class="text-primary-400 font-bold">→</span>
                                     <span>Figma specs, redlines, and component exports</span>
@@ -665,13 +659,13 @@
                         UX/UI Designer shifting into Product Design with strong systems thinking.
                     </h2>
 
-                    <p class="text-gray-400 leading-relaxed mb-6">
+                    <p class="text-muted leading-relaxed mb-6">
                         I help teams transform complex requirements into intuitive digital products.
                         My work blends UX strategy, scalable UI systems, and product thinking across the full delivery
                         process.
                     </p>
 
-                    <p class="text-gray-400 leading-relaxed mb-10">
+                    <p class="text-muted leading-relaxed mb-10">
                         With experience in UX/UI Design and Product Management, I’m passionate about crafting
                         user-centered solutions that drive business impact. I’m currently focused on expanding my
                         expertise into broader Product Design, where I can leverage my research and design skills to
@@ -681,19 +675,19 @@
 
                     <div class="flex flex-wrap gap-3">
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
                             Product Design
                         </span>
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
                             UX Strategy
                         </span>
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
                             Design Systems
                         </span>
 
-                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
                             Prototyping
                         </span>
 
@@ -720,30 +714,30 @@
                 Let’s build meaningful digital products.
             </h2>
 
-            <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
+            <p class="text-muted text-lg leading-relaxed max-w-2xl mx-auto mb-12">
                 Open for freelance projects, product collaborations, and long-term opportunities.
             </p>
 
 
             <!-- CTA -->
             <a href="mailto:julian.fohringer@icloud.com"
-                class="inline-flex items-center justify-center px-10 h-16 rounded-full bg-primary-500 text-dark font-semibold text-lg transition-all duration-200 hover:bg-primary-400 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
+                class="inline-flex items-center justify-center px-10 h-16 rounded-full bg-primary-500 text-white font-semibold text-lg transition-all duration-200 hover:bg-primary-400 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
                 julian.fohringer@icloud.com
             </a>
 
 
             <!-- Social Links -->
-            <div class="mt-14 flex items-center justify-center gap-8 text-sm text-gray-400">
+            <div class="mt-14 flex items-center justify-center gap-8 text-sm text-muted">
 
 
                 <a href="https://www.linkedin.com/in/julian-fohringer" target="_blank"
-                    class="transition duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
+                    class="transition duration-200 hover:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
                     LinkedIn
                 </a>
 
             </div>
 
-            <p class="mt-8 text-sm text-gray-500">
+            <p class="mt-8 text-sm text-muted">
                 &copy; 2026 Julian Fohringer. All rights reserved.
             </p>
 
@@ -800,10 +794,10 @@
                 const linkSection = href.substring(1); // Remove # from href
 
                 if (linkSection === currentSection) {
-                    link.classList.add('text-white', 'font-semibold');
+                    link.classList.add('text-text', 'font-semibold');
                     link.classList.remove('text-muted');
                 } else {
-                    link.classList.remove('text-white', 'font-semibold');
+                    link.classList.remove('text-text', 'font-semibold');
                     link.classList.add('text-muted');
                 }
             });
@@ -838,10 +832,10 @@
 
                 // Update active button
                 document.querySelectorAll('.step-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-primary-500', 'text-dark');
+                    b.classList.remove('active', 'bg-primary-500', 'text-white');
                     b.classList.add('bg-dark', 'border', 'border-border', 'text-primary-400');
                 });
-                btn.classList.add('active', 'bg-primary-500', 'text-dark');
+                btn.classList.add('active', 'bg-primary-500', 'text-white');
                 btn.classList.remove('bg-dark', 'border', 'border-border', 'text-primary-400');
 
                 // Update active content
