@@ -116,6 +116,41 @@ window.addEventListener(
 );
 
 // ============================================
+// MOBILE NAV TOGGLE
+// ============================================
+
+const navToggle = document.querySelector('.nav-toggle');
+const navbarEl = document.querySelector('.navbar');
+
+if (navToggle && navbarEl) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navbarEl.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  });
+
+  // Close nav when a link is clicked (mobile)
+  document.querySelectorAll('.nav-links a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (navbarEl.classList.contains('nav-open')) {
+        navbarEl.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+  });
+
+  // Remove nav-open on resize above breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && navbarEl.classList.contains('nav-open')) {
+      navbarEl.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open navigation');
+    }
+  });
+}
+
+// ============================================
 // REDUCED MOTION SUPPORT
 // ============================================
 
