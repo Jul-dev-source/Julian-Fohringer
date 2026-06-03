@@ -1,781 +1,596 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Julian Fohringer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Julian Fohringer | Product Designer</title>
 
+  <meta name="description"
+    content="Product Designer focused on AI Products, Design Systems and decision-making experiences.">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Browser Icon -->
-    <link rel="icon" type="image/png" href="src/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f5f8ff',
-                            100: '#eaf0ff',
-                            200: '#d6e2ff',
-                            300: '#b4caff',
-                            400: '#86a9ff',
-                            500: '#5b84f7',
-                            600: '#3f63e6',
-                            700: '#2748c7',
-                            800: '#1b377f',
-                            900: '#102a5c'
-                        },
-
-                        background: '#FAFBFC',
-                        surface: '#FFFFFF',
-                        border: '#E5E7EB',
-                        muted: '#6B7280',
-                        text: '#111827'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    },
-                    boxShadow: {
-                        soft: '0 10px 40px rgba(0,0,0,0.25)'
-                    }
-                }
-            }
-        }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-8px);
-            }
-
-            60% {
-                transform: translateY(-4px);
-            }
-        }
-
-        .scroll-arrow {
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .scroll-arrow:hover {
-            opacity: 0.7;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-image:
-                radial-gradient(circle at 16% 20%, rgba(63, 99, 230, 0.12), transparent 24%),
-                radial-gradient(circle at 84% 20%, rgba(56, 189, 248, 0.15), transparent 22%),
-                radial-gradient(circle at 40% 75%, rgba(168, 85, 247, 0.13), transparent 20%),
-                linear-gradient(180deg, #FAFBFC 0%, #F5F8FF 100%);
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.04), transparent 40%);
-            opacity: 0.8;
-            pointer-events: none;
-        }
-
-        .fade-section {
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-
-        .fade-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-section.delay-150 {
-            transition-delay: 0.15s;
-        }
-    </style>
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 
-<body class="bg-background text-text font-sans selection:bg-primary-500 selection:text-text">
+<body>
 
-    <!-- ======================================== -->
-    <!-- QUICK EDIT VARIABLES -->
-    <!-- ======================================== -->
+  <!-- ===================================== -->
+  <!-- NAVIGATION -->
+  <!-- ===================================== -->
 
-    <!--
-    Change these values quickly:
+  <nav class="navbar">
 
-    1. Profile Image:
-       Replace:
-       ./img/portrait.png
+    <div class="logo">
 
-    2. Name:
-       Julian Fohringer
+      <span class="logo-mark">
+        JF
+      </span>
 
-    3. Hero Headline
+      <span class="logo-text">
+        Julian Fohringer
+      </span>
 
-    4. CTA Links
+      <span class="nav-badge">Under construction</span>
 
-    5. Project Content
+    </div>
 
-    6. Contact Information
-  -->
+    <div class="nav-links">
 
+      <a href="#work">Work</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#thinking">Thinking</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
 
-    <!-- ======================================== -->
-    <!-- NAVIGATION -->
-    <!-- ======================================== -->
+    </div>
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/90 border-b border-border">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10">
-            <div class="flex items-center justify-between h-20">
+  </nav>
 
-                <!-- Logo -->
-                <a href="#"
-                    class="text-lg font-bold tracking-widest transition duration-200 hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                    JF
-                </a>
+  <!-- ===================================== -->
+  <!-- HERO -->
+  <!-- ===================================== -->
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
+  <section class="hero">
 
-                    <a href="#work"
-                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                        Work
-                    </a>
+    <div class="hero-copy fade-up">
 
-                    <a href="#what-i-bring"
-                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                        What I bring
-                    </a>
+      <span class="hero-pill">
 
-                    <a href="#about"
-                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                        About
-                    </a>
+        Product Designer • AI Experiences • Design Systems
 
-                    <a href="#contact"
-                        class="transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                        Contact
-                    </a>
+      </span>
 
-                </nav>
+      <h1>
 
-                <!-- Mobile Menu Button -->
-                <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-                    class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-border bg-white text-text transition duration-200 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                    <span class="sr-only">Open navigation menu</span>
-                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M4 7h16"></path>
-                        <path d="M4 12h16"></path>
-                        <path d="M4 17h16"></path>
-                    </svg>
-                </button>
-            </div>
+        Designing products that turn
+        complex decisions into
+        confident actions.
 
-            <div id="mobile-nav"
-                class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out">
-                <div class="flex flex-col gap-4 py-4 text-sm text-muted border-t border-border">
-                    <a href="#work"
-                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Work</a>
-                    <a href="#what-i-bring"
-                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">What
-                        I Bring</a>
-                    <a href="#about"
-                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">About</a>
-                    <a href="#contact"
-                        class="block px-2 py-2 transition duration-200 hover:text-text focus:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">Contact</a>
-                </div>
-            </div>
-        </div>
-    </header>
+      </h1>
 
+      <p>
 
-    <!-- ======================================== -->
-    <!-- HERO SECTION -->
-    <!-- ======================================== -->
+        I help teams create products,
+        systems and interfaces that transform
+        complex information into confident actions.
 
-    <section
-        class="relative overflow-hidden min-h-screen pt-20 flex items-center justify-center border-b border-border fade-section visible delay-150">
+      </p>
 
-        <!-- Abstract Hero Background -->
-        <div class="hero-bg"></div>
+      <div class="hero-actions">
 
-        <!-- Decorative Shapes -->
-        <div
-            class="absolute top-[-120px] right-[-120px] w-[320px] h-[320px] rounded-full bg-primary-500/10 blur-3xl mix-blend-screen">
-        </div>
-        <div
-            class="absolute bottom-[-90px] left-[-90px] w-[280px] h-[280px] rounded-full bg-sky-400/10 blur-3xl mix-blend-screen">
-        </div>
-        <div
-            class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[240px] h-[240px] rounded-[36%] bg-violet-500/10 blur-[80px] mix-blend-screen">
+        <a href="#work" class="btn btn-primary">
+          View Case Studies
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          Let's Talk
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- BENTO GRID -->
+
+    <div class="hero-bento fade-up">
+
+      <div class="bento-card large">
+
+        <span class="card-label">
+          AI Health Platform
+        </span>
+
+        <div class="metric">
+          <span>Recovery Score</span>
+          <h3>87%</h3>
         </div>
 
-
-        <!-- Content -->
-        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-
-            <!-- Eyebrow -->
-            <div class="inline-flex items-center gap-3 mb-8">
-                <div class="w-12 h-[1px] bg-primary-500"></div>
-
-                <p class="text-primary-400 uppercase tracking-[0.35em] text-xs font-semibold">
-                    Product Designer
-                </p>
-
-                <div class="w-12 h-[1px] bg-primary-500"></div>
-            </div>
-
-
-            <!-- Main Headline -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] tracking-tight max-w-5xl mx-auto">
-                Bridging user needs, business goals and scalable design systems.
-            </h1>
-
-
-            <!-- Description -->
-            <p class="mt-8 max-w-2xl mx-auto text-base md:text-lg text-muted leading-relaxed">
-                I design digital products that balance user value, business impact and scalable systems — from discovery
-                to delivery.
-            </p>
-
-
-            <!-- Buttons -->
-            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-
-                <!-- Primary Button -->
-                <a href="#work"
-                    class="group inline-flex items-center justify-center px-8 h-14 rounded-full bg-primary-500 text-white font-semibold transition-all duration-200 hover:bg-primary-400 active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
-
-                    View Work
-
-                    <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">
-
-                    </span>
-                </a>
-
-
-                <!-- Secondary Button -->
-                <a href="#contact"
-                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-border bg-primary-50 text-text transition-all duration-200 hover:bg-primary-100 hover:border-border active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
-                    Contact Me
-                </a>
-
-
-                <!-- Download Resume Button -->
-                <a href="https://drive.google.com/file/d/1p30M7RcZSgZbfnR8zSVVQMgnwTuPOAtO/view?usp=sharing"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-border bg-primary-50 text-text transition-all duration-200 hover:bg-primary-100 hover:border-border active:scale-[0.97] focus:outline-none focus:ring-4 focus:ring-primary-500/30 backdrop-blur-sm">
-                    Resume
-                </a>
-            </div>
-
-
-
-        </div>
-        <!-- Scroll Down Arrow -->
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2">
-            <button onclick="document.getElementById('stats').scrollIntoView()" aria-label="Scroll to next section"
-                class="scroll-arrow inline-flex items-center justify-center w-12 h-12 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-400 transition-all duration-200 hover:border-primary-500/60 hover:bg-primary-500/10 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </button>
-        </div>
-    </section>
-
-    <!-- ======================================== -->
-    <!-- Stats SECTION -->
-    <!-- ======================================== -->
-
-    <section id="stats" class="py-20 border-b">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-6">
-            <div class="p-6 rounded-3xl bg-white border">
-                <h3 class="text-3xl font-bold">3+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="p-6 rounded-3xl bg-white border">
-                <h3 class="text-3xl font-bold">UX + PM</h3>
-                <p>Cross-functional Background</p>
-            </div>
-            <div class="p-6 rounded-3xl bg-white border">
-                <h3 class="text-3xl font-bold">DS</h3>
-                <p>Design System Expertise</p>
-            </div>
-            <div class="p-6 rounded-3xl bg-white border">
-                <h3 class="text-3xl font-bold">End‑to‑End</h3>
-                <p>Discovery to Delivery</p>
-            </div>
+        <div class="metric">
+          <span>Sleep Quality</span>
+          <h3>91%</h3>
         </div>
 
-        <div class="mt-10 max-w-7xl mx-auto px-6">
-            <div class="rounded-3xl border border-border bg-surface p-6">
-                <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                        <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-2">
-                            Certifications
-                        </p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1ElNoJuaq1iu_k14HNEwVLCkEEYeGHPOo?usp=drive_link"
-                        target="_blank" rel="noopener noreferrer"
-                        class="text-primary-500 text-sm font-semibold hover:text-primary-400">
-                        View all certificates
-                    </a>
-                </div>
+      </div>
 
-                <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                    <a href="https://drive.google.com/file/d/1b5_GOGmi3cl4LFepXBOoJC7OQWflXr_B/view?usp=sharing"
-                        target="_blank" rel="noopener noreferrer"
-                        class="block rounded-3xl border border-border bg-white p-5 transition duration-200 hover:border-primary-500/40 hover:shadow-soft">
-                        <p class="font-semibold">Google UX Design Certification</p>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1oYt3jOLOzRd0y0_XwjIQi8_acBMD6dFu/view?usp=sharing"
-                        target="_blank" rel="noopener noreferrer"
-                        class="block rounded-3xl border border-border bg-white p-5 transition duration-200 hover:border-primary-500/40 hover:shadow-soft">
-                        <p class="font-semibold">Building Design System in Figma from Scratch - UIUX Mastery</p>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1oYt3jOLOzRd0y0_XwjIQi8_acBMD6dFu/view?usp=sharing"
-                        target="_blank" rel="noopener noreferrer"
-                        class="block rounded-3xl border border-border bg-white p-5 transition duration-200 hover:border-primary-500/40 hover:shadow-soft">
-                        <p class="font-semibold">Responsive UXUI Design in Figma</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="bento-card">
 
+        <span class="card-label">
+          AI Recommendation
+        </span>
 
-    <!-- ======================================== -->
-    <!-- WORK SECTION -->
-    <!-- ======================================== -->
+        <h3>
+          Train Light Today
+        </h3>
 
-    <section id="work" class="py-28 border-b border-border fade-section">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      </div>
 
-            <!-- Section Header -->
-            <div class="max-w-2xl mb-16">
+      <div class="bento-card">
 
-                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
-                    Selected Work
-                </p>
+        <span class="card-label">
+          Portfolio Health
+        </span>
 
-                <h2 class="text-4xl md:text-5xl font-semibold leading-tight">
-                    Product experiences built for users.
-                </h2>
-            </div>
+        <h3>
+          Low Risk
+        </h3>
 
+      </div>
 
-            <!-- Project Grid -->
-            <div class="grid lg:grid-cols-2 gap-8">
+      <div class="bento-card">
 
+        <span class="card-label">
+          Design System
+        </span>
 
-                <!-- CARD 1 -->
-                <article
-                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft flex flex-col h-full">
+        <h3>
+          148 Components
+        </h3>
 
-                    <!-- Image -->
-                    <div class="overflow-hidden">
-                        <img src="./casestudies/smartrecoveryapp/assets/cover-image.svg" alt="Smart Recovery App"
-                            class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    </div>
+      </div>
 
-                    <!-- Content -->
-                    <div class="p-8 flex flex-col flex-1">
+      <div class="bento-card gradient-card">
 
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
-                                Low-Fi Design
-                            </span>
-                            <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
-                                Visual Design
-                            </span>
+        <span class="card-label">
+          Product Thinking
+        </span>
 
-                            <span class="px-3 py-1 rounded-full bg-primary-50 text-muted text-xs border border-border">
-                                Human Interface Guidelines
-                            </span>
+        <h2>
+          Strategy × UX × Systems
+        </h2>
 
+      </div>
 
-                        </div>
+    </div>
 
-                        <h3 class="text-2xl font-semibold mb-4">
-                            Helping athletes make smarter recovery decisions through personalized training insights.
-                        </h3>
+  </section>
 
-                        <p class="text-muted leading-relaxed mb-8">
-                            Designed a recovery experience that transforms complex training data into actionable
-                            recommendations, helping athletes improve performance while reducing decision complexity.
-                        </p>
+  <!-- ===================================== -->
+  <!-- EXPERTISE STRIP -->
+  <!-- ===================================== -->
 
-                        <a href="./casestudies/smartrecoveryapp/index.html"
-                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-primary-50 transition-all duration-200 hover:text-primary-300 hover:bg-primary-100 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
-                            View Case Study →
-                        </a>
+  <section id="expertise" class="expertise-strip">
 
-                    </div>
-                </article>
+    <div>Product Strategy</div>
+    <div>AI Product Design</div>
+    <div>Design Systems</div>
+    <div>User Research</div>
+    <div>Data Visualization</div>
 
+  </section>
 
-                <!-- CARD 2 -->
-                <article
-                    class="group bg-surface border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-primary-500/40 hover:-translate-y-1 hover:shadow-soft flex flex-col h-full">
+  <!-- ===================================== -->
+  <!-- DESIGN PHILOSOPHY -->
+  <!-- ===================================== -->
 
-                    <!-- Image -->
-                    <div class="overflow-hidden">
-                        <img src="./casestudies/zeeusapp/assets/cover-image.svg" alt="ZeeUs App"
-                            class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    </div>
+  <section class="philosophy">
 
-                    <!-- Content -->
-                    <div class="p-8 flex flex-col flex-1">
+    <span class="section-tag">
+      Philosophy
+    </span>
 
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
-                                Research
-                            </span>
+    <h2>
 
-                            <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
-                                UI Design
-                            </span>
+      Great products don't simplify complexity.
+      They make complexity understandable.
 
-                            <span
-                                class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-medium border border-primary-500/20">
-                                Prototyping
-                            </span>
+    </h2>
 
-                            <span class="px-3 py-1 rounded-full bg-primary-50 text-muted text-xs border border-border">
-                                Self created DS
-                            </span>
-                        </div>
+    <p>
 
-                        <h3 class="text-2xl font-semibold mb-4">
-                            Creating meaningful social connections through shared interests.
-                        </h3>
+      I believe product design is about helping people
+      make better decisions, not just creating beautiful screens.
 
-                        <p class="text-muted leading-relaxed mb-8">
-                            Designed a platform that helps people discover and connect with like-minded individuals,
-                            reducing friction in forming real-world relationships.
-                        </p>
+    </p>
 
-                        <a href="./casestudies/zeeusapp/index.html"
-                            class="inline-flex items-center justify-center px-4 py-2 text-primary-400 font-medium border border-primary-500/30 rounded-full bg-primary-50 transition-all duration-200 hover:text-primary-300 hover:bg-primary-100 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 active:scale-[0.97] mt-auto">
-                            View Case Study →
-                        </a>
+  </section>
 
-                    </div>
-                </article>
+  <!-- ===================================== -->
+  <!-- FEATURED WORK -->
+  <!-- ===================================== -->
 
-            </div>
-        </div>
-    </section>
+  <section id="work" class="featured-work fade-up">
 
+    <div class="section-heading">
 
-    <!-- ======================================== -->
-    <!-- Value proposition -->
-    <!-- ======================================== -->
+      <span class="section-tag">
+        Selected Work
+      </span>
 
-    <section id="what-i-bring" class="py-28 border-b border-border">
+      <h2>
 
-        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        Solving complex problems
+        through strategy,
+        systems and execution.
 
-            <!-- Section Header -->
-            <div class="max-w-2xl mb-16">
+      </h2>
 
-                <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
-                    What I bring
-                </p>
+      <p>
 
-                <h2 class="text-4xl md:text-5xl font-semibold leading-tight">
-                    More than UI design.
-                </h2>
-            </div>
+        A collection of concept products exploring
+        AI, healthcare, finance and future mobility.
 
-            <div class="grid md:grid-cols-2 gap-8 text-left">
+      </p>
 
-                <div>
-                    <h3 class="font-semibold mb-3">Product Thinking</h3>
-                    <p class="text-muted">
-                        Balancing user needs, business goals and technical constraints.
-                    </p>
-                </div>
+    </div>
+    <!-- ===================================== -->
+    <!-- FEATURED PROJECT -->
+    <!-- ===================================== -->
 
-                <div>
-                    <h3 class="font-semibold mb-3">Design Systems</h3>
-                    <p class="text-muted">
-                        Building scalable foundations for product teams.
-                    </p>
-                </div>
+    <article class="featured-project">
 
-                <div>
-                    <h3 class="font-semibold mb-3">Stakeholder Alignment</h3>
-                    <p class="text-muted">
-                        Translating complex requirements into clear solutions.
-                    </p>
-                </div>
+      <span class="badge project-badge">Under construction</span>
 
-                <div>
-                    <h3 class="font-semibold mb-3">Research & Validation</h3>
-                    <p class="text-muted">
-                        Making decisions based on evidence instead of assumptions.
-                    </p>
-                </div>
+      <div class="project-preview">
 
-            </div>
+        <div class="project-preview-content">
+
+          <span>HealthTech + AI</span>
+
+          <h3>
+            AI Performance Coach
+          </h3>
+
+          <p>
+            Transforming health metrics into
+            personalized daily actions through
+            intelligent recommendations.
+          </p>
 
         </div>
-    </section>
 
+      </div>
 
-    <!-- ======================================== -->
-    <!-- ABOUT -->
-    <!-- ======================================== -->
+      <div class="project-content">
 
-    <section id="about" class="py-28 border-b border-border fade-section">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <span class="project-category">
+          Flagship Project
+        </span>
 
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <h3>
+          Helping users understand what to do,
+          not just what happened.
+        </h3>
 
+        <p>
 
+          Modern health platforms generate
+          enormous amounts of data.
 
+          Most users still don't know what
+          actions to take.
 
-                <!-- Content -->
-                <div>
+          This concept explores how AI can
+          transform metrics into meaningful,
+          personalized recommendations.
 
-                    <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
-                        About
-                    </p>
+        </p>
 
-                    <h2 class="text-4xl md:text-5xl font-semibold leading-tight mb-8">
-                        Product Designer with a background in UX, Product Management and Design Systems.
-                    </h2>
+        <div class="project-tags">
 
-                    <p class="text-muted leading-relaxed mb-6">
-                        I help teams transform complex requirements into scalable digital products by combining user
-                        research, systems thinking and business strategy.
-
-                        My background across UX Design, Product Management and Design Systems allows me to bridge the
-                        gap between users, stakeholders and engineering teams while creating solutions that deliver
-                        measurable value.
-                    </p>
-
-
-                    <div class="flex flex-wrap gap-3">
-
-                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
-                            Product Design
-                        </span>
-
-                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
-                            UX Strategy
-                        </span>
-
-                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
-                            Design Systems
-                        </span>
-
-                        <span class="px-4 py-2 rounded-full bg-primary-50 border border-border text-sm text-muted">
-                            Prototyping
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <!-- Image -->
-                <div>
-                    <img src="./src/portrait.png" alt="About" class="rounded-3xl border border-border shadow-soft" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ======================================== -->
-    <!-- CONTACT -->
-    <!-- ======================================== -->
-
-    <section id="contact" class="py-28 fade-section">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-
-            <p class="text-primary-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5">
-                Contact
-            </p>
-
-            <h2 class="text-4xl md:text-6xl font-semibold leading-tight mb-8">
-                Let’s build meaningful digital products.
-            </h2>
-
-            <p class="text-muted text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-                Open for freelance projects, product collaborations, and long-term opportunities.
-            </p>
-
-
-            <!-- CTA -->
-            <a href="mailto:julian.fohringer@icloud.com"
-                class="inline-flex items-center justify-center px-10 h-16 rounded-full bg-primary-500 text-white font-semibold text-lg transition-all duration-200 hover:bg-primary-400 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-primary-500/40 shadow-soft">
-                julian.fohringer@icloud.com
-            </a>
-
-
-            <!-- Social Links -->
-            <div class="mt-14 flex items-center justify-center gap-8 text-sm text-muted">
-
-
-                <a href="https://www.linkedin.com/in/julian-fohringer" target="_blank"
-                    class="transition duration-200 hover:text-text focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-sm">
-                    LinkedIn
-                </a>
-
-            </div>
-
-            <p class="mt-8 text-sm text-muted">
-                &copy; 2026 Julian Fohringer. All rights reserved.
-            </p>
-
-
+          <span>Product Strategy</span>
+          <span>UX Research</span>
+          <span>AI</span>
+          <span>Design System</span>
+          <span>Data Visualization</span>
 
         </div>
-    </section>
 
-    <script>
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileNav = document.getElementById('mobile-nav');
-        const mobileLinks = mobileNav?.querySelectorAll('a');
+        <a href="#" class="project-link">
+          View Case Study →
+        </a>
 
-        const toggleMenu = () => {
-            const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', String(!isOpen));
-            mobileNav.style.maxHeight = isOpen ? '0' : mobileNav.scrollHeight + 'px';
-        };
+      </div>
 
-        if (navToggle && mobileNav) {
-            navToggle.addEventListener('click', toggleMenu);
+    </article>
 
-            mobileLinks?.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navToggle.getAttribute('aria-expanded') === 'true') {
-                        toggleMenu();
-                    }
-                });
-            });
-        }
+    <!-- ===================================== -->
+    <!-- PROJECT GRID -->
+    <!-- ===================================== -->
 
-        // Section Navigation Active State
-        const navLinks = document.querySelectorAll('nav a[href^="#"], #mobile-nav a[href^="#"]');
-        const sections = ['work', 'what-i-bring', 'about', 'contact'];
+    <div class="project-grid">
 
-        const updateActiveNav = () => {
-            let currentSection = '';
+      <article class="project-card fade-up">
 
-            // Find the current section in viewport
-            for (const sectionId of sections) {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    const rect = section.getBoundingClientRect();
-                    // If section is in upper half of viewport, mark it as current
-                    if (rect.top <= window.innerHeight / 2 && rect.bottom > 0) {
-                        currentSection = sectionId;
-                    }
-                }
-            }
+        <span class="badge project-badge">Under construction</span>
 
-            // Update nav links
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                const linkSection = href.substring(1); // Remove # from href
+        <span class="project-category">
+          Design Systems
+        </span>
 
-                if (linkSection === currentSection) {
-                    link.classList.add('text-text', 'font-semibold');
-                    link.classList.remove('text-muted');
-                } else {
-                    link.classList.remove('text-text', 'font-semibold');
-                    link.classList.add('text-muted');
-                }
-            });
-        };
+        <h3>
+          Enterprise Design System
+        </h3>
 
-        // Update on scroll
-        window.addEventListener('scroll', updateActiveNav, { passive: true });
-        // Initial call
-        updateActiveNav();
+        <p>
+          Building scalable foundations
+          that accelerate product teams.
+        </p>
 
-        // Fade-in animations for sections on load and scroll
-        const fadeSections = document.querySelectorAll('.fade-section');
+        <a href="#">
+          View Project →
+        </a>
 
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    sectionObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -10% 0px'
-        });
+      </article>
 
-        fadeSections.forEach(section => sectionObserver.observe(section));
+      <article class="project-card fade-up">
 
-        // What I Bring Tab Functionality
-        document.querySelectorAll('.step-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const step = btn.dataset.step;
+        <span class="badge project-badge">Under construction</span>
 
-                // Update active button
-                document.querySelectorAll('.step-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-primary-500', 'text-white');
-                    b.classList.add('bg-dark', 'border', 'border-border', 'text-primary-400');
-                });
-                btn.classList.add('active', 'bg-primary-500', 'text-white');
-                btn.classList.remove('bg-dark', 'border', 'border-border', 'text-primary-400');
+        <span class="project-category">
+          FinTech
+        </span>
 
-                // Update active content
-                document.querySelectorAll('.step-content').forEach(content => {
-                    content.classList.add('hidden');
-                    content.classList.remove('active');
-                });
-                document.querySelector(`[data-step="${step}"].step-content`).classList.remove('hidden');
-                document.querySelector(`[data-step="${step}"].step-content`).classList.add('active');
-            });
-        });
-    </script>
+        <h3>
+          AI Investment Platform
+        </h3>
+
+        <p>
+          Helping users make better
+          investment decisions through AI.
+        </p>
+
+        <a href="#">
+          View Project →
+        </a>
+
+      </article>
+
+      <article class="project-card fade-up">
+
+        <span class="badge project-badge">Under construction</span>
+
+        <span class="project-category">
+          Future Mobility
+        </span>
+
+        <h3>
+          Autonomous Vehicle OS
+        </h3>
+
+        <p>
+          Designing the future interface
+          for autonomous transportation.
+        </p>
+
+        <a href="#">
+          View Project →
+        </a>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================== -->
+  <!-- THOUGHT LEADERSHIP -->
+  <!-- ===================================== -->
+
+  <section id="thinking" class="thinking">
+
+    <div class="section-heading">
+
+      <span class="section-tag">
+        Thinking
+      </span>
+
+      <h2>
+        What I'm exploring.
+      </h2>
+
+      <p>
+        Topics shaping the future of product design.
+      </p>
+
+    </div>
+
+    <div class="thinking-grid">
+
+      <article class="thinking-card fade-up">
+
+        <span>AI</span>
+
+        <h3>
+          Designing Trust
+          in AI Products
+        </h3>
+
+      </article>
+
+      <article class="thinking-card fade-up">
+
+        <span>Systems</span>
+
+        <h3>
+          Why Design Systems
+          Are Product Infrastructure
+        </h3>
+
+      </article>
+
+      <article class="thinking-card fade-up">
+
+        <span>Strategy</span>
+
+        <h3>
+          Measuring Design Impact
+          Beyond Usability
+        </h3>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================== -->
+  <!-- ABOUT -->
+  <!-- ===================================== -->
+
+  <section id="about" class="about">
+
+    <div class="about-grid fade-up">
+
+      <div class="about-copy">
+
+        <span class="section-tag">
+          About
+        </span>
+
+        <h2>
+
+          Product Designer with a background
+          in UX, Product Management
+          and Design Systems.
+
+        </h2>
+
+        <p>
+
+          I help teams transform complex
+          requirements into scalable digital
+          products by combining user research,
+          systems thinking and business strategy.
+
+        </p>
+
+        <p>
+
+          My experience across UX Design,
+          Product Management and Design Systems
+          enables me to bridge the gap between
+          users, stakeholders and engineering teams.
+
+        </p>
+
+        <div class="about-tags">
+
+          <span>Product Design</span>
+          <span>UX Strategy</span>
+          <span>Design Systems</span>
+          <span>AI Products</span>
+
+        </div>
+
+      </div>
+
+      <div class="about-visual">
+
+        <div class="portrait-card">
+
+          <img src="./src/portrait.png" alt="Julian Fohringer">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================== -->
+  <!-- CONTACT -->
+  <!-- ===================================== -->
+
+  <section id="contact" class="contact">
+
+    <span class="section-tag">
+      Contact
+    </span>
+
+    <h2>
+
+      Let's build
+      something meaningful.
+
+    </h2>
+
+    <p>
+
+      Open to Product Design opportunities,
+      freelance projects and collaborations.
+
+    </p>
+
+    <div class="contact-actions">
+
+      <a href="mailto:julian.fohringer@icloud.com" class="btn btn-primary">
+
+        Contact Me
+
+      </a>
+
+      <a href="https://www.linkedin.com/in/julian-fohringer" target="_blank" class="btn btn-secondary">
+
+        LinkedIn
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================== -->
+  <!-- FOOTER -->
+  <!-- ===================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div>
+
+        <h4>
+          Julian Fohringer
+        </h4>
+
+        <p>
+          Product Designer focused on AI,
+          Design Systems and complex
+          decision-making experiences.
+        </p>
+
+      </div>
+
+      <div>
+
+        <span id="year"></span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="./src/script.js"></script>
+
 </body>
 
 </html>
