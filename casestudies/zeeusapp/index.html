@@ -9,29 +9,32 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Global theme -->
+    <link rel="stylesheet" href="../../src/theme.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: {
-                            50: '#EFF6FF',
-                            100: '#DBEAFE',
-                            200: '#BFDBFE',
-                            300: '#93C5FD',
-                            400: '#60A5FA',
-                            500: '#2563EB',
-                            600: '#1D4ED8',
-                            700: '#1E40AF',
-                            800: '#1E3A8A',
-                            900: '#172554'
+                            50: 'var(--color-primary-50)',
+                            100: 'var(--color-primary-100)',
+                            200: 'var(--color-primary-200)',
+                            300: 'var(--color-primary-300)',
+                            400: 'var(--color-primary-400)',
+                            500: 'var(--color-primary-500)',
+                            600: 'var(--color-primary-600)',
+                            700: 'var(--color-primary-700)',
+                            800: 'var(--color-primary-800)',
+                            900: 'var(--color-primary-900)'
                         },
-                        secondary: '#0F172A',
-                        accent: '#14B8A6',
-                        background: '#FFFFFF',
-                        surface: '#F8FAFC',
-                        border: '#E2E8F0',
-                        muted: '#64748B'
+                        secondary: 'var(--color-text)',
+                        accent: 'var(--color-accent)',
+                        background: 'var(--color-background)',
+                        surface: 'var(--color-surface)',
+                        border: 'var(--color-border)',
+                        muted: 'var(--color-muted)'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
@@ -108,14 +111,14 @@
         }
 
         .section-nav-link.active {
-            color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-text);
+            background-color: rgba(var(--color-text-rgb), 0.1);
         }
 
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+            background: linear-gradient(180deg, var(--color-background) 0%, var(--color-surface) 100%);
             pointer-events: none;
             overflow: hidden;
         }
@@ -136,11 +139,11 @@
             width: auto;
             height: auto;
             padding: 0.75rem 1rem;
-            background: #2563EB;
-            color: #FFFFFF;
+            background: var(--color-primary-500);
+            color: var(--color-text);
             border-radius: 0.5rem;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 10px 30px rgba(var(--color-primary-500-rgb), 0.25);
         }
 
         nav a,
@@ -162,7 +165,7 @@
         }
 
         :focus-visible {
-            outline: 3px solid #2563EB;
+            outline: 3px solid var(--color-primary-500);
             outline-offset: 4px;
         }
 
